@@ -2,10 +2,12 @@ import { Routes, Route } from "react-router-dom"
 import { useState } from "react";
 import './App.css';
 import Header from './pages/Header'
+import Home from "./pages/Home";
 
 function App() {
 
-  const [users, setUsers] = useState(mockUsers)
+  // const [users, setUsers] = useState([])
+
   return (
       <>
       <Header />
