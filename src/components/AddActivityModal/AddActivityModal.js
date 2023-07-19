@@ -1,6 +1,5 @@
 import React from "react";
-import { Modal, Input, Row, Checkbox, Button, Text } from "@nextui-org/react";
-import { createTheme } from "@nextui-org/react"
+import { Modal, Input, Button, Text } from "@nextui-org/react";
 import ActivityDropDown from "../ActivityDropDown";
 
 
