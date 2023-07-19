@@ -4,19 +4,17 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from "react-router-dom";
-import { PrimeReactProvider } from 'primereact/api';
+import { NextUIProvider } from '@nextui-org/react';
         
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-          <PrimeReactProvider>
-    <BrowserRouter>
-
+    <NextUIProvider>
+      <BrowserRouter>
        <App />
-
-    </BrowserRouter>
-    </PrimeReactProvider>
+      </BrowserRouter>
+    </NextUIProvider>
   </React.StrictMode>
 );
 
