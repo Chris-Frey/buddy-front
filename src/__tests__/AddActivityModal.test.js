@@ -1,6 +1,8 @@
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { BrowserRouter } from 'react-router-dom';
 import AddActivityModal from '../components/AddActivityModal/AddActivityModal';
+
 
 describe("<AddActivityModal />", () => {
   beforeEach(() => {
@@ -26,6 +28,10 @@ describe("<AddActivityModal />", () => {
 
   it("has create an activity text", () => {
     screen.logTestingPlaygroundURL()
+    userEvent.click(screen.getByRole('button', {
+      name: /\+/i
+    }))
     expect(screen.getByText(/create an activity/i)).toBeInTheDocument
   })  
+
 })

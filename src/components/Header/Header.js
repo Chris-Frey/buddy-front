@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, Button, Link, Text } from "@nextui-org/react";
+import { Navbar, Text } from "@nextui-org/react";
 import { Layout } from "./Layout.js";
 import Logo from "./Logo.js";
 import BrowseActivityModal from "../BrowseActivity/BrowseActivityModal.js";
@@ -27,7 +27,7 @@ const Header = () => {
         </Navbar.Content>
         <Navbar.Content>
           <Navbar.Link color="inherit" href="/LogIn">
-            Login
+            Log Out
           </Navbar.Link>
           <Navbar.Item>
           <BrowseActivityModal />
