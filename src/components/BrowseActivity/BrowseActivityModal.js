@@ -7,6 +7,7 @@ const BrowseActivityModal = () => {
     setVisible(false);
     console.log("closed");
   };
+  
   return (
     <div>
       <Button auto color="#FFCD4E" shadow onPress={handler}>
