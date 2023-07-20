@@ -1,6 +1,5 @@
 import React from "react";
 import { Modal, Button, Text } from "@nextui-org/react";
-// import ActivityCategory from "./components/BrowseActivity/ActivityCategory"
 const BrowseActivityModal = () => {
   const [visible, setVisible] = React.useState(false);
   const handler = () => setVisible(true);
@@ -10,7 +9,7 @@ const BrowseActivityModal = () => {
   };
   return (
     <div>
-      <Button auto color="#FFCD4E"  shadow onPress={handler}>
+      <Button auto color="#FFCD4E" shadow onPress={handler}>
         +
       </Button>
       <Modal
@@ -19,8 +18,8 @@ const BrowseActivityModal = () => {
         aria-labelledby="modal-title"
         open={visible}
         onClose={closeHandler}
-        
-      >
+        >
+
         <Modal.Header>
           <Text id="modal-title" size={18}>
             BROWSE ACTIVITIES

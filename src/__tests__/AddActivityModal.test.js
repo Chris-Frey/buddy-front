@@ -12,22 +12,17 @@ describe("<AddActivityModal />", () => {
     </BrowserRouter>
   )})
 
-
-
   it("has a button", () => {
-    screen.logTestingPlaygroundURL()
     expect(screen.getByRole('button', {
       name: /\+/i
     })).toBeInTheDocument
   })
 
   it("has a '+' symbol", () => {
-    screen.logTestingPlaygroundURL()
     expect(screen.getByText(/\+/i)).toBeInTheDocument
   })
 
   it("has create an activity text", () => {
-    screen.logTestingPlaygroundURL()
     userEvent.click(screen.getByRole('button', {
       name: /\+/i
     }))
