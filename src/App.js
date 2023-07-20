@@ -7,9 +7,11 @@ import Friends from "./pages/Friends";
 import BuddyProfile from "./pages/BuddyProfile";
 import LogIn from "./pages/LogIn";
 import ActivityShow from "./pages/ActivityShow";
+import Users from "./MockUsers";
+
 
 function App() {
-
+const [activities, setActivities] = useState(Users)
   return (
       <>
       <Header />
@@ -25,7 +27,8 @@ function App() {
         <Route path="/Friends" element={<Friends />} />
         <Route path="/BuddyProfile" element={<BuddyProfile />} />
         <Route path="/LogIn" element={<LogIn />} />
-      <Route path="/ActivityShow" element={<ActivityShow />} />
+      <Route path="/ActivityShow" element={<ActivityShow activities={activities} />} />
+
       </Routes>
       </>
   );

@@ -1,11 +1,11 @@
 import { Card, Col, Row, Button, Text } from "@nextui-org/react";
 
-export const Card5 = () => (
+export const Card5 = ({activities}) => (
   <Card css={{ w: "100%", h: "75vh" }}>
     <Card.Header css={{ position: "absolute", zIndex: 1, top: 5 }}>
       <Col>
         <Text size={24} weight="bold" transform="uppercase" color="white">
-          Soccer
+          {activities.name}
           <Text size={15} weight="bold" transform="uppercase" color="yellow">          
               Event
           </Text>
