@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Friends from "./pages/Friends";
 import BuddyProfile from "./pages/BuddyProfile";
 import LogIn from "./pages/LogIn";
+import ActivityShow from "./pages/ActivityShow";
 
 function App() {
 
@@ -24,9 +25,8 @@ function App() {
         <Route path="/Friends" element={<Friends />} />
         <Route path="/BuddyProfile" element={<BuddyProfile />} />
         <Route path="/LogIn" element={<LogIn />} />
+      <Route path="/ActivityShow" element={<ActivityShow />} />
       </Routes>
-
-      
       </>
   );
 }
