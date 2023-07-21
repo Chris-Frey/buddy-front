@@ -28,7 +28,7 @@ const [activities, setActivities] = useState(users)
         <Route path="/Friends" element={<Friends />} />
         <Route path="/BuddyProfile" element={<BuddyProfile />} />
         <Route path="/LogIn" element={<LogIn />} />
-      <Route path="/ActivityShow" element={<ActivityShow activities={activities} />} />
+      <Route path="/ActivityShow/:id" element={<ActivityShow activities={activities} />} />
 
       </Routes>
       </>
