@@ -12,6 +12,7 @@ describe("<ActivityShow/1 />", () => {
             path="/ActivityShow/:id"
             element={<ActivityShow activities={user} />}
           />
+          //Users are the placeholder until we have the actual activities
         </Routes>
       </MemoryRouter>
     );
@@ -38,7 +39,7 @@ describe("<ActivityShow/1 />", () => {
     expect(screen.getAllByText(/padge/i));
   });
 
-    it("has event text", () => {
+  it("has event text", () => {
       expect(screen.getAllByText(/event/i));
     });
 

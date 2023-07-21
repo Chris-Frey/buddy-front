@@ -1,6 +1,6 @@
 import { Card, Col, Text } from "@nextui-org/react";
 
-export const PictureCard = () => (
+const PictureCard = () => (
 
   <Card css={{w: 500, h: 340}}>
     <Card.Header css={{ position: "absolute", zIndex: 1, top: 5,  }}>
@@ -14,3 +14,5 @@ export const PictureCard = () => (
     />
   </Card>
 );
+
+export default PictureCard
