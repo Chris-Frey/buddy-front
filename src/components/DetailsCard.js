@@ -1,45 +1,28 @@
 import { Card, Col, Row, Button, Text } from "@nextui-org/react";
 
-export const Card5 = ({activities}) => (
+const DetailsCard = (props) => {
+
+  return(
+   
+  <>
   <Card css={{ w: "100%", h: "75vh" }}>
     <Card.Header css={{ position: "absolute", zIndex: 1, top: 5 }}>
       <Col>
         <Text size={24} weight="bold" transform="uppercase" color="white">
-          {activities.name}
-          <Text size={15} weight="bold" transform="uppercase" color="yellow">          
-              Event
-          </Text>
+          event {props.activities[0].name}
         </Text>
+        <Text size={15} weight="bold" transform="uppercase" color="yellow">Event</Text>
         <Text size={13} h3 color="white">
-        2v2 Pickup Game
-        </Text>
-        <Text size={15} weight="bold" transform="uppercase" color="yellow">          
-              Time
-          </Text>
-        <Text size={13} h3 color="white">
-        18:00
-        </Text>
-        <Text size={15} weight="bold" transform="uppercase" color="yellow">          
-              Duration
-          </Text>
-        <Text size={13} h3 color="white">
-        2.0 Hours
-        </Text>
-        <Text size={15} weight="bold" transform="uppercase" color="yellow">          
-              Location
-          </Text>
-        <Text size={13} h3 color="white">
-        West Balboa Park
-        </Text>
-        <Text size={15} weight="bold" transform="uppercase" color="yellow">          
-              Attendees
-          </Text>
-        <Text size={13} h3 color="white">
-        3
-        </Text>
-        <Text size={15} weight="bold" transform="uppercase" color="yellow">          
-              Info
-          </Text>
+        2v2 Pickup Game {props.activities[0].username}</Text>
+        <Text size={15} weight="bold" transform="uppercase" color="yellow">Time</Text>
+        <Text size={13} h3 color="white">18:00</Text>
+        <Text size={15} weight="bold" transform="uppercase" color="yellow">Duration</Text>
+        <Text size={13} h3 color="white">2.0 Hours</Text>
+        <Text size={15} weight="bold" transform="uppercase" color="yellow">Location</Text>
+        <Text size={13} h3 color="white">West Balboa Park</Text>
+        <Text size={15} weight="bold" transform="uppercase" color="yellow">Attendees</Text>
+        <Text size={13} h3 color="white">3</Text>
+        <Text size={15} weight="bold" transform="uppercase" color="yellow">Info</Text>
         <Text size={13} h3 color="white">
         Come join us for a quick pickup game for an hour. Bring your own drinks and sunscreen.
         </Text>
@@ -85,4 +68,7 @@ export const Card5 = ({activities}) => (
       </Row>
     </Card.Footer>
   </Card>
-);
+  </>
+  )
+    };
+export default DetailsCard

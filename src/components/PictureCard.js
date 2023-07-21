@@ -1,23 +1,15 @@
 import { Card, Col, Text } from "@nextui-org/react";
 
-export const Card1 = () => (
+export const PictureCard = () => (
   <Card>
     <Card.Header css={{ position: "absolute", zIndex: 1, top: 5 }}>
-      <Col>
-        <Text size={12} weight="bold" transform="uppercase" color="#ffffffAA">
-          What to watch
-        </Text>
-        <Text h4 color="white">
-          Stream the Acme event
-        </Text>
-      </Col>
     </Card.Header>
     <Card.Image
-      src="https://nextui.org/images/card-example-4.jpeg"
+      src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2720&q=80"
       objectFit="cover"
       width="100%"
       height={340}
-      alt="Card image background"
+      alt="Activity Image"
     />
   </Card>
 );

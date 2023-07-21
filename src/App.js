@@ -7,16 +7,17 @@ import Friends from "./pages/Friends";
 import BuddyProfile from "./pages/BuddyProfile";
 import LogIn from "./pages/LogIn";
 import ActivityShow from "./pages/ActivityShow";
-import Users from "./MockUsers";
+import users from "./mockUsers";
 
 
 function App() {
-const [activities, setActivities] = useState(Users)
+const [activities, setActivities] = useState(users)
+// console.log(users);
   return (
       <>
       <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home activities={activities}/>} />
         {/* <Route path="/signup" element={<SignUp />} />
         <Route path="/activityindex" element={<ActivityIndex />} />
         <Route path="/activityshow" element={<ActivityShow />} />

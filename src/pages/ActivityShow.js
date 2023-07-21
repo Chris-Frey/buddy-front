@@ -1,19 +1,20 @@
 import React from 'react'
-import { Card1 } from "../components/PictureCard";
-import { Card5 } from "../components/ShowCard2";
+import { PictureCard } from "../components/PictureCard";
+import DetailsCard from "../components/DetailsCard";
 import AddActivityModal from '../components/AddActivityModal/AddActivityModal'
 import { useParams } from "react-router-dom"
 
 
 const ActivityShow = ({ activities }) => {
     const { id } = useParams()
-    console.log(id)
+    let currentActivity = activities.find((activity) => activity.id === +id)
+    console.log(currentActivity);
 
   return (
     <>
       <div>Your Activity</div>
-        <Card1 />
-        <Card5 activities={activities}/>
+        <PictureCard />
+        <DetailsCard activities={activities}/>
         <AddActivityModal />
     </>
   )
