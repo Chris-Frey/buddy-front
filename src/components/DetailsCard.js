@@ -1,6 +1,6 @@
 import { Card, Col, Row, Button, Text } from "@nextui-org/react";
 
-const DetailsCard = (props) => {
+const DetailsCard = ({currentActivity}) => {
 
   return(
    
@@ -8,24 +8,32 @@ const DetailsCard = (props) => {
   <Card css={{ w: 500, h: "70vh" }}>
     <Card.Header css={{ position: "absolute", zIndex: 1, top: 5 }}>
       <Col>
-        <Text size={24} weight="bold" transform="uppercase" color="white">
-          event {props.currentActivity.name}
-        </Text>
-        <Text size={15} weight="bold" transform="uppercase" color="yellow">Event</Text>
+        <Text size={24} weight="bold" transform="uppercase" color="white">{currentActivity.category}</Text>
+
+        <Text size={15} weight="bold" transform="uppercase" color="yellow">ACTIVITY NAME</Text>
+
         <Text size={13} h3 color="white">
-        {props.currentActivity.name}</Text>
+        {currentActivity.activity}</Text>
+
         <Text size={15} weight="bold" transform="uppercase" color="yellow">Time</Text>
-        <Text size={13} h3 color="white">18:00</Text>
+
+        <Text size={13} h3 color="white">{currentActivity.start_time}</Text>
+
         <Text size={15} weight="bold" transform="uppercase" color="yellow">Duration</Text>
-        <Text size={13} h3 color="white"> {props.currentActivity.name}</Text>
+
+        <Text size={13} h3 color="white"> {currentActivity.duration}</Text>
+
         <Text size={15} weight="bold" transform="uppercase" color="yellow">Location</Text>
-        <Text size={13} h3 color="white"> {props.currentActivity.name}</Text>
+
+        <Text size={13} h3 color="white"> {currentActivity.location}</Text>
+
         <Text size={15} weight="bold" transform="uppercase" color="yellow">Attendees</Text>
+
         <Text size={13} h3 color="white">3</Text>
+
         <Text size={15} weight="bold" transform="uppercase" color="yellow">Info</Text>
-        <Text size={13} h3 color="white">
-        {props.currentActivity.name}
-        </Text>
+
+        <Text size={13} h3 color="white">{currentActivity.description}</Text>
         
       </Col>
     </Card.Header>
