@@ -82,7 +82,7 @@ describe("<ActivityShow/1 />", () => {
       })
     );})
 
-    it("has Buddy Up text", () => {
+  it("has Buddy Up text", () => {
       expect(screen.getByText(/buddy up/i));
     });
   });

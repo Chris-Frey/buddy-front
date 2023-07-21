@@ -7,7 +7,6 @@ import Friends from "./pages/Friends";
 import BuddyProfile from "./pages/BuddyProfile";
 import LogIn from "./pages/LogIn";
 import ActivityShow from "./pages/ActivityShow";
-import users from "./mockUsers";
 import userActivities from "./mockActivities";
 
 
