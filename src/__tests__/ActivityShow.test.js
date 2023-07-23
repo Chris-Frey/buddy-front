@@ -19,7 +19,6 @@ describe("<ActivityShow/1 />", () => {
   });
 
   it("has a button", () => {
-    screen.logTestingPlaygroundURL();
     expect(
       screen.getByRole("button", {
         name: /\+/i,
