@@ -12,7 +12,6 @@ describe("<ActivityShow/1 />", () => {
             path="/ActivityShow/:id"
             element={<ActivityShow activities={activities} />}
           />
-          //Users are the placeholder until we have the actual activities
         </Routes>
       </MemoryRouter>
     );
