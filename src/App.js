@@ -9,6 +9,7 @@ import LogIn from "./pages/LogIn";
 import ActivityShow from "./pages/ActivityShow";
 import userActivities from "./mockActivities";
 import SignUp from "./pages/SignUp";
+import ActivityEdit from "./pages/ActivityEdit";
 
 
 function App() {
@@ -24,7 +25,7 @@ const [activities, setActivities] = useState(userActivities)
         <Route path="/login" element={<LogIn />} />
         <Route path="/activityshow/:id" element={<ActivityShow activities={activities} />} />
         <Route path="/signup" element={<SignUp />} />
-
+        <Route path="/activityedit/:id" element={<ActivityEdit activities={activities} />} />
       </Routes>
       </>
   );

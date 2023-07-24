@@ -1,4 +1,6 @@
+import { React } from "react";
 import { Card, Col, Row, Button, Text } from "@nextui-org/react";
+import { Link } from 'react-router-dom'
 
 const DetailsCard = ({currentActivity}) => {
 
@@ -71,6 +73,38 @@ const DetailsCard = ({currentActivity}) => {
                 Buddy Up
               </Text>
             </Button>
+            <Button
+              flat
+              auto
+              rounded
+              css={{ color: "#94f9f0", bg: "#94f9f026" }}
+            >
+              <Text
+                css={{ color: "inherit" }}
+                size={12}
+                weight="bold"
+                transform="uppercase"
+              >
+                Delete
+              </Text>
+            </Button>
+            <Link to="/activityedit">
+            <Button
+              flat
+              auto
+              rounded
+              css={{ color: "#94f9f0", bg: "#94f9f026" }}
+            >
+              <Text
+                css={{ color: "inherit" }}
+                size={12}
+                weight="bold"
+                transform="uppercase"
+              >
+                Edit
+              </Text>
+            </Button>
+            </Link>
           </Row>
         </Col>
       </Row>
