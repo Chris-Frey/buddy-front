@@ -78,5 +78,5 @@ const DetailsCard = ({currentActivity}) => {
   </Card>
   </>
   )
-    };
+};
 export default DetailsCard
