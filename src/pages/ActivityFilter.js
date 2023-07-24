@@ -3,9 +3,20 @@ import AddActivityModal from '../components/AddActivityModal/AddActivityModal'
 import ActivityCard from '../components/ActivityCard'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { useParams } from "react-router-dom"
 
+const ActivityFilter = (props) => {
 
-const Home = (props) => {
+  const { category } = useParams()
+
+    // activityFilter filters the activities objects and only shows the ones with category matching the name typed into the address bar
+  const activityFilter = props.activities?.filter(value => {
+    return value.category === category
+   })
+   .map((value,index) => {
+    return <div><ActivityCard activities={value} key={index}/></div>
+  })
+
   //parameters for carousel
   const responsive = {
 
@@ -26,30 +37,23 @@ const Home = (props) => {
       partialVisibilityGutter: 100
     }
   };
-
-
-// maps through activity objects and displays them
-  const activityDisplay = props.activities?.map((value,index) => {
-    return <div><ActivityCard activities={value} key={index}/></div>
-  })
-
   return (
     <>
-    <h3>ACTIVITIES IN THE NEXT <br/>30 MIN</h3>
+
+  <h3>ACTIVITIES IN THE NEXT <br/>30 MIN</h3>
     <Carousel 
       partialVisible
       infinite
       responsive={responsive}
       >
-      {activityDisplay}
+      {activityFilter}
     </Carousel>
 
   <h3>ACTIVITIES IN THE NEXT <br/>HOUR</h3>
   <Carousel 
     partialVisible
-      responsive={responsive}
-      >
-      {activityDisplay}
+      responsive={responsive}>
+      {activityFilter}
     </Carousel>
 
     <h3>ACTIVITIES IN THE NEXT <br/>2 HOURS</h3>
@@ -57,26 +61,24 @@ const Home = (props) => {
       partialVisible
       responsive={responsive}
       >
-      {activityDisplay}
+      {activityFilter}
     </Carousel>
-
     <h3>ACTIVITIES IN THE NEXT <br/>4 HOURS</h3>
     <Carousel 
       partialVisible
-      responsive={responsive}
-      >
-      {activityDisplay}
+      responsive={responsive}>
+      {activityFilter}
     </Carousel>
-
     <h3>ACTIVITIES IN THE NEXT <br/>8 HOURS</h3>
     <Carousel 
       partialVisible
-      responsive={responsive}
-      >
-      {activityDisplay}
+      responsive={responsive}>
+      {activityFilter}
     </Carousel>
     <AddActivityModal/>
     </>
+
   )
 }
-export default Home
+
+export default ActivityFilter

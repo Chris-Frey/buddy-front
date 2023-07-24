@@ -9,6 +9,7 @@ import LogIn from "./pages/LogIn";
 import ActivityShow from "./pages/ActivityShow";
 import userActivities from "./mockActivities";
 import SignUp from "./pages/SignUp";
+import ActivityFilter from "./pages/ActivityFilter";
 
 
 function App() {
@@ -19,11 +20,13 @@ const [activities, setActivities] = useState(userActivities)
       <Header />
       <Routes>
         <Route path="/" element={<Home activities={activities}/>} />
+        <Route path="/:category?" element={<ActivityFilter activities={activities}/>} />
         <Route path="/friends" element={<Friends />} />
         <Route path="/buddyprofile" element={<BuddyProfile />} />
         <Route path="/login" element={<LogIn />} />
         <Route path="/activityshow/:id" element={<ActivityShow activities={activities} />} />
         <Route path="/signup" element={<SignUp />} />
+        
 
       </Routes>
       </>
