@@ -8,6 +8,7 @@ import BuddyProfile from "./pages/BuddyProfile";
 import LogIn from "./pages/LogIn";
 import ActivityShow from "./pages/ActivityShow";
 import userActivities from "./mockActivities";
+import SignUp from "./pages/SignUp";
 
 
 function App() {
@@ -22,6 +23,7 @@ const [activities, setActivities] = useState(userActivities)
         <Route path="/buddyprofile" element={<BuddyProfile />} />
         <Route path="/login" element={<LogIn />} />
         <Route path="/activityshow/:id" element={<ActivityShow activities={activities} />} />
+        <Route path="/signup" element={<SignUp />} />
 
       </Routes>
       </>
