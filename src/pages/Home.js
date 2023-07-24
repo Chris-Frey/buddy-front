@@ -35,7 +35,7 @@ const Home = (props) => {
 
   return (
     <>
-    <h3>ACTIVITIES IN THE NEXT <br/>30 MIN</h3>
+    <h3>ACTIVITIES HAPPENING <br/>SOON</h3>
     <Carousel 
       partialVisible
       infinite
@@ -43,39 +43,6 @@ const Home = (props) => {
       >
       {activityDisplay}
     </Carousel>
-
-  <h3>ACTIVITIES IN THE NEXT <br/>HOUR</h3>
-  <Carousel 
-    partialVisible
-      responsive={responsive}
-      >
-      {activityDisplay}
-    </Carousel>
-
-    <h3>ACTIVITIES IN THE NEXT <br/>2 HOURS</h3>
-    <Carousel 
-      partialVisible
-      responsive={responsive}
-      >
-      {activityDisplay}
-    </Carousel>
-
-    <h3>ACTIVITIES IN THE NEXT <br/>4 HOURS</h3>
-    <Carousel 
-      partialVisible
-      responsive={responsive}
-      >
-      {activityDisplay}
-    </Carousel>
-
-    <h3>ACTIVITIES IN THE NEXT <br/>8 HOURS</h3>
-    <Carousel 
-      partialVisible
-      responsive={responsive}
-      >
-      {activityDisplay}
-    </Carousel>
-    <AddActivityModal/>
     </>
   )
 }
