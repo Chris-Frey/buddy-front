@@ -7,13 +7,13 @@ import Friends from "./pages/Friends";
 import BuddyProfile from "./pages/BuddyProfile";
 import LogIn from "./pages/LogIn";
 import ActivityShow from "./pages/ActivityShow";
-import userActivities from "./mockActivities";
+import mockActivities from "./mockActivities";
 import SignUp from "./pages/SignUp";
 import ActivityFilter from "./pages/ActivityFilter";
 
 
 function App() {
-const [activities, setActivities] = useState(userActivities)
+const [activities, setActivities] = useState(mockActivities)
 
   return (
       <>
