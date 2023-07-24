@@ -1,4 +1,4 @@
-const userActivities = [
+const mockActivities = [
     {   
       id: 1,
       category: 'soccer',
@@ -70,4 +70,4 @@ const userActivities = [
       description: 'bring your own soccer ball'
   }
   ]
-  export default userActivities
+  export default mockActivities
