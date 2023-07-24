@@ -18,10 +18,10 @@ const [activities, setActivities] = useState(userActivities)
       <Header />
       <Routes>
         <Route path="/" element={<Home activities={activities}/>} />
-        <Route path="/Friends" element={<Friends />} />
-        <Route path="/BuddyProfile" element={<BuddyProfile />} />
-        <Route path="/LogIn" element={<LogIn />} />
-        <Route path="/ActivityShow/:id" element={<ActivityShow activities={activities} />} />
+        <Route path="/friends" element={<Friends />} />
+        <Route path="/buddyprofile" element={<BuddyProfile />} />
+        <Route path="/login" element={<LogIn />} />
+        <Route path="/activityshow/:id" element={<ActivityShow activities={activities} />} />
 
       </Routes>
       </>
