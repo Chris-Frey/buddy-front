@@ -60,7 +60,7 @@ const userActivities = [
       description: 'bring your own basketball and drinks'
   },
   {   
-      id: 1,
+      id: 7,
       category: 'soccer',
       activity: '23v2 pick up game',
       activity_photo: 'https://images.unsplash.com/photo-1579952363873-27f3bade9f55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2670&q=80',
