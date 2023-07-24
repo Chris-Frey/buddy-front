@@ -9,7 +9,9 @@ import LogIn from "./pages/LogIn";
 import ActivityShow from "./pages/ActivityShow";
 import mockActivities from "./mockActivities";
 import SignUp from "./pages/SignUp";
+import ActivityEdit from "./pages/ActivityEdit";
 import ActivityFilter from "./pages/ActivityFilter";
+
 
 
 function App() {
@@ -26,8 +28,7 @@ const [activities, setActivities] = useState(mockActivities)
         <Route path="/login" element={<LogIn />} />
         <Route path="/activityshow/:id" element={<ActivityShow activities={activities} />} />
         <Route path="/signup" element={<SignUp />} />
-        
-
+        <Route path="/activityedit/:id" element={<ActivityEdit activities={activities} />} />
       </Routes>
       </>
   );
