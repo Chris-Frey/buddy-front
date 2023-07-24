@@ -10,16 +10,14 @@ describe("<ActivityShow/1 />", () => {
         <Routes>
           <Route
             path="/ActivityShow/:id"
-            element={<ActivityShow activities={user} />}
+            element={<ActivityShow activities={activities} />}
           />
-          //Users are the placeholder until we have the actual activities
         </Routes>
       </MemoryRouter>
     );
   });
 
   it("has a button", () => {
-    screen.logTestingPlaygroundURL();
     expect(
       screen.getByRole("button", {
         name: /\+/i,
