@@ -88,7 +88,7 @@ const DetailsCard = ({currentActivity}) => {
                 Delete
               </Text>
             </Button>
-            <Link to="/activityedit">
+            <Link to="/activityedit/:id">
             <Button
               flat
               auto

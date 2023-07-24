@@ -2,7 +2,7 @@ import { React } from "react";
 import { Card, Col, Row, Button, Text, Input, Dropdown } from "@nextui-org/react";
 import { Link } from 'react-router-dom'
 
-const EditCard = ({}) => {
+const EditCard = ({currentActivity}) => {
 
   return(
    
@@ -16,7 +16,7 @@ const EditCard = ({}) => {
             fullWidth
             color="primary"
             size="lg"
-            placeholder="EVENT"
+            placeholder={currentActivity.activity}
             contentLeft={<Text fill="currentColor" />}
           />
           <Input
@@ -25,7 +25,7 @@ const EditCard = ({}) => {
             fullWidth
             color="primary"
             size="lg"
-            placeholder="TIME"
+            placeholder={currentActivity.start_time}
             contentLeft={<Text fill="currentColor" />}
           />
           <Input
@@ -34,7 +34,7 @@ const EditCard = ({}) => {
             fullWidth
             color="primary"
             size="lg"
-            placeholder="LOCATION"
+            placeholder={currentActivity.location}
             contentLeft={<Text fill="currentColor" />}
           />
           <Input
@@ -43,7 +43,7 @@ const EditCard = ({}) => {
             fullWidth
             color="primary"
             size="lg"
-            placeholder="INFO"
+            placeholder={currentActivity.description}
             contentLeft={<Text fill="currentColor" />}
           />
           <Input
@@ -52,7 +52,7 @@ const EditCard = ({}) => {
             fullWidth
             color="primary"
             size="lg"
-            placeholder="DURATION"
+            placeholder={currentActivity.duration}
             contentLeft={<Text fill="currentColor" />}
           />
           <Dropdown>
@@ -84,10 +84,6 @@ const EditCard = ({}) => {
       }}
     >
       <Row>
-        <Col>
-          <Row>
-          </Row>
-        </Col>
         <Col>
           <Row justify="flex-end">
             <Button
