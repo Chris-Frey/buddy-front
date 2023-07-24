@@ -14,15 +14,19 @@ const LogIn = () => {
       <Spacer y={1.5} />
       <div className='buttons'>
         <Grid>
+        <Link to="/home">
           <Button shadow color="warning" auto>
             Sign In
           </Button>
+          </Link>
         </Grid>
         <Spacer y={1.5} />
         <Grid>
+        <Link to="/buddyprofile">
           <Button shadow color="warning" auto>
             Sign Up
           </Button>
+          </Link>
         </Grid>
       </div>
       <div className='link'>
