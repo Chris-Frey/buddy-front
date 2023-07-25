@@ -43,6 +43,7 @@ const Home = (props) => {
       >
       {activityDisplay}
     </Carousel>
+    <AddActivityModal/>
     </>
   )
 }

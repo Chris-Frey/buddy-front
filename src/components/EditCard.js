@@ -1,8 +1,10 @@
 import { React } from "react";
 import { Card, Col, Row, Button, Text, Input, Dropdown } from "@nextui-org/react";
 import { Link } from 'react-router-dom'
+import { useParams } from "react-router-dom";
 
 const EditCard = ({currentActivity}) => {
+  const { id } = useParams()
 
   return(
    
@@ -86,6 +88,7 @@ const EditCard = ({currentActivity}) => {
       <Row>
         <Col>
           <Row justify="flex-end">
+            <Link to={`/activityshow/${currentActivity.id}`}>
             <Button
               flat
               auto
@@ -101,7 +104,9 @@ const EditCard = ({currentActivity}) => {
                 Save
               </Text>
             </Button>
-            <Link to="/activityedit">
+            </Link>
+            
+            <Link to={`/activityshow/${currentActivity.id}`}>
             <Button
               flat
               auto

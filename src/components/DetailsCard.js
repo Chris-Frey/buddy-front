@@ -1,9 +1,12 @@
 import { React } from "react";
 import { Card, Col, Row, Button, Text } from "@nextui-org/react";
 import { Link } from 'react-router-dom'
+import { useParams } from "react-router-dom";
 
 const DetailsCard = ({currentActivity}) => {
-
+  console.log(currentActivity);
+  const { id } = useParams()
+  // currentEvent = 
   return(
    
   <>
@@ -88,7 +91,7 @@ const DetailsCard = ({currentActivity}) => {
                 Delete
               </Text>
             </Button>
-            <Link to="/activityedit/:id">
+            <Link to={`/activityedit/${currentActivity.id}`}>
             <Button
               flat
               auto

@@ -1,15 +1,28 @@
-import React from "react";
+import {React, useState} from "react";
 import { Modal, Input, Button, Text } from "@nextui-org/react";
-import ActivityDropDown from "../ActivityDropDown";
 
 
 
-const AddActivityModal = () => {
+const AddActivityModal = ({}) => {
+
+  const [newActivity, setNewActivity] = useState({
+    category:"",
+    activity:"",
+    start_time:"",
+    duration:"",
+    location:"",
+    description:""
+  })
+
+  // const navigate = useNavigate()
+  const handleChange = (e) => {
+    setNewActivity({...newActivity, [e.target.name]: e.target.value})
+  }
+
   const [visible, setVisible] = React.useState(false);
   const handler = () => setVisible(true);
   const closeHandler = () => {
     setVisible(false);
-    console.log("closed");
   };
   return (
     <div>
@@ -30,16 +43,44 @@ const AddActivityModal = () => {
             CREATE AN ACTIVITY
           </Text>
         </Modal.Header>
-        <Modal.Body>
-          <ActivityDropDown/>
 
+        <Modal.Body>
           <Input
+            onChange={handleChange} 
+            name='category'
+            value={newActivity.activity}
             clearable
             bordered
             fullWidth
             color="primary"
             size="lg"
-            placeholder="EVENT"
+            placeholder="WHICH CATEGORY IS YOUR ACTIVITY IN?"
+            contentLeft={<Text fill="currentColor" />}
+          />
+          <Input
+            onChange={handleChange} 
+            name='activity'
+            value={newActivity.activity}
+            label="EVENT"
+            clearable
+            bordered
+            fullWidth
+            color="primary"
+            size="lg"
+            placeholder="GIVE IT A NAME"
+            contentLeft={<Text fill="currentColor" />}
+          />
+          <Input
+            onChange={handleChange} 
+            name='start_time'
+            value={newActivity.start_time}
+            label="TIME"
+            clearable
+            bordered
+            fullWidth
+            color="primary"
+            size="lg"
+            placeholder="WHEN DO YOU WANT TO START?"
             contentLeft={<Text fill="currentColor" />}
           />
           <Input
