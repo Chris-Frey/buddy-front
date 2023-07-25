@@ -1,3 +1,4 @@
+
 const mockActivities = [
   {   
     id: 1,
@@ -71,4 +72,3 @@ const mockActivities = [
 }
 ]
 export default mockActivities
-
