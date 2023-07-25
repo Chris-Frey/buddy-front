@@ -131,7 +131,7 @@ const ActivityEdit = ({activities, updateActivity}) => {
       <Row>
         <Col>
           <Row justify="flex-end">
-            {/* <Link to={`/activityshow/${currentActivity.id}`}> */}
+            <Link to={`/activityshow/${currentActivity.id}`}>
             <Button
              onPress={submitHandler}
               flat
@@ -148,7 +148,7 @@ const ActivityEdit = ({activities, updateActivity}) => {
                 Save
               </Text>
             </Button>
-            {/* </Link> */}
+            </Link>
             
             <Link to={`/activityshow/${changeActivity.id}`}>
             <Button

@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 import { useParams } from "react-router-dom";
 
 const DetailsCard = ({currentActivity}) => {
-  // console.log(currentActivity);
   const { id } = useParams()
   return(
    

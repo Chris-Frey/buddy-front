@@ -1,9 +1,7 @@
 import { Card, Col, Text } from "@nextui-org/react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
 
 const ActivityCard = (props) => {
-  // console.log(props.activities)
 
   return(
     <>
