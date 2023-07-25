@@ -11,6 +11,7 @@ import mockActivities from "./mockActivities";
 import SignUp from "./pages/SignUp";
 import ActivityEdit from "./pages/ActivityEdit";
 import ActivityFilter from "./pages/ActivityFilter";
+import AboutUs from "./pages/AboutUs";
 
 
 
@@ -20,6 +21,9 @@ const [activities, setActivities] = useState(mockActivities)
   return (
       <>
       <Header />
+      <div className="bgcolor">
+
+      </div>
       <Routes>
         <Route path="/" element={<Home activities={activities}/>} />
         <Route path="/:category?" element={<ActivityFilter activities={activities}/>} />
@@ -29,7 +33,9 @@ const [activities, setActivities] = useState(mockActivities)
         <Route path="/activityshow/:id" element={<ActivityShow activities={activities} />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/activityedit/:id" element={<ActivityEdit activities={activities} />} />
+        <Route path="/aboutus" element={<AboutUs />} />
       </Routes>
+      
       </>
   );
 }

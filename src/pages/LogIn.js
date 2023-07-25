@@ -1,7 +1,6 @@
 import React from 'react'
-import { Input, Spacer } from "@nextui-org/react";
-import { Button, Grid } from "@nextui-org/react";
-import { Link } from "@nextui-org/react";
+import { Input, Spacer, Button, Grid } from "@nextui-org/react";
+import { Link } from 'react-router-dom'
 import styles from "../styles/LogIn.css"
 const LogIn = () => {
   return (
@@ -14,7 +13,7 @@ const LogIn = () => {
       <Spacer y={1.5} />
       <div className='buttons'>
         <Grid>
-        <Link to="/home">
+        <Link to="/Home">
           <Button shadow color="warning" auto>
             Sign In
           </Button>
