@@ -1,10 +1,12 @@
-import {React, useState} from "react";
+import React from "react";
+import { useState } from "react";
 import { Modal, Input, Button, Text } from "@nextui-org/react";
+import { useNavigate } from "react-router-dom";
+import styles from "/Users/learnacademy/Desktop/capstone/front-end/src/styles/AddActivityModal.css"
 
 
 
-const AddActivityModal = ({}) => {
-
+const AddActivityModal = ({createActivity}) => {
   const [newActivity, setNewActivity] = useState({
     category:"",
     activity:"",
@@ -14,16 +16,23 @@ const AddActivityModal = ({}) => {
     description:""
   })
 
-  // const navigate = useNavigate()
+  const navigate = useNavigate()
   const handleChange = (e) => {
     setNewActivity({...newActivity, [e.target.name]: e.target.value})
   }
+  
 
   const [visible, setVisible] = React.useState(false);
   const handler = () => setVisible(true);
   const closeHandler = () => {
     setVisible(false);
   };
+
+  const submitHandler = () => {
+    createActivity(newActivity);
+    closeHandler()
+  }
+
   return (
     <div>
 
@@ -36,19 +45,20 @@ const AddActivityModal = ({}) => {
         aria-labelledby="modal-title"
         open={visible}
         onClose={closeHandler}
-        
       >
         <Modal.Header>
           <Text id="modal-title" size={18}>
             CREATE AN ACTIVITY
           </Text>
         </Modal.Header>
-
         <Modal.Body>
+
+
           <Input
             onChange={handleChange} 
             name='category'
-            value={newActivity.activity}
+            value={newActivity.category}
+            label="CATEGORY"
             clearable
             bordered
             fullWidth
@@ -56,6 +66,7 @@ const AddActivityModal = ({}) => {
             size="lg"
             placeholder="WHICH CATEGORY IS YOUR ACTIVITY IN?"
             contentLeft={<Text fill="currentColor" />}
+ 
           />
           <Input
             onChange={handleChange} 
@@ -69,6 +80,7 @@ const AddActivityModal = ({}) => {
             size="lg"
             placeholder="GIVE IT A NAME"
             contentLeft={<Text fill="currentColor" />}
+ 
           />
           <Input
             onChange={handleChange} 
@@ -84,39 +96,42 @@ const AddActivityModal = ({}) => {
             contentLeft={<Text fill="currentColor" />}
           />
           <Input
+            onChange={handleChange} 
+            name='location'
+            value={newActivity.location}
+            label="LOCATION"
             clearable
             bordered
             fullWidth
             color="primary"
             size="lg"
-            placeholder="TIME"
+            placeholder="ADDRESS OF ACTIVITY"
             contentLeft={<Text fill="currentColor" />}
           />
           <Input
+            onChange={handleChange} 
+            name='description'
+            value={newActivity.description}
+            label="INFO"
             clearable
             bordered
             fullWidth
             color="primary"
             size="lg"
-            placeholder="LOCATION"
+            placeholder="A SHORT DESCRIPTION"
             contentLeft={<Text fill="currentColor" />}
           />
           <Input
+            onChange={handleChange} 
+            name='duration'
+            value={newActivity.duration}
+            label="DURATION"
             clearable
             bordered
             fullWidth
             color="primary"
             size="lg"
-            placeholder="INFO"
-            contentLeft={<Text fill="currentColor" />}
-          />
-          <Input
-            clearable
-            bordered
-            fullWidth
-            color="primary"
-            size="lg"
-            placeholder="DURATION"
+            placeholder="HOW LONG IS YOUR EVENT?"
             contentLeft={<Text fill="currentColor" />}
           />
         </Modal.Body>
@@ -124,7 +139,7 @@ const AddActivityModal = ({}) => {
           <Button auto flat color="#FFCD4E" onPress={closeHandler}>
             CLOSE
           </Button>
-          <Button auto color="#FFCD4E" onPress={closeHandler}>
+          <Button auto color="#FFCD4E" onPress={submitHandler}>
             CREATE ACTIVITY
           </Button>
         </Modal.Footer>
