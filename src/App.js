@@ -3,7 +3,6 @@ import { useState } from "react";
 import './App.css';
 import Header from './components/Header/Header'
 import Home from "./pages/Home";
-import Friends from "./pages/Friends";
 import BuddyProfile from "./pages/BuddyProfile";
 import LogIn from "./pages/LogIn";
 import ActivityShow from "./pages/ActivityShow";
@@ -14,28 +13,30 @@ import ActivityFilter from "./pages/ActivityFilter";
 import AboutUs from "./pages/AboutUs";
 
 
-
 function App() {
 const [activities, setActivities] = useState(mockActivities)
+
+//*******This is for testing with mock data. DELETE THIS AFTER BACK END IS CONNECTED*******
+const createActivity = (activity) => {
+  console.log(activity)
+}
+const updateActivity = (activity) => {
+  console.log(activity)
+}
 
   return (
       <>
       <Header />
-      <div className="bgcolor">
-
-      </div>
       <Routes>
-        <Route path="/" element={<Home activities={activities}/>} />
+        <Route path="/" element={<Home activities={activities} createActivity={createActivity}/>} />
         <Route path="/:category?" element={<ActivityFilter activities={activities}/>} />
-        <Route path="/friends" element={<Friends />} />
         <Route path="/buddyprofile" element={<BuddyProfile />} />
         <Route path="/login" element={<LogIn />} />
-        <Route path="/activityshow/:id" element={<ActivityShow activities={activities} />} />
+        <Route path="/activityshow/:id" element={<ActivityShow activities={activities} updateActivity={updateActivity}/>} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/activityedit/:id" element={<ActivityEdit activities={activities} />} />
+        <Route path="/activityedit/:id" element={<ActivityEdit activities={activities} updateActivity={updateActivity}/>} />
         <Route path="/aboutus" element={<AboutUs />} />
       </Routes>
-      
       </>
   );
 }

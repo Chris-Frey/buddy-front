@@ -1,16 +1,38 @@
 import React from "react";
+import { useState } from "react";
 import { Modal, Input, Button, Text } from "@nextui-org/react";
-import ActivityDropDown from "../ActivityDropDown";
+import { useNavigate } from "react-router-dom";
+import styles from "/Users/learnacademy/Desktop/capstone/front-end/src/styles/AddActivityModal.css"
 
 
 
-const AddActivityModal = () => {
+const AddActivityModal = ({createActivity}) => {
+  const [newActivity, setNewActivity] = useState({
+    category:"",
+    activity:"",
+    start_time:"",
+    duration:"",
+    location:"",
+    description:""
+  })
+
+  const navigate = useNavigate()
+  const handleChange = (e) => {
+    setNewActivity({...newActivity, [e.target.name]: e.target.value})
+  }
+  
+
   const [visible, setVisible] = React.useState(false);
   const handler = () => setVisible(true);
   const closeHandler = () => {
     setVisible(false);
-    console.log("closed");
   };
+
+  const submitHandler = () => {
+    createActivity(newActivity);
+    closeHandler()
+  }
+
   return (
     <div>
 
@@ -23,7 +45,6 @@ const AddActivityModal = () => {
         aria-labelledby="modal-title"
         open={visible}
         onClose={closeHandler}
-        
       >
         <Modal.Header>
           <Text id="modal-title" size={18}>
@@ -31,51 +52,86 @@ const AddActivityModal = () => {
           </Text>
         </Modal.Header>
         <Modal.Body>
-          <ActivityDropDown/>
+
 
           <Input
+            onChange={handleChange} 
+            name='category'
+            value={newActivity.category}
+            label="CATEGORY"
             clearable
             bordered
             fullWidth
             color="primary"
             size="lg"
-            placeholder="EVENT"
+            placeholder="WHICH CATEGORY IS YOUR ACTIVITY IN?"
+            contentLeft={<Text fill="currentColor" />}
+ 
+          />
+          <Input
+            onChange={handleChange} 
+            name='activity'
+            value={newActivity.activity}
+            label="EVENT"
+            clearable
+            bordered
+            fullWidth
+            color="primary"
+            size="lg"
+            placeholder="GIVE IT A NAME"
+            contentLeft={<Text fill="currentColor" />}
+ 
+          />
+          <Input
+            onChange={handleChange} 
+            name='start_time'
+            value={newActivity.start_time}
+            label="TIME"
+            clearable
+            bordered
+            fullWidth
+            color="primary"
+            size="lg"
+            placeholder="WHEN DO YOU WANT TO START?"
             contentLeft={<Text fill="currentColor" />}
           />
           <Input
+            onChange={handleChange} 
+            name='location'
+            value={newActivity.location}
+            label="LOCATION"
             clearable
             bordered
             fullWidth
             color="primary"
             size="lg"
-            placeholder="TIME"
+            placeholder="ADDRESS OF ACTIVITY"
             contentLeft={<Text fill="currentColor" />}
           />
           <Input
+            onChange={handleChange} 
+            name='description'
+            value={newActivity.description}
+            label="INFO"
             clearable
             bordered
             fullWidth
             color="primary"
             size="lg"
-            placeholder="LOCATION"
+            placeholder="A SHORT DESCRIPTION"
             contentLeft={<Text fill="currentColor" />}
           />
           <Input
+            onChange={handleChange} 
+            name='duration'
+            value={newActivity.duration}
+            label="DURATION"
             clearable
             bordered
             fullWidth
             color="primary"
             size="lg"
-            placeholder="INFO"
-            contentLeft={<Text fill="currentColor" />}
-          />
-          <Input
-            clearable
-            bordered
-            fullWidth
-            color="primary"
-            size="lg"
-            placeholder="DURATION"
+            placeholder="HOW LONG IS YOUR EVENT?"
             contentLeft={<Text fill="currentColor" />}
           />
         </Modal.Body>
@@ -83,7 +139,7 @@ const AddActivityModal = () => {
           <Button auto flat color="#FFCD4E" onPress={closeHandler}>
             CLOSE
           </Button>
-          <Button auto color="#FFCD4E" onPress={closeHandler}>
+          <Button auto color="#FFCD4E" onPress={submitHandler}>
             CREATE ACTIVITY
           </Button>
         </Modal.Footer>
