@@ -1,3 +1,4 @@
+
 const mockActivities = [
   {   
     id: 1,
@@ -70,4 +71,6 @@ const mockActivities = [
     description: 'bring your own soccer ball'
 }
 ]
+
 export default mockActivities
+
