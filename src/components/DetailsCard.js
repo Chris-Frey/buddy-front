@@ -3,7 +3,10 @@ import { Card, Col, Row, Button, Text } from "@nextui-org/react";
 import { Link } from 'react-router-dom'
 import { useParams } from "react-router-dom";
 
-const DetailsCard = ({currentActivity}) => {
+const DetailsCard = ({currentActivity, deleteActivity}) => {
+  const handleDelete = () => {
+    deleteActivity(currentActivity)
+  }
   const { id } = useParams()
   return(
    
@@ -79,6 +82,7 @@ const DetailsCard = ({currentActivity}) => {
               auto
               rounded
               css={{ color: "#94f9f0", bg: "#94f9f026" }}
+              onPress={handleDelete}
             >
               <Text
                 css={{ color: "inherit" }}
