@@ -71,4 +71,6 @@ const mockActivities = [
     description: 'bring your own soccer ball'
 }
 ]
+
 export default mockActivities
+
