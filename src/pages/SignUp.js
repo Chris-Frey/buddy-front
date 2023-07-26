@@ -1,8 +1,20 @@
-import React from "react";
+import React, {useRef} from "react";
 import { Input, useInput, Grid, Dropdown, Button, Text } from "@nextui-org/react";
 import { Link } from 'react-router-dom'
 
 const SignUp = () => {
+  const formRef = useRef()
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    const formData = new FormData(formRef.current)
+    const data = Object.fromEntries(formData)
+    const userInfo = {
+      "user":{ email: data.email, password: data.password, password_confirmation: data.password }
+    }
+
+  }
+
+
   const { value, reset, bindings } = useInput("");
 
   const validateEmail = (value) => {
@@ -25,6 +37,7 @@ const SignUp = () => {
   return (
     <>
     <Grid.Container gap={4}>
+      <form ref={formRef} onSubmit={handleSubmit}>
       <Grid>
         <Input
           {...bindings}
@@ -36,26 +49,29 @@ const SignUp = () => {
           helperColor={helper.color}
           helperText={helper.text}
           type="email"
+          name="email"
           label="Email"
           placeholder="With regex validation"
-        />
+          />
       </Grid>
       <Grid>
         <Input
           clearable
           helperText="Please enter your name"
+          name="name"
           label="Name"
           placeholder="Enter your name"
-        />
+          />
       </Grid>
       <Grid>
         <Input
           clearable
           color=""
           helperText="Required"
+          name="age"
           label="Age"
           placeholder="Enter your Age"
-        />
+          />
       </Grid>
       <Grid>
         <Input
@@ -63,10 +79,23 @@ const SignUp = () => {
           color="success"
           initialValue="John Snow"
           helperText="Excellent username"
+          name="username"
           type="test"
           label="Username"
           placeholder="Enter your username"
-        />
+          />
+      </Grid>
+      <Grid>
+        <Input.Password
+          clearable
+          color="warning"
+          initialValue="123"
+          helperText="Insecure password"
+          name="password"
+          type="password"
+          label="Password"
+          placeholder="Enter your password with eye"
+          />
       </Grid>
       <Grid>
         <Input.Password
@@ -75,20 +104,10 @@ const SignUp = () => {
           initialValue="123"
           helperText="Insecure password"
           type="password"
-          label="Password"
+          name="password_confirmation"
+          label="Confirm Password"
           placeholder="Enter your password with eye"
-        />
-      </Grid>
-      <Grid>
-        <Input.Password
-          clearable
-          color="warning"
-          initialValue="123"
-          helperText="Insecure password"
-          type="password"
-          label="Password"
-          placeholder="Enter your password with eye"
-        />
+          />
       </Grid>
       <Grid>
         <Dropdown>
@@ -105,24 +124,25 @@ const SignUp = () => {
         
       </Grid>
       <Grid>
-        <Link to="/signup">
+        {/* <Link to="/signup"> */}
         
       <Button
+              onPress={handleSubmit}
               flat
               auto
               rounded
               css={{ color: "black", bg: "#94f9f026" }}
-            >
+              >
               <Text
                 css={{ color: "inherit" }}
                 size={12}
                 weight="bold"
                 transform="uppercase"
-              >
+                >
                 Sign Up
               </Text>
             </Button>
-            </Link>
+            {/* </Link> */}
       </Grid>
       <Grid>
       <Link to="/login">
@@ -131,18 +151,19 @@ const SignUp = () => {
                 auto
                 rounded
                 css={{ color: "black", bg: "#94f9f026" }}
-              >
+                >
                 <Text
                   css={{ color: "inherit" }}
                   size={12}
                   weight="bold"
                   transform="uppercase"
-                >
+                  >
                   LogIn
                 </Text>
               </Button>
             </Link>
       </Grid>
+      </form>
       
     </Grid.Container>
   </>

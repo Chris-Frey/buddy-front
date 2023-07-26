@@ -6,7 +6,7 @@ import Home from "./pages/Home";
 import BuddyProfile from "./pages/BuddyProfile";
 import LogIn from "./pages/LogIn";
 import ActivityShow from "./pages/ActivityShow";
-import mockActivities from "./mockActivities";
+// import mockActivities from "./mockActivities";
 import mockUsers from "./mockUsers";
 import SignUp from "./pages/SignUp";
 import ActivityEdit from "./pages/ActivityEdit";
@@ -15,7 +15,8 @@ import AboutUs from "./pages/AboutUs";
 
 
 function App() {
-const [activities, setActivities] = useState(mockActivities)
+const [currentUser, setCurrentUser] = useState(null)
+const [activities, setActivities] = useState([])
 
 const [users, setUsers] = useState(mockUsers)
 
