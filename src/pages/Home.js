@@ -43,7 +43,7 @@ const Home = (props) => {
       >
       {activityDisplay}
     </Carousel>
-    <AddActivityModal/>
+    <AddActivityModal users={props.users} createActivity={props.createActivity}/>
     </>
   )
 }

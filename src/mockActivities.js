@@ -8,7 +8,8 @@ const mockActivities = [
     start_time: '10am',
     duration: 2,
     location: 'IB',
-    description: 'bring your own soccer ball'
+    description: 'bring your own soccer ball',
+    creator_id: 2
 },
 {   
     id: 2,
@@ -18,7 +19,8 @@ const mockActivities = [
     start_time: '11am',
     duration: 2,
     location: 'IB',
-    description: 'bring your own drinks ball'
+    description: 'bring your own drinks ball',
+    creator_id: 2
 },
 {   
     id: 3,
@@ -28,7 +30,8 @@ const mockActivities = [
     start_time: '2pm',
     duration: 2,
     location: 'IB',
-    description: 'bring your own basketball and drinks'
+    description: 'bring your own basketball and drinks',
+    creator_id: 2
 },
 {   
     id: 4,
@@ -38,7 +41,8 @@ const mockActivities = [
     start_time: '2pm',
     duration: 2,
     location: 'IB',
-    description: 'bring your own basketball and drinks'
+    description: 'bring your own basketball and drinks',
+    creator_id: 2
 },
 {   
     id: 5,
@@ -48,7 +52,8 @@ const mockActivities = [
     start_time: '2pm',
     duration: 2,
     location: 'IB',
-    description: 'bring your own basketball and drinks'
+    description: 'bring your own basketball and drinks',
+    creator_id: 1
 },
 {   
     id: 6,
@@ -58,7 +63,8 @@ const mockActivities = [
     start_time: '2pm',
     duration: 2,
     location: 'IB',
-    description: 'bring your own basketball and drinks'
+    description: 'bring your own basketball and drinks',
+    creator_id: 1
 },
 {   
     id: 7,
@@ -68,7 +74,8 @@ const mockActivities = [
     start_time: '10am',
     duration: 2,
     location: 'IB',
-    description: 'bring your own soccer ball'
+    description: 'bring your own soccer ball',
+    creator_id: 1
 }
 ]
 

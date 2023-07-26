@@ -7,7 +7,7 @@ import { useParams, Link } from "react-router-dom"
 
 const ActivityShow = ({activities, deleteActivity}) => {
     const { id } = useParams()
-    let currentActivity = activities.find((activity) => activity.id === +id)
+    let currentActivity = activities?.find((activity) => activity.id === +id)
   
     const handleDelete = () => {
       deleteActivity(currentActivity)
@@ -17,29 +17,30 @@ const ActivityShow = ({activities, deleteActivity}) => {
   return (
     <>
       <div>Your Activity</div>
+
       <div className='activityShowBody'>
-        <PictureCard />
+        <PictureCard currentActivity={currentActivity}/>
         <Card css={{ w: 500, h: "70vh" }}>
     <Card.Header css={{ position: "absolute", zIndex: 1, top: 5 }}>
       <Col>
-        <Text size={24} weight="bold" transform="uppercase" color="white">{currentActivity.category}</Text>
+        <Text size={24} weight="bold" transform="uppercase" color="white">{currentActivity?.category}</Text>
 
         <Text size={15} weight="bold" transform="uppercase" color="yellow">ACTIVITY NAME</Text>
 
         <Text size={13} h3 color="white">
-        {currentActivity.activity}</Text>
+        {currentActivity?.activity}</Text>
 
         <Text size={15} weight="bold" transform="uppercase" color="yellow">Time</Text>
 
-        <Text size={13} h3 color="white">{currentActivity.start_time}</Text>
+        <Text size={13} h3 color="white">{currentActivity?.start_time}</Text>
 
         <Text size={15} weight="bold" transform="uppercase" color="yellow">Duration</Text>
 
-        <Text size={13} h3 color="white"> {currentActivity.duration}</Text>
+        <Text size={13} h3 color="white"> {currentActivity?.duration}</Text>
 
         <Text size={15} weight="bold" transform="uppercase" color="yellow">Location</Text>
 
-        <Text size={13} h3 color="white"> {currentActivity.location}</Text>
+        <Text size={13} h3 color="white"> {currentActivity?.location}</Text>
 
         <Text size={15} weight="bold" transform="uppercase" color="yellow">Attendees</Text>
 
@@ -47,7 +48,7 @@ const ActivityShow = ({activities, deleteActivity}) => {
 
         <Text size={15} weight="bold" transform="uppercase" color="yellow">Info</Text>
 
-        <Text size={13} h3 color="white">{currentActivity.description}</Text>
+        <Text size={13} h3 color="white">{currentActivity?.description}</Text>
         
       </Col>
     </Card.Header>
@@ -103,7 +104,7 @@ const ActivityShow = ({activities, deleteActivity}) => {
               </Text>
             </Button>
             </Link>
-            <Link to={`/activityedit/${currentActivity.id}`}>
+            <Link to={`/activityedit/${currentActivity?.id}`}>
             <Button
               flat
               auto

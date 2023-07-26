@@ -10,12 +10,13 @@ const ActivityEdit = ({activities, updateActivity}) => {
     let currentActivity = activities.find((activity) => activity.id === +id)
 
     const [changeActivity, setChangeActivity] = useState({
-      category: currentActivity.category,
-      activity: currentActivity.activity,
-      start_time: currentActivity.start_time,
-      duration: currentActivity.duration,
-      location: currentActivity.location,
-      description:currentActivity.description
+      category: currentActivity?.category,
+      activity: currentActivity?.activity,
+      start_time: currentActivity?.start_time,
+      duration: currentActivity?.duration,
+      location: currentActivity?.location,
+      description: currentActivity?.description,
+      activity_photo: currentActivity?.activity_photo
     })
     const handleChange = (e) => {
       setChangeActivity({...changeActivity, [e.target.name]: e.target.value})
@@ -37,79 +38,79 @@ const ActivityEdit = ({activities, updateActivity}) => {
       <Input
             onChange={handleChange} 
             name='activity'
-            value={changeActivity.activity}
+            value={changeActivity?.activity}
             clearable
             bordered
             fullWidth
             color="primary"
             size="lg"
             label="ACTIVITY"
-            placeholder={currentActivity.activity}
+            placeholder={currentActivity?.activity}
             contentLeft={<Text fill="currentColor" />}
           />
           <Input
             onChange={handleChange} 
             name='start_time'
-            value={changeActivity.start_time}
+            value={changeActivity?.start_time}
             clearable
             bordered
             fullWidth
             color="primary"
             size="lg"
             label="START TIME"
-            placeholder={currentActivity.start_time}
+            placeholder={currentActivity?.start_time}
             contentLeft={<Text fill="currentColor" />}
           />
           <Input
             onChange={handleChange} 
             name='location'
-            value={changeActivity.location}
+            value={changeActivity?.location}
             clearable
             bordered
             fullWidth
             color="primary"
             size="lg"
             label="LOCATION"
-            placeholder={currentActivity.location}
+            placeholder={currentActivity?.location}
             contentLeft={<Text fill="currentColor" />}
           />
           <Input
             onChange={handleChange} 
             name='description'
-            value={changeActivity.description}
+            value={changeActivity?.description}
             clearable
             bordered
             fullWidth
             color="primary"
             size="lg"
             label="DESCRIPTION"
-            placeholder={currentActivity.description}
+            placeholder={currentActivity?.description}
             contentLeft={<Text fill="currentColor" />}
           />
           <Input
             onChange={handleChange} 
             name='duration'
-            value={changeActivity.duration}
+            value={changeActivity?.duration}
             clearable
             bordered
             fullWidth
             color="primary"
             size="lg"
             label="DURATION"
-            placeholder={currentActivity.duration}
+            placeholder={currentActivity?.duration}
             contentLeft={<Text fill="currentColor" />}
           />
           <Input
             onChange={handleChange} 
             name='category'
-            value={changeActivity.category}
+            value={changeActivity?.category}
             clearable
             bordered
             fullWidth
             color="primary"
             size="lg"
             label="CATEGORY"
-            placeholder={currentActivity.category}
+            placeholder={currentActivity?.category}
             contentLeft={<Text fill="currentColor" />}
           />
 
@@ -131,7 +132,7 @@ const ActivityEdit = ({activities, updateActivity}) => {
       <Row>
         <Col>
           <Row justify="flex-end">
-            <Link to={`/activityshow/${currentActivity.id}`}>
+            <Link to={`/activityshow/${currentActivity?.id}`}>
             <Button
              onPress={submitHandler}
               flat

@@ -1,4 +1,4 @@
-const users = [
+const mockUsers = [
   {
     id:1,
     username: 'JesusChristPadge',
@@ -40,4 +40,4 @@ const users = [
     gender_identity: 'male',
   }
 ]
-export default users
+export default mockUsers

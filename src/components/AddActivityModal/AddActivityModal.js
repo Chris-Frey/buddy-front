@@ -5,15 +5,17 @@ import { useNavigate } from "react-router-dom";
 
 
 
-
-const AddActivityModal = ({createActivity}) => {
+// `user` is passed through Home.js
+const AddActivityModal = ({createActivity, users}) => {
   const [newActivity, setNewActivity] = useState({
     category:"",
     activity:"",
+    activity_photo:"",
     start_time:"",
-    duration:"",
+    duration: 2.0,
     location:"",
-    description:""
+    description:"",
+    creator_id: users[0].id
   })
 
   const navigate = useNavigate()
@@ -30,6 +32,7 @@ const AddActivityModal = ({createActivity}) => {
 
   const submitHandler = () => {
     createActivity(newActivity);
+    console.log(newActivity);
     closeHandler()
   }
 
@@ -72,7 +75,7 @@ const AddActivityModal = ({createActivity}) => {
             onChange={handleChange} 
             name='activity'
             value={newActivity.activity}
-            label="EVENT"
+            label="ACTIVITY"
             clearable
             bordered
             fullWidth
@@ -131,7 +134,21 @@ const AddActivityModal = ({createActivity}) => {
             fullWidth
             color="primary"
             size="lg"
+            type="float"
             placeholder="HOW LONG IS YOUR EVENT?"
+            contentLeft={<Text fill="currentColor" />}
+          />
+                    <Input
+            onChange={handleChange} 
+            name='activity_photo'
+            value={newActivity?.activity_photo}
+            label="PHOTO URL"
+            clearable
+            bordered
+            fullWidth
+            color="primary"
+            size="lg"
+            placeholder="INSERT A LINK"
             contentLeft={<Text fill="currentColor" />}
           />
         </Modal.Body>
