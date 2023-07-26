@@ -24,6 +24,9 @@ const updateActivity = (activity) => {
   console.log(activity)
 }
 
+const deleteActivity = (activity) => {
+  console.log(activity)
+}
   return (
       <>
       <Header />
@@ -32,7 +35,7 @@ const updateActivity = (activity) => {
         <Route path="/:category?" element={<ActivityFilter activities={activities}/>} />
         <Route path="/buddyprofile" element={<BuddyProfile />} />
         <Route path="/login" element={<LogIn />} />
-        <Route path="/activityshow/:id" element={<ActivityShow activities={activities} updateActivity={updateActivity}/>} />
+        <Route path="/activityshow/:id" element={<ActivityShow activities={activities} updateActivity={updateActivity} deleteActivity={deleteActivity} />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/activityedit/:id" element={<ActivityEdit activities={activities} updateActivity={updateActivity}/>} />
         <Route path="/aboutus" element={<AboutUs />} />

@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { Modal, Input, Button, Text } from "@nextui-org/react";
 import { useNavigate } from "react-router-dom";
-import styles from "/Users/learnacademy/Desktop/capstone/front-end/src/styles/AddActivityModal.css"
+
 
 
 
