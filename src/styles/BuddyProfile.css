@@ -8,6 +8,10 @@ p {
   flex-direction: row;
 }
 
-Image {
-  display: flex;
+.profile-image {
+  justify-content: left;
+}
+
+.profile-card{
+  background-color: black;
 }

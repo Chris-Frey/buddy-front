@@ -1,9 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { BrowserRouter } from 'react-router-dom';
-import { NavLink } from "react-router-dom";
 import AddActivityModal from '../components/AddActivityModal/AddActivityModal';
-
 
 describe("<AddActivityModal />", () => {
   beforeEach(() => {
