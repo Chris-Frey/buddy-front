@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 
 const AddActivityModal = ({createActivity, activities, currentUser}) => {
-  // console.log(currentUser?.id);
+
   const [newActivity, setNewActivity] = useState({
     category:"",
     activity_name:"",
@@ -32,7 +32,6 @@ const AddActivityModal = ({createActivity, activities, currentUser}) => {
 
   const submitHandler = () => {
     createActivity(newActivity);
-    console.log(newActivity);
     closeHandler()
   }
 
