@@ -22,10 +22,9 @@ const ActivityEdit = ({activities, updateActivity}) => {
     const handleChange = (e) => {
       setChangeActivity({...changeActivity, [e.target.name]: e.target.value})
     }
-  console.log(activities);
+
     const submitHandler = () => {
       updateActivity(changeActivity, currentActivity?.id);
-      console.log(changeActivity);
     }
 
   return (
