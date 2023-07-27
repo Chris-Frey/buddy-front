@@ -6,6 +6,8 @@ import Home from "./pages/Home";
 import BuddyProfile from "./pages/BuddyProfile";
 import LogIn from "./pages/LogIn";
 import ActivityShow from "./pages/ActivityShow";
+import mockActivities from "./mockActivities";
+import mockUsers from "./mockUsers";
 import SignUp from "./pages/SignUp";
 import ActivityEdit from "./pages/ActivityEdit";
 import ActivityFilter from "./pages/ActivityFilter";
@@ -17,6 +19,8 @@ function App() {
 const [activities, setActivities] = useState([])
 const [currentUser, setCurrentUser] = useState(mockUsers[0])
 
+
+const [users, setUsers] = useState(mockUsers)
 
 //*******This is for testing with mock data. DELETE THIS AFTER BACK END IS CONNECTED*******
 // const createActivity = (activity) => {
@@ -83,7 +87,7 @@ const deleteActivity = (id) => {
       <Routes>
         <Route path="/" element={<Home activities={activities} currentUser={currentUser} createActivity={createActivity} />} />
         <Route path="/:category?" element={<ActivityFilter activities={activities}/>} />
-        <Route path="/buddyprofile" element={<BuddyProfile />} />
+        <Route path="/buddyprofile/:id" element={<BuddyProfile selectedUser={users}/>} />
         <Route path="/login" element={<LogIn />} />
         <Route path="/activityshow/:id" element={<ActivityShow activities={activities} updateActivity={updateActivity} deleteActivity={deleteActivity} />} />
         <Route path="/signup" element={<SignUp />} />
