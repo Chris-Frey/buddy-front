@@ -15,7 +15,8 @@ import mockUsers from "./mockUsers";
 
 function App() {
 const [activities, setActivities] = useState([])
-const [users, setUsers] = useState(mockUsers)
+const [currentUser, setCurrentUser] = useState(mockUsers[0])
+
 
 //*******This is for testing with mock data. DELETE THIS AFTER BACK END IS CONNECTED*******
 // const createActivity = (activity) => {
@@ -54,7 +55,7 @@ const createActivity = (activity) => {
 }
 
 const updateActivity = (activity, id) => {
-  fetch(`http://localhost:3000/activities/${id}/edit`, {
+  fetch(`http://localhost:3000/activities/${id}/`, {
     body: JSON.stringify(activity),
     headers: {"Content-Type": "application/json"},
     method: "PATCH"
@@ -64,17 +65,15 @@ const updateActivity = (activity, id) => {
     .catch((errors) => console.log("Activity update errors:", errors))
 }
 
-// deleteCat = (id) => {
-//   fetch(`http://localhost:3000/activities/${id}`, {
-//     headers: {
-//       "Content-Type": "application/json"
-//     },
-//     method: "DELETE"
-//   })
-//     .then((response) => response.json())
-//     .then((payload) => readActivity())
-//     .catch((errors) => console.log("delete errors:", errors))
-// }
+const deleteActivity = (id) => {
+  fetch(`http://localhost:3000/activities/${id}`, {
+    headers: {"Content-Type": "application/json"},
+    method: "DELETE"
+  })
+    .then((response) => response.json())
+    .then((payload) => readActivity())
+    .catch((errors) => console.log("delete errors:", errors))
+}
 
 
 
@@ -82,11 +81,11 @@ const updateActivity = (activity, id) => {
       <>
       <Header />
       <Routes>
-        <Route path="/" element={<Home activities={activities} users={users} createActivity={createActivity} />} />
+        <Route path="/" element={<Home activities={activities} currentUser={currentUser} createActivity={createActivity} />} />
         <Route path="/:category?" element={<ActivityFilter activities={activities}/>} />
         <Route path="/buddyprofile" element={<BuddyProfile />} />
         <Route path="/login" element={<LogIn />} />
-        <Route path="/activityshow/:id" element={<ActivityShow activities={activities} updateActivity={updateActivity}  />} />
+        <Route path="/activityshow/:id" element={<ActivityShow activities={activities} updateActivity={updateActivity} deleteActivity={deleteActivity} />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/activityedit/:id" element={<ActivityEdit activities={activities} updateActivity={updateActivity}/>} />
         <Route path="/aboutus" element={<AboutUs />} />

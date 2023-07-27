@@ -10,7 +10,7 @@ const ActivityShow = ({activities, deleteActivity}) => {
     let currentActivity = activities?.find((activity) => activity.id === +id)
   
     const handleDelete = () => {
-      deleteActivity(currentActivity)
+      deleteActivity(currentActivity?.id)
     }
 
 
@@ -28,7 +28,7 @@ const ActivityShow = ({activities, deleteActivity}) => {
         <Text size={15} weight="bold" transform="uppercase" color="yellow">ACTIVITY NAME</Text>
 
         <Text size={13} h3 color="white">
-        {currentActivity?.activity}</Text>
+        {currentActivity?.activity_name}</Text>
 
         <Text size={15} weight="bold" transform="uppercase" color="yellow">Time</Text>
 

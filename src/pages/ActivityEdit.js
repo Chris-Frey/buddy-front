@@ -16,108 +16,121 @@ const ActivityEdit = ({activities, updateActivity}) => {
       duration: currentActivity?.duration,
       location: currentActivity?.location,
       description: currentActivity?.description,
-      activity_photo: currentActivity?.activity_photo
+      activity_photo: currentActivity?.activity_photo,
+      creator_id: currentActivity?.creator_id
     })
     const handleChange = (e) => {
       setChangeActivity({...changeActivity, [e.target.name]: e.target.value})
     }
-  
+  console.log(activities);
     const submitHandler = () => {
-      updateActivity(changeActivity);
+      updateActivity(changeActivity, currentActivity?.id);
+      console.log(changeActivity);
     }
 
   return (
     <>
       <div>Your Activity</div>
       <div className='activityEditBody'>
-        <PictureCard />
+        <PictureCard currentActivity={currentActivity}/>
 
-        <Card css={{ w: 500, h: "70vh" }}>
+        <Card css={{ w: 500, h: "75vh" }}>
     <Card.Header css={{ position: "absolute", zIndex: 1, top: 5 }}>
-      <Col>
-      <Input
-            onChange={handleChange} 
-            name='activity'
-            value={changeActivity?.activity}
-            clearable
-            bordered
-            fullWidth
-            color="primary"
-            size="lg"
-            label="ACTIVITY"
-            placeholder={currentActivity?.activity}
-            contentLeft={<Text fill="currentColor" />}
-          />
-          <Input
-            onChange={handleChange} 
-            name='start_time'
-            value={changeActivity?.start_time}
-            clearable
-            bordered
-            fullWidth
-            color="primary"
-            size="lg"
-            label="START TIME"
-            placeholder={currentActivity?.start_time}
-            contentLeft={<Text fill="currentColor" />}
-          />
-          <Input
-            onChange={handleChange} 
-            name='location'
-            value={changeActivity?.location}
-            clearable
-            bordered
-            fullWidth
-            color="primary"
-            size="lg"
-            label="LOCATION"
-            placeholder={currentActivity?.location}
-            contentLeft={<Text fill="currentColor" />}
-          />
-          <Input
-            onChange={handleChange} 
-            name='description'
-            value={changeActivity?.description}
-            clearable
-            bordered
-            fullWidth
-            color="primary"
-            size="lg"
-            label="DESCRIPTION"
-            placeholder={currentActivity?.description}
-            contentLeft={<Text fill="currentColor" />}
-          />
-          <Input
-            onChange={handleChange} 
-            name='duration'
-            value={changeActivity?.duration}
-            clearable
-            bordered
-            fullWidth
-            color="primary"
-            size="lg"
-            label="DURATION"
-            placeholder={currentActivity?.duration}
-            contentLeft={<Text fill="currentColor" />}
-          />
-          <Input
-            onChange={handleChange} 
-            name='category'
-            value={changeActivity?.category}
-            clearable
-            bordered
-            fullWidth
-            color="primary"
-            size="lg"
-            label="CATEGORY"
-            placeholder={currentActivity?.category}
-            contentLeft={<Text fill="currentColor" />}
-          />
 
-        
-      </Col>
     </Card.Header>
     <Card.Body css={{ p: 0, color: "#94f9f0" ,bg: "white" }}>
+       <Input
+        onChange={handleChange} 
+        name='category'
+        value={changeActivity?.category}
+        label="CATEGORY"
+        clearable
+        bordered
+        fullWidth
+        color="primary"
+        size="lg"
+        placeholder={currentActivity?.category}
+        contentLeft={<Text fill="currentColor" />}
+      />
+      <Input
+        onChange={handleChange} 
+        name='activity_name'
+        value={changeActivity?.activity_name}
+        label="ACTIVITY"
+        clearable
+        bordered
+        fullWidth
+        color="primary"
+        size="lg"
+        placeholder={currentActivity?.activity_name}
+        contentLeft={<Text fill="currentColor" />}
+      />
+      <Input
+        onChange={handleChange} 
+        name='start_time'
+        value={changeActivity?.start_time}
+        label="TIME"
+        clearable
+        bordered
+        fullWidth
+        color="primary"
+        size="lg"
+        placeholder={currentActivity?.start_time}
+        contentLeft={<Text fill="currentColor" />}
+      />
+      <Input
+        onChange={handleChange} 
+        name='location'
+        value={changeActivity?.location}
+        label="LOCATION"
+        clearable
+        bordered
+        fullWidth
+        color="primary"
+        size="lg"
+        placeholder={currentActivity?.location}
+        contentLeft={<Text fill="currentColor" />}
+      />
+      <Input
+        onChange={handleChange} 
+        name='description'
+        value={changeActivity?.description}
+        label="INFO"
+        clearable
+        bordered
+        fullWidth
+        color="primary"
+        size="lg"
+        placeholder={currentActivity?.description}
+        contentLeft={<Text fill="currentColor" />}
+      />
+      <Input
+        onChange={handleChange} 
+        name='duration'
+        value={changeActivity?.duration}
+        label="DURATION"
+        clearable
+        bordered
+        fullWidth
+        color="primary"
+        size="lg"
+        type="float"
+        placeholder={currentActivity?.duration}
+        contentLeft={<Text fill="currentColor" />}
+      />
+      <Input
+        onChange={handleChange} 
+        name='activity_photo'
+        value={changeActivity?.activity_photo}
+        label="PHOTO URL"
+        clearable
+        bordered
+        fullWidth
+        color="primary"
+        size="lg"
+        placeholder={currentActivity?.activity_photo}
+        contentLeft={<Text fill="currentColor" />}
+      />
     </Card.Body>
     <Card.Footer
       isBlurred
@@ -151,7 +164,7 @@ const ActivityEdit = ({activities, updateActivity}) => {
             </Button>
             </Link>
             
-            <Link to={`/activityshow/${changeActivity.id}`}>
+            <Link to={`/activityshow/${currentActivity?.id}`}>
             <Button
               flat
               auto

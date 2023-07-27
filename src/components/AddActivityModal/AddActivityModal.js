@@ -5,24 +5,24 @@ import { useNavigate } from "react-router-dom";
 
 
 
-// `user` is passed through Home.js
-const AddActivityModal = ({createActivity, users}) => {
+const AddActivityModal = ({createActivity, activities, currentUser}) => {
+  // console.log(currentUser?.id);
   const [newActivity, setNewActivity] = useState({
     category:"",
-    activity:"",
+    activity_name:"",
     activity_photo:"",
     start_time:"",
     duration: 2.0,
     location:"",
     description:"",
-    creator_id: users[0].id
+    creator_id: currentUser?.id
   })
 
   const navigate = useNavigate()
   const handleChange = (e) => {
     setNewActivity({...newActivity, [e.target.name]: e.target.value})
   }
-  
+
 
   const [visible, setVisible] = React.useState(false);
   const handler = () => setVisible(true);
@@ -56,7 +56,6 @@ const AddActivityModal = ({createActivity, users}) => {
         </Modal.Header>
         <Modal.Body>
 
-
           <Input
             onChange={handleChange} 
             name='category'
@@ -69,12 +68,11 @@ const AddActivityModal = ({createActivity, users}) => {
             size="lg"
             placeholder="WHICH CATEGORY IS YOUR ACTIVITY IN?"
             contentLeft={<Text fill="currentColor" />}
- 
           />
           <Input
             onChange={handleChange} 
-            name='activity'
-            value={newActivity.activity}
+            name='activity_name'
+            value={newActivity.activity_name}
             label="ACTIVITY"
             clearable
             bordered
@@ -83,7 +81,6 @@ const AddActivityModal = ({createActivity, users}) => {
             size="lg"
             placeholder="GIVE IT A NAME"
             contentLeft={<Text fill="currentColor" />}
- 
           />
           <Input
             onChange={handleChange} 
@@ -138,7 +135,7 @@ const AddActivityModal = ({createActivity, users}) => {
             placeholder="HOW LONG IS YOUR EVENT?"
             contentLeft={<Text fill="currentColor" />}
           />
-                    <Input
+          <Input
             onChange={handleChange} 
             name='activity_photo'
             value={newActivity?.activity_photo}

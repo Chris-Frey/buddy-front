@@ -1,7 +1,8 @@
 import { Card, Col, Text } from "@nextui-org/react";
 
-const PictureCard = ({currentActivity}) => (
-
+const PictureCard = ({currentActivity}) => {
+return(
+  <>
   <Card css={{w: 500, h: 340}}>
     <Card.Header css={{ position: "absolute", zIndex: 1, top: 5,  }}>
     </Card.Header>
@@ -13,6 +14,8 @@ const PictureCard = ({currentActivity}) => (
       alt="Activity Image"
     />
   </Card>
-);
+  </>
+)
+};
 
 export default PictureCard
