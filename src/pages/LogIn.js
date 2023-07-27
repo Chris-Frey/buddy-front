@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import { Input, Spacer, Button, Grid } from "@nextui-org/react";
 import { Link } from 'react-router-dom'
-// import styles from "../styles/LogIn.css"
+import styles from "../styles/LogIn.css"
 import { useNavigate } from 'react-router-dom';
 
 const LogIn = ({login}) => {
@@ -9,7 +9,7 @@ const LogIn = ({login}) => {
   const navigate = useNavigate()
 
   const handleSubmit = (e) => {
-    // e.preventDefault()
+
     console.log(formRef.current)
     const formData = new FormData(formRef.current)
     const data = Object.fromEntries(formData)
@@ -18,7 +18,7 @@ const LogIn = ({login}) => {
     }
     login(userInfo)
     navigate("/")
-    // e.target.reset()
+
   }
 
 
@@ -33,12 +33,12 @@ const LogIn = ({login}) => {
       <Spacer y={1.5} />
       <div className='buttons'>
         <Grid>
-        {/* <Link to="/Home"> */}
+        <Link to="/Home">
           <Button shadow color="warning" auto
           onClick={handleSubmit}>
             Sign In
           </Button>
-          {/* </Link> */}
+          </Link>
         </Grid>
         <Spacer y={1.5} />
         <Grid>

@@ -10,7 +10,6 @@ import SignUp from "./pages/SignUp";
 import ActivityEdit from "./pages/ActivityEdit";
 import ActivityFilter from "./pages/ActivityFilter";
 import AboutUs from "./pages/AboutUs";
-import mockUsers from "./mockUsers";
 
 
 function App() {
@@ -20,11 +19,18 @@ function App() {
 
 const url = "https://buddy-frontend.onrender.com"
 // const url = "http://localhost:3000/"
-console.log(currentUser);
+
 useEffect(() => {
   readActivity()
 }, [])
 
+useEffect(() => {
+  const loggedInUser = localStorage.getItem("token")
+  if (loggedInUser) {
+    setCurrentUser(loggedInUser)
+  }
+  readActivity()
+}, [])
 
 // authentication methods
 const login = (userInfo) => {
