@@ -22,18 +22,6 @@ const [currentUser, setCurrentUser] = useState(mockUsers[0])
 
 const [users, setUsers] = useState(mockUsers)
 
-//*******This is for testing with mock data. DELETE THIS AFTER BACK END IS CONNECTED*******
-// const createActivity = (activity) => {
-//   console.log(activity)
-// }
-// const updateActivity = (activity) => {
-//   console.log(activity)
-// }
-
-// const deleteActivity = (activity) => {
-//   console.log(activity)
-// }
-
   useEffect(() => {
     readActivity()
   }, [])
