@@ -1,14 +1,15 @@
 import React, {useRef} from "react";
-import { Input, useInput, Grid, Dropdown, Button, Text } from "@nextui-org/react";
+import { Input, useInput, Grid, Button, Text } from "@nextui-org/react";
 // import { Form, Link } from 'react-router-dom'
 import { useNavigate } from "react-router-dom";
 
 const SignUp = ({signup}) => {
   const formRef = useRef ()
-  const navigate = useNavigate
+  const navigate = useNavigate()
 
   const handleSubmit = (e) => {
-    e.preventDefault()
+    console.log(e);
+    // e.preventDefault()
     console.log(formRef.current)
     const formData = new FormData(formRef.current)
     const data = Object.fromEntries(formData)
@@ -17,7 +18,7 @@ const SignUp = ({signup}) => {
     }
     signup(userInfo)
     navigate("/")
-    e.target.reset()
+    // e.target.reset()
   }
 
   const { value, reset, bindings } = useInput("");
@@ -121,27 +122,27 @@ const SignUp = ({signup}) => {
         {/* <Link to="/signup"> */}
         
       <Button
-              onPress={handleSubmit}
-              flat
-              auto
-              rounded
-              css={{ color: "black", bg: "#94f9f026" }}
+            onClick={handleSubmit}
+            flat
+            auto
+            rounded
+            css={{ color: "black", bg: "#94f9f026" }}
+            >
+            <Text
+              css={{ color: "inherit" }}
+              size={12}
+              weight="bold"
+              transform="uppercase"
               >
-              <Text
-                css={{ color: "inherit" }}
-                size={12}
-                weight="bold"
-                transform="uppercase"
-                >
-                Sign Up
-              </Text>
-            </Button>
-            {/* </Link> */}
+              Sign Up
+            </Text>
+          </Button>
+        {/* </Link> */}
       </Grid>
       <Grid>
       {/* <Link to="/login"> */}
         <Button
-                onPress={handleSubmit}
+                onClick={handleSubmit}
                 flat
                 auto
                 rounded
