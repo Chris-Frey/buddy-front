@@ -1,19 +1,24 @@
 import React, {useRef} from "react";
 import { Input, useInput, Grid, Dropdown, Button, Text } from "@nextui-org/react";
-import { Link } from 'react-router-dom'
+// import { Form, Link } from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 
-const SignUp = () => {
-  const formRef = useRef()
+const SignUp = ({signup}) => {
+  const formRef = useRef ()
+  const navigate = useNavigate
+
   const handleSubmit = (e) => {
     e.preventDefault()
+    console.log(formRef.current)
     const formData = new FormData(formRef.current)
     const data = Object.fromEntries(formData)
     const userInfo = {
-      "user":{ email: data.email, password: data.password, password_confirmation: data.password }
+      "user":{ email: data.email, password: data.password, name: data.name, username: data.username, gender_identity: data.gender_identity}
     }
-
+    signup(userInfo)
+    navigate("/")
+    e.target.reset()
   }
-
 
   const { value, reset, bindings } = useInput("");
 
@@ -58,19 +63,10 @@ const SignUp = () => {
         <Input
           clearable
           helperText="Please enter your name"
-          name="name"
+          type="text"
           label="Name"
+          name="name"
           placeholder="Enter your name"
-          />
-      </Grid>
-      <Grid>
-        <Input
-          clearable
-          color=""
-          helperText="Required"
-          name="age"
-          label="Age"
-          placeholder="Enter your Age"
           />
       </Grid>
       <Grid>
@@ -80,7 +76,7 @@ const SignUp = () => {
           initialValue="John Snow"
           helperText="Excellent username"
           name="username"
-          type="test"
+          type="text"
           label="Username"
           placeholder="Enter your username"
           />
@@ -103,25 +99,23 @@ const SignUp = () => {
           color="warning"
           initialValue="123"
           helperText="Insecure password"
-          type="password"
           name="password_confirmation"
+          type="password"
           label="Confirm Password"
           placeholder="Enter your password with eye"
           />
       </Grid>
       <Grid>
-        <Dropdown>
-          <Dropdown.Button color="warning" flat>
-            Gender Identity
-          </Dropdown.Button>
-          <Dropdown.Menu aria-label="Static Actions">
-            <Dropdown.Item key="male">Male</Dropdown.Item>
-            <Dropdown.Item key="female">Female</Dropdown.Item>
-            <Dropdown.Item key="non-binary">Non-Binary</Dropdown.Item>
-            <Dropdown.Item key="other">Other</Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
-        
+        <Input
+          clearable
+          color="success"
+          initialValue=""
+          helperText="Excellent username"
+          name="gender_identity"
+          type="text"
+          label="Gender"
+          placeholder=""
+          />
       </Grid>
       <Grid>
         {/* <Link to="/signup"> */}
@@ -145,8 +139,9 @@ const SignUp = () => {
             {/* </Link> */}
       </Grid>
       <Grid>
-      <Link to="/login">
+      {/* <Link to="/login"> */}
         <Button
+                onPress={handleSubmit}
                 flat
                 auto
                 rounded
@@ -161,9 +156,9 @@ const SignUp = () => {
                   LogIn
                 </Text>
               </Button>
-            </Link>
+            {/* </Link> */}
       </Grid>
-      </form>
+    </form>
       
     </Grid.Container>
   </>
