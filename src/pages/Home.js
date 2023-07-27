@@ -32,7 +32,7 @@ const Home = (props) => {
   const activityDisplay = props.activities?.map((value,index) => {
     return <div><ActivityCard activities={value} key={index}/></div>
   })
-
+  
   return (
     <>
     <h3>ACTIVITIES HAPPENING <br/>SOON</h3>
@@ -43,7 +43,7 @@ const Home = (props) => {
       >
       {activityDisplay}
     </Carousel>
-    <AddActivityModal/>
+    <AddActivityModal currentUser={props.currentUser} activities={props.activities} createActivity={props.createActivity}/>
     </>
   )
 }

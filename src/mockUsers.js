@@ -1,11 +1,11 @@
-const users = [
+const mockUsers = [
   {
     id:1,
     username: 'JesusChristPadge',
     email: 'JCP@example.com',
     password: 'xxhunterxx',
     name: 'Padge',
-    photo: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1287&q=80',
+    photo: 'https://images.unsplash.com/photo-1548655820-aaef3a7db508?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2592&q=80',
     bio: "I love fast activities. Basketball, frisbee, and soccer are my jam",
     gender_identity: 'male',
   },
@@ -40,4 +40,4 @@ const users = [
     gender_identity: 'male',
   }
 ]
-export default users
+export default mockUsers
