@@ -10,11 +10,13 @@ import SignUp from "./pages/SignUp";
 import ActivityEdit from "./pages/ActivityEdit";
 import ActivityFilter from "./pages/ActivityFilter";
 import AboutUs from "./pages/AboutUs";
+import mockUsers from "./mockUsers";
 
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null)
   const [activities, setActivities] = useState([])
+
 
 // const url = "https://buddy-frontend.onrender.com"
 const url = "http://localhost:3000/"
@@ -131,7 +133,7 @@ const deleteActivity = (id) => {
       <>
       <Header currentUser={currentUser} logout={logout}/>
       <Routes>
-        <Route path="/" element={<Home activities={activities} createActivity={createActivity}/>} />
+        <Route path="/" element={<Home activities={activities} currentUser={currentUser} createActivity={createActivity} />} />
         <Route path="/:category?" element={<ActivityFilter activities={activities}/>} />
         <Route path="/buddyprofile/:id" element={<BuddyProfile currentUser={currentUser}/>} />
         <Route path="/login" element={<LogIn login={login}/>} />

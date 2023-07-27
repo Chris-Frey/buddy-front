@@ -11,7 +11,7 @@ const ActivityCard = (props) => {
         <Col>
           <Text h4 color="white">{props.activities.category}</Text>
           <Text size={12} weight="bold" transform="uppercase" color="#ffffffAA">
-            WHAT: {props.activities.activity}
+            WHAT: {props.activities.activity_name}
           </Text>
           <Text size={12} weight="bold" transform="uppercase" color="#ffffffAA">
             WHEN: {props.activities.start_time}

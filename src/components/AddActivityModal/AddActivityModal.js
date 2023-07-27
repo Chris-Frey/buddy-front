@@ -5,22 +5,24 @@ import { useNavigate } from "react-router-dom";
 
 
 
+const AddActivityModal = ({createActivity, activities, currentUser}) => {
 
-const AddActivityModal = ({createActivity}) => {
   const [newActivity, setNewActivity] = useState({
     category:"",
-    activity:"",
+    activity_name:"",
+    activity_photo:"",
     start_time:"",
-    duration:"",
+    duration: 2.0,
     location:"",
-    description:""
+    description:"",
+    creator_id: currentUser?.id
   })
 
   const navigate = useNavigate()
   const handleChange = (e) => {
     setNewActivity({...newActivity, [e.target.name]: e.target.value})
   }
-  
+
 
   const [visible, setVisible] = React.useState(false);
   const handler = () => setVisible(true);
@@ -53,7 +55,6 @@ const AddActivityModal = ({createActivity}) => {
         </Modal.Header>
         <Modal.Body>
 
-
           <Input
             onChange={handleChange} 
             name='category'
@@ -66,13 +67,12 @@ const AddActivityModal = ({createActivity}) => {
             size="lg"
             placeholder="WHICH CATEGORY IS YOUR ACTIVITY IN?"
             contentLeft={<Text fill="currentColor" />}
- 
           />
           <Input
             onChange={handleChange} 
-            name='activity'
-            value={newActivity.activity}
-            label="EVENT"
+            name='activity_name'
+            value={newActivity.activity_name}
+            label="ACTIVITY"
             clearable
             bordered
             fullWidth
@@ -80,7 +80,6 @@ const AddActivityModal = ({createActivity}) => {
             size="lg"
             placeholder="GIVE IT A NAME"
             contentLeft={<Text fill="currentColor" />}
- 
           />
           <Input
             onChange={handleChange} 
@@ -131,7 +130,21 @@ const AddActivityModal = ({createActivity}) => {
             fullWidth
             color="primary"
             size="lg"
+            type="float"
             placeholder="HOW LONG IS YOUR EVENT?"
+            contentLeft={<Text fill="currentColor" />}
+          />
+          <Input
+            onChange={handleChange} 
+            name='activity_photo'
+            value={newActivity?.activity_photo}
+            label="PHOTO URL"
+            clearable
+            bordered
+            fullWidth
+            color="primary"
+            size="lg"
+            placeholder="INSERT A LINK"
             contentLeft={<Text fill="currentColor" />}
           />
         </Modal.Body>
