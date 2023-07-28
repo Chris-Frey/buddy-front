@@ -21,19 +21,19 @@ const Header = ({currentUser, logout}) => {
       <Navbar.Brand>
       <Logo />
       <Text b color="inherit" hideIn="xs">
-      Buddy
+        BUDDY
       </Text>
       </Navbar.Brand>
       <Navbar.Content hideIn="xs">
-        <NavLink to="/" >home</NavLink>
-        <NavLink to="/aboutus" >about us</NavLink>
+        <NavLink to="/" >HOME</NavLink>
+        <NavLink to="/aboutus" >ABOUT US</NavLink>
         <NavLink to={`/buddyprofile/${currentUser?.id}` }>BUDDY PROFILE</NavLink>
 
         </Navbar.Content>
 
       <Navbar.Content>
         <Navbar.Link color="inherit" href="/LogIn" onPress={handleClick}>
-        Log Out
+          LOG OUT
         </Navbar.Link>
         <Navbar.Item>
         <BrowseActivityModal />

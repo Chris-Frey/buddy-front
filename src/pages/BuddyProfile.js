@@ -9,7 +9,6 @@ const BuddyProfile = ({currentUser}) => {
   console.log(currentUser.id);
  
 
-
  
   return (
     <>  

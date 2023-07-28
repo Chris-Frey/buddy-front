@@ -2,12 +2,12 @@ import { React, useState} from 'react'
 import { useParams } from "react-router-dom"
 import { Card, Col, Row, Button, Text, Input } from "@nextui-org/react";
 import PictureCard from "../components/PictureCard";
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import AddActivityModal from '../components/AddActivityModal/AddActivityModal'
 
 const ActivityEdit = ({activities, updateActivity}) => {
     const { id } = useParams()
-    let currentActivity = activities.find((activity) => activity.id === +id)
+    let currentActivity = activities?.find((activity) => activity.id === +id)
 console.log(currentActivity)
     const [changeActivity, setChangeActivity] = useState({
       category: currentActivity?.category,
@@ -145,41 +145,12 @@ console.log(currentActivity)
         <Col>
           <Row justify="flex-end">
             <Link to={`/activityshow/${currentActivity?.id}`}>
-            <Button
-             onPress={submitHandler}
-              flat
-              auto
-              rounded
-              css={{ color: "#94f9f0", bg: "#94f9f026" }}
-            >
-              <Text
-                css={{ color: "inherit" }}
-                size={12}
-                weight="bold"
-                transform="uppercase"
-              >
-                Save
-              </Text>
-            </Button>
+            <button>CANCEL</button>
             </Link>
             
-            <Link to={`/activityshow/${currentActivity?.id}`}>
-            <Button
-              flat
-              auto
-              rounded
-              css={{ color: "#94f9f0", bg: "#94f9f026" }}
-            >
-              <Text
-                css={{ color: "inherit" }}
-                size={12}
-                weight="bold"
-                transform="uppercase"
-              >
-               Cancel
-              </Text>
-            </Button>
-            </Link>
+            <NavLink to={`/activityshow/${currentActivity?.id}`}>
+            <button onClick={submitHandler}>SAVE</button>
+            </NavLink>
           </Row>
         </Col>
       </Row>
