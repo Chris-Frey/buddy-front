@@ -2,7 +2,6 @@ import React from 'react'
 import { Image } from '@nextui-org/react';
 import styles from "../styles/BuddyProfile.css";
 import { Card, Col, Text } from "@nextui-org/react";
-import { useParams } from "react-router-dom"
 import AddActivityModal from '../components/AddActivityModal/AddActivityModal'
 
 const BuddyProfile = ({currentUser}) => {
@@ -18,7 +17,7 @@ const BuddyProfile = ({currentUser}) => {
     
     <div>
     <Image
-      class="profile-image"
+      className="profile-image"
       width={320}
       height={180}  
       src={currentUser.photo}
@@ -26,7 +25,7 @@ const BuddyProfile = ({currentUser}) => {
       objectFit="cover"
     />
     </div> 
-        <Card class="profile-card" css={{ w: 500, h: "70vh" }}>
+        <Card className="profile-card" css={{ w: 500, h: "70vh" }}>
     <Card.Header css={{ position: "absolute", zIndex: 1, top: 5 }}>
       <Col>
         <Text size={24} weight="bold" transform="uppercase" color="black">{currentUser.category}</Text>

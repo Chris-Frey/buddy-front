@@ -73,7 +73,7 @@ const ActivityShow = ({activities, deleteActivity}) => {
           <Row justify="flex-end">
             
             <NavLink to={`/`}>
-              <button>DELETE</button>
+              <button onClick={handleDelete}>DELETE</button>
             </NavLink>
 
             <NavLink to={`/`}>
