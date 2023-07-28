@@ -1,16 +1,13 @@
 import React from 'react'
-import { useState } from "react";
 import { Image } from '@nextui-org/react';
 import styles from "../styles/BuddyProfile.css";
-import { Card, Col, Row, Button, Text } from "@nextui-org/react";
+import { Card, Col, Text } from "@nextui-org/react";
 import { useParams, Link } from "react-router-dom"
-import PictureCard from "../components/PictureCard";
-import mockUsers from "../mockUsers";
 import AddActivityModal from '../components/AddActivityModal/AddActivityModal'
 
-const BuddyProfile = ({selectedUser}) => {
+const BuddyProfile = ({currentUser}) => {
   const { id } = useParams()
-  let currentUsers = selectedUser.find((user) => user.id === +id)
+  let currentUsers = currentUser.find((user) => user.id === +id)
 
  
   return (

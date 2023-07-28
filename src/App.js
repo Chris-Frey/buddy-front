@@ -6,34 +6,102 @@ import Home from "./pages/Home";
 import BuddyProfile from "./pages/BuddyProfile";
 import LogIn from "./pages/LogIn";
 import ActivityShow from "./pages/ActivityShow";
-import mockActivities from "./mockActivities";
-import mockUsers from "./mockUsers";
 import SignUp from "./pages/SignUp";
 import ActivityEdit from "./pages/ActivityEdit";
 import ActivityFilter from "./pages/ActivityFilter";
 import AboutUs from "./pages/AboutUs";
-import mockUsers from "./mockUsers";
 
 
 function App() {
-const [activities, setActivities] = useState([])
-const [currentUser, setCurrentUser] = useState(mockUsers[0])
+  const [currentUser, setCurrentUser] = useState(null)
+  const [activities, setActivities] = useState([])
 
 
-const [users, setUsers] = useState(mockUsers)
+const url = "https://buddy-frontend.onrender.com"
+// const url = "http://localhost:3000/"
 
-  useEffect(() => {
-    readActivity()
-  }, [])
+useEffect(() => {
+  readActivity()
+}, [])
 
-  const readActivity = () => {
-    fetch("http://localhost:3000/activities")
-      .then((response) => response.json())
-      .then((payload) => {
-        setActivities(payload)
-      })
-      .catch((error) => console.log(error))
+useEffect(() => {
+  const loggedInUser = localStorage.getItem("token")
+  if (loggedInUser) {
+    setCurrentUser(loggedInUser)
   }
+  readActivity()
+}, [])
+
+// authentication methods
+const login = (userInfo) => {
+  fetch(`${url}/login`, {
+    body: JSON.stringify(userInfo),
+    headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    method: "POST"
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw Error(response.statusText)
+    }
+    // store the token
+    localStorage.setItem("token", response.headers.get("Authorization"))
+    return response.json()
+  })
+  .then(payload => {
+    setCurrentUser(payload)
+  })
+  .catch(error => console.log("login errors: ", error))
+}
+
+const signup = (userInfo) => {
+  fetch(`${url}/signup`, {
+    body: JSON.stringify(userInfo),
+    headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    method: "POST"
+  })
+  .then(response => {
+      if (!response.ok) {
+      throw Error(response.statusText)
+    }
+    // store the token
+  localStorage.setItem("token", response.headers.get("Authorization"))
+  return response.json()
+  })
+  .then(payload => {
+    setCurrentUser(payload)
+  })
+  .catch(error => console.log("login errors: ", error))
+}
+
+const logout = () => {
+  fetch(`${url}/logout`, {
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": localStorage.getItem("token") //retrieve the token
+    },
+    method: "DELETE"
+  })
+  .then(payload => {
+    localStorage.removeItem("token")  // remove the token
+    setCurrentUser(null)
+  })
+  .catch(error => console.log("log out errors: ", error))
+}
+
+const readActivity = () => {
+  fetch("http://localhost:3000/activities")
+    .then((response) => response.json())
+    .then((payload) => {
+      setActivities(payload)
+    })
+    .catch((error) => console.log(error))
+}
 
 const createActivity = (activity) => {
   fetch("http://localhost:3000/activities", {
@@ -67,18 +135,16 @@ const deleteActivity = (id) => {
     .catch((errors) => console.log("delete errors:", errors))
 }
 
-
-
   return (
       <>
-      <Header />
+      <Header currentUser={currentUser} logout={logout}/>
       <Routes>
         <Route path="/" element={<Home activities={activities} currentUser={currentUser} createActivity={createActivity} />} />
         <Route path="/:category?" element={<ActivityFilter activities={activities}/>} />
-        <Route path="/buddyprofile/:id" element={<BuddyProfile selectedUser={users}/>} />
-        <Route path="/login" element={<LogIn />} />
+        <Route path="/buddyprofile/:id" element={<BuddyProfile currentUser={currentUser}/>} />
+        <Route path="/login" element={<LogIn login={login}/>} />
         <Route path="/activityshow/:id" element={<ActivityShow activities={activities} updateActivity={updateActivity} deleteActivity={deleteActivity} />} />
-        <Route path="/signup" element={<SignUp />} />
+        <Route path="/signup" element={<SignUp signup={signup}/>} />
         <Route path="/activityedit/:id" element={<ActivityEdit activities={activities} updateActivity={updateActivity}/>} />
         <Route path="/aboutus" element={<AboutUs />} />
       </Routes>
