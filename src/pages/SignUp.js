@@ -14,7 +14,7 @@ const SignUp = ({signup}) => {
       "user":{ email: data.email, password: data.password, name: data.name, username: data.username, gender_identity: data.gender_identity}
     }
     signup(userInfo)
-    // navigate("/")
+    navigate("/")
   }
 
   const { value, reset, bindings } = useInput("");
