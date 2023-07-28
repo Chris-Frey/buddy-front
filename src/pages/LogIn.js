@@ -9,8 +9,6 @@ const LogIn = ({login}) => {
   const navigate = useNavigate()
 
   const handleSubmit = (e) => {
-
-    console.log(formRef.current)
     const formData = new FormData(formRef.current)
     const data = Object.fromEntries(formData)
     const userInfo = {
@@ -18,23 +16,24 @@ const LogIn = ({login}) => {
     }
     login(userInfo)
     navigate("/")
-
   }
-
 
   return (
     <>
     <form ref={formRef} onSubmit={handleSubmit}>
     <div className='container-card'>
       <Spacer y={2.5} />
-      <Input css={{textAlign:'$center'}}width="250px" labelPlaceholder="Email" type='email' name='email' initialValue="" />
+      <Input css={{textAlign:'$center'}}width="250px" labelPlaceholder="Email" type='email' name='email' initialValue="" color="warning"/>
       <Spacer y={2.5} />
-      <Input.Password width="250px" labelPlaceholder="Password" type='password' name='password' initialValue="" />
+      <Input.Password width="250px" labelPlaceholder="Password" type='password' name='password' initialValue="" color="warning"/>
       <Spacer y={1.5} />
       <div className='buttons'>
+
         <Grid>
         <Link to="/Home">
-          <Button shadow color="warning" auto
+          <Button 
+          auto
+          css={{ color: "black", bg: "#FFCD4E" }}
           onClick={handleSubmit}>
             Sign In
           </Button>
@@ -43,22 +42,17 @@ const LogIn = ({login}) => {
         <Spacer y={1.5} />
         <Grid>
         <Link to="/signup">
-          <Button shadow color="warning" auto>
+          <Button 
+          auto
+          css={{ color: "black", bg: "#FFCD4E" }}>
             Sign Up
           </Button>
           </Link>
         </Grid>
       </div>
-      <div className='link'>
-        <Spacer />
-        <Link color="error" href="#">
-          FORGOT PASSWORD
-        </Link>
-      </div>
+ 
     </div>
     </form>
-    
-
   </>
   )
 }
