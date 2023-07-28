@@ -14,7 +14,7 @@ const SignUp = ({signup}) => {
       "user":{ email: data.email, password: data.password, name: data.name, username: data.username, gender_identity: data.gender_identity}
     }
     signup(userInfo)
-    navigate("/")
+    // navigate("/")
   }
 
   const { value, reset, bindings } = useInput("");
@@ -114,8 +114,7 @@ const SignUp = ({signup}) => {
           />
       </Grid>
       <Grid>
-        <Link to="/signup">
-        
+
       <Button
             onClick={handleSubmit}
             flat
@@ -132,7 +131,6 @@ const SignUp = ({signup}) => {
               Sign Up
             </Text>
           </Button>
-        </Link>
       </Grid>
       <Grid>
       <Link to="/login">

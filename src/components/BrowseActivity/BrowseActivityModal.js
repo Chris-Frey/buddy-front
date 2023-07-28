@@ -11,7 +11,7 @@ const BrowseActivityModal = () => {
   return (
     <div>
       <Button auto color="#FFCD4E" shadow onPress={handler}>
-        +
+        BROWSE ACTIVITIES
       </Button>
       <Modal
         closeButton

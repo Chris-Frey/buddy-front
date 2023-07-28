@@ -12,7 +12,6 @@ const Header = ({currentUser, logout}) => {
     logout()
     navigate("/")
   }
-
   const [variant, setVariant] = React.useState("static");
   
   return (
@@ -26,11 +25,12 @@ const Header = ({currentUser, logout}) => {
       </Text>
       </Navbar.Brand>
       <Navbar.Content hideIn="xs">
-          <Navbar.Link href="/">Home</Navbar.Link>
-          <Navbar.Link href="/Friends">Friends</Navbar.Link>
-          <Navbar.Link href="#">Search</Navbar.Link>
-          <Navbar.Link href="/BuddyProfile">BuddyProfile</Navbar.Link>
+        <NavLink to="/" >home</NavLink>
+        <NavLink to="/aboutus" >about us</NavLink>
+        <NavLink to={`/buddyprofile/${currentUser?.id}` }>BUDDY PROFILE</NavLink>
+
         </Navbar.Content>
+
       <Navbar.Content>
         <Navbar.Link color="inherit" href="/LogIn" onPress={handleClick}>
         Log Out

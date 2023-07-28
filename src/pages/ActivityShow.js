@@ -86,7 +86,7 @@ const ActivityShow = ({activities, deleteActivity}) => {
                 Buddy Up
               </Text>
             </Button>
-            <Link to={"/"}>
+            <Link to="/">
             <Button
               flat
               auto
@@ -109,7 +109,7 @@ const ActivityShow = ({activities, deleteActivity}) => {
               flat
               auto
               rounded
-              css={{ color: "#94f9f0", bg: "#94f9f026" }}
+              css={{ color: "warning", bg: "#94f9f026" }}
             >
               <Text
                 css={{ color: "inherit" }}
