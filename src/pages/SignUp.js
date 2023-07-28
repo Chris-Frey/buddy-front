@@ -1,6 +1,6 @@
 import React, {useRef} from "react";
 import { Input, useInput, Grid, Button, Text } from "@nextui-org/react";
-// import { Form, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useNavigate } from "react-router-dom";
 
 const SignUp = ({signup}) => {
@@ -8,9 +8,6 @@ const SignUp = ({signup}) => {
   const navigate = useNavigate()
 
   const handleSubmit = (e) => {
-    console.log(e);
-    // e.preventDefault()
-    console.log(formRef.current)
     const formData = new FormData(formRef.current)
     const data = Object.fromEntries(formData)
     const userInfo = {
@@ -18,7 +15,6 @@ const SignUp = ({signup}) => {
     }
     signup(userInfo)
     navigate("/")
-    // e.target.reset()
   }
 
   const { value, reset, bindings } = useInput("");
@@ -42,7 +38,7 @@ const SignUp = ({signup}) => {
   
   return (
     <>
-    <Grid.Container gap={4}>
+    <Grid.Container gap={2}>
       <form ref={formRef} onSubmit={handleSubmit}>
       <Grid>
         <Input
@@ -51,7 +47,8 @@ const SignUp = ({signup}) => {
           shadow={false}
           onClearClick={reset}
           status={helper.color}
-          color={helper.color}
+          color="warning"
+          
           helperColor={helper.color}
           helperText={helper.text}
           type="email"
@@ -63,6 +60,7 @@ const SignUp = ({signup}) => {
       <Grid>
         <Input
           clearable
+          color="warning"
           helperText="Please enter your name"
           type="text"
           label="Name"
@@ -73,8 +71,7 @@ const SignUp = ({signup}) => {
       <Grid>
         <Input
           clearable
-          color="success"
-          initialValue="John Snow"
+          color="warning"
           helperText="Excellent username"
           name="username"
           type="text"
@@ -86,47 +83,45 @@ const SignUp = ({signup}) => {
         <Input.Password
           clearable
           color="warning"
-          initialValue="123"
           helperText="Insecure password"
           name="password"
           type="password"
           label="Password"
-          placeholder="Enter your password with eye"
+          placeholder="Enter your password"
           />
       </Grid>
       <Grid>
         <Input.Password
           clearable
           color="warning"
-          initialValue="123"
           helperText="Insecure password"
           name="password_confirmation"
           type="password"
           label="Confirm Password"
-          placeholder="Enter your password with eye"
+          placeholder="Confirm your password"
           />
       </Grid>
       <Grid>
         <Input
           clearable
-          color="success"
+          color="warning"
           initialValue=""
           helperText="Excellent username"
           name="gender_identity"
           type="text"
-          label="Gender"
-          placeholder=""
+          label="Gender Identity"
+          placeholder="Enter gender"
           />
       </Grid>
       <Grid>
-        {/* <Link to="/signup"> */}
+        <Link to="/signup">
         
       <Button
             onClick={handleSubmit}
             flat
             auto
             rounded
-            css={{ color: "black", bg: "#94f9f026" }}
+            css={{ color: "black", bg: "#FFCD4E" }}
             >
             <Text
               css={{ color: "inherit" }}
@@ -137,16 +132,16 @@ const SignUp = ({signup}) => {
               Sign Up
             </Text>
           </Button>
-        {/* </Link> */}
+        </Link>
       </Grid>
       <Grid>
-      {/* <Link to="/login"> */}
+      <Link to="/login">
         <Button
                 onClick={handleSubmit}
                 flat
                 auto
                 rounded
-                css={{ color: "black", bg: "#94f9f026" }}
+                css={{ color: "black", bg: "#FFCD4E" }}
                 >
                 <Text
                   css={{ color: "inherit" }}
@@ -157,7 +152,7 @@ const SignUp = ({signup}) => {
                   LogIn
                 </Text>
               </Button>
-            {/* </Link> */}
+            </Link>
       </Grid>
     </form>
       

@@ -17,8 +17,8 @@ function App() {
   const [activities, setActivities] = useState([])
 
 
-const url = "https://buddy-frontend.onrender.com"
 // const url = "http://localhost:3000/"
+const url = "https://buddy-backend.onrender.com"
 
 useEffect(() => {
   readActivity()
@@ -95,7 +95,7 @@ const logout = () => {
 }
 
 const readActivity = () => {
-  fetch("http://localhost:3000/activities")
+  fetch(`${url}/activities`)
     .then((response) => response.json())
     .then((payload) => {
       setActivities(payload)
@@ -104,7 +104,7 @@ const readActivity = () => {
 }
 
 const createActivity = (activity) => {
-  fetch("http://localhost:3000/activities", {
+  fetch(`${url}/activities`, {
     body: JSON.stringify(activity),
     headers: {"Content-Type": "application/json"},
     method: "POST"
@@ -115,7 +115,7 @@ const createActivity = (activity) => {
 }
 
 const updateActivity = (activity, id) => {
-  fetch(`http://localhost:3000/activities/${id}/`, {
+  fetch(`${url}/activities/${id}/`, {
     body: JSON.stringify(activity),
     headers: {"Content-Type": "application/json"},
     method: "PATCH"
@@ -126,7 +126,7 @@ const updateActivity = (activity, id) => {
 }
 
 const deleteActivity = (id) => {
-  fetch(`http://localhost:3000/activities/${id}`, {
+  fetch(`${url}/activities/${id}`, {
     headers: {"Content-Type": "application/json"},
     method: "DELETE"
   })
