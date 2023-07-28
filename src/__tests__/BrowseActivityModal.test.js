@@ -3,8 +3,6 @@ import userEvent from '@testing-library/user-event';
 import { BrowserRouter } from 'react-router-dom';
 import BrowseActivityModal from '../components/BrowseActivity/BrowseActivityModal';
 
-
-
 describe("<BrowseActivityModal />", () => {
   beforeEach(() => {
     render(

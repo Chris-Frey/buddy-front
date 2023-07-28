@@ -18,6 +18,7 @@ const BuddyProfile = ({currentUser}) => {
     
     <div>
     <Image
+      class="profile-image"
       width={320}
       height={180}  
       src={currentUsers.photo}
@@ -25,7 +26,7 @@ const BuddyProfile = ({currentUser}) => {
       objectFit="cover"
     />
     </div> 
-        <Card css={{ w: 500, h: "70vh" }}>
+        <Card class="profile-card" css={{ w: 500, h: "70vh" }}>
     <Card.Header css={{ position: "absolute", zIndex: 1, top: 5 }}>
       <Col>
         <Text size={24} weight="bold" transform="uppercase" color="black">{currentUsers.category}</Text>
