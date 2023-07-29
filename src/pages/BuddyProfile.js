@@ -5,9 +5,6 @@ import { Card, Col, Text } from "@nextui-org/react";
 import AddActivityModal from '../components/AddActivityModal/AddActivityModal'
 
 const BuddyProfile = ({currentUser}) => {
-  console.log(currentUser);
- 
-
  
   return (
     <>  

@@ -8,7 +8,7 @@ import AddActivityModal from '../components/AddActivityModal/AddActivityModal'
 const ActivityEdit = ({activities, updateActivity}) => {
     const { id } = useParams()
     let currentActivity = activities?.find((activity) => activity.id === +id)
-console.log(currentActivity)
+
     const [changeActivity, setChangeActivity] = useState({
       category: currentActivity?.category,
       activity: currentActivity?.activity,

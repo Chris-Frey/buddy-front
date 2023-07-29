@@ -31,7 +31,6 @@ const AddActivityModal = ({createActivity, currentUser}) => {
   };
 
   const submitHandler = () => {
-    console.log(newActivity);
     createActivity(newActivity);
     closeHandler()
   }
