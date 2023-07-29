@@ -1,6 +1,6 @@
 import React, {useRef} from "react";
 import { Input, useInput, Grid, Button, Text } from "@nextui-org/react";
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { useNavigate } from "react-router-dom";
 
 const SignUp = ({signup}) => {
@@ -11,12 +11,12 @@ const SignUp = ({signup}) => {
     const formData = new FormData(formRef.current)
     const data = Object.fromEntries(formData)
     const userInfo = {
-      "user":{ email: data.email, password: data.password, name: data.name, username: data.username, gender_identity: data.gender_identity}
+      "user":{ email: data.email, password: data.password, name: data.name, username: data.username, gender_identity: data.gender_identity, bio: data.bio}
     }
     signup(userInfo)
     navigate("/")
   }
-
+  
   const { value, reset, bindings } = useInput("");
 
   const validateEmail = (value) => {
@@ -54,7 +54,7 @@ const SignUp = ({signup}) => {
           type="email"
           name="email"
           label="Email"
-          placeholder="With regex validation"
+          placeholder="Enter email"
           />
       </Grid>
       <Grid>
@@ -113,9 +113,20 @@ const SignUp = ({signup}) => {
           placeholder="Enter gender"
           />
       </Grid>
+      {/* <Grid>
+        <Input
+          clearable
+          color="warning"
+          helperText="bio"
+          name="bio"
+          type="text"
+          label="Bio"
+          placeholder="Enter bio"
+          />
+      </Grid> */}
+
       <Grid>
-        <Link to="/signup">
-        
+
       <Button
             onClick={handleSubmit}
             flat
@@ -132,12 +143,11 @@ const SignUp = ({signup}) => {
               Sign Up
             </Text>
           </Button>
-        </Link>
       </Grid>
       <Grid>
-      <Link to="/login">
+      <NavLink to="/login">
         <Button
-                onClick={handleSubmit}
+                // onClick={handleSubmit}
                 flat
                 auto
                 rounded
@@ -152,7 +162,7 @@ const SignUp = ({signup}) => {
                   LogIn
                 </Text>
               </Button>
-            </Link>
+            </NavLink>
       </Grid>
     </form>
       

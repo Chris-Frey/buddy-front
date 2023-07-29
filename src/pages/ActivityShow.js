@@ -2,7 +2,7 @@ import React from 'react'
 import PictureCard from "../components/PictureCard";
 import { Card, Col, Row, Button, Text } from "@nextui-org/react";
 import AddActivityModal from '../components/AddActivityModal/AddActivityModal'
-import { useParams, Link } from "react-router-dom"
+import { useParams, Link, NavLink } from "react-router-dom"
 
 
 const ActivityShow = ({activities, deleteActivity}) => {
@@ -71,56 +71,19 @@ const ActivityShow = ({activities, deleteActivity}) => {
         </Col>
         <Col>
           <Row justify="flex-end">
-            <Button
-              flat
-              auto
-              rounded
-              css={{ color: "#94f9f0", bg: "#94f9f026" }}
-            >
-              <Text
-                css={{ color: "inherit" }}
-                size={12}
-                weight="bold"
-                transform="uppercase"
-              >
-                Buddy Up
-              </Text>
-            </Button>
-            <Link to={"/"}>
-            <Button
-              flat
-              auto
-              rounded
-              css={{ color: "#94f9f0", bg: "#94f9f026" }}
-              onPress={handleDelete}
-            >
-              <Text
-                css={{ color: "inherit" }}
-                size={12}
-                weight="bold"
-                transform="uppercase"
-              >
-                Delete
-              </Text>
-            </Button>
-            </Link>
-            <Link to={`/activityedit/${currentActivity?.id}`}>
-            <Button
-              flat
-              auto
-              rounded
-              css={{ color: "#94f9f0", bg: "#94f9f026" }}
-            >
-              <Text
-                css={{ color: "inherit" }}
-                size={12}
-                weight="bold"
-                transform="uppercase"
-              >
-                Edit
-              </Text>
-            </Button>
-            </Link>
+            
+            <NavLink to={`/`}>
+              <button onClick={handleDelete}>DELETE</button>
+            </NavLink>
+
+            <NavLink to={`/`}>
+              <button>CANCEL</button>
+            </NavLink>
+
+            <NavLink to={`/activityedit/${currentActivity.id}`}>
+              <button>EDIT</button>
+            </NavLink>
+            
           </Row>
         </Col>
       </Row>

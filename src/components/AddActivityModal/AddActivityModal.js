@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 
 
-const AddActivityModal = ({createActivity, activities, currentUser}) => {
+const AddActivityModal = ({createActivity, currentUser}) => {
 
   const [newActivity, setNewActivity] = useState({
     category:"",
@@ -149,10 +149,10 @@ const AddActivityModal = ({createActivity, activities, currentUser}) => {
           />
         </Modal.Body>
         <Modal.Footer justify="space-around">
-          <Button auto flat color="#FFCD4E" onPress={closeHandler}>
+          <Button auto flat color="#FFCD4E" onClick={closeHandler}>
             CLOSE
           </Button>
-          <Button auto color="#FFCD4E" onPress={submitHandler}>
+          <Button auto color="#FFCD4E" onClick={submitHandler}>
             CREATE ACTIVITY
           </Button>
         </Modal.Footer>

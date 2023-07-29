@@ -17,8 +17,8 @@ function App() {
   const [activities, setActivities] = useState([])
 
 
-// const url = "http://localhost:3000/"
-const url = "https://buddy-backend.onrender.com"
+// const url = "http://localhost:3000"
+const url = "buddy-backend.onrender.com"
 
 useEffect(() => {
   readActivity()
