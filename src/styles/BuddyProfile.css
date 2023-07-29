@@ -1,6 +1,7 @@
-h1 {
+.your_profile {
   display:flex;
-  color: aliceblue;
+  color: #FFCD4E;
+  padding-bottom: 30px;
 }
 
 p {
@@ -10,12 +11,21 @@ p {
 
 .profile-image {
   justify-content: left;
+  color: white;
+  border-radius: 40px;
 }
 
 .profile-card{
-  background-color: black;
+  color: white;
 }
 
-text {
-  color: white;
+.card_container {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.pic_fields{
+  display: flex;
+  justify-content: space-between;
 }

@@ -11,13 +11,14 @@ const SignUp = ({signup}) => {
     const formData = new FormData(formRef.current)
     const data = Object.fromEntries(formData)
     const userInfo = {
-      "user":{ email: data.email, password: data.password, name: data.name, username: data.username, gender_identity: data.gender_identity}
+      "user":{ email: data.email, password: data.password, name: data.name, username: data.username, gender_identity: data.gender_identity, bio: data.bio}
     }
     signup(userInfo)
     navigate("/")
   }
-
+  
   const { value, reset, bindings } = useInput("");
+  console.log(value)
 
   const validateEmail = (value) => {
     return value.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$/i);
@@ -54,7 +55,7 @@ const SignUp = ({signup}) => {
           type="email"
           name="email"
           label="Email"
-          placeholder="With regex validation"
+          placeholder="Enter email"
           />
       </Grid>
       <Grid>
@@ -113,6 +114,18 @@ const SignUp = ({signup}) => {
           placeholder="Enter gender"
           />
       </Grid>
+      {/* <Grid>
+        <Input
+          clearable
+          color="warning"
+          helperText="bio"
+          name="bio"
+          type="text"
+          label="Bio"
+          placeholder="Enter bio"
+          />
+      </Grid> */}
+
       <Grid>
 
       <Button
