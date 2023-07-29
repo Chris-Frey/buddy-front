@@ -1,6 +1,6 @@
 import React, {useRef} from "react";
 import { Input, useInput, Grid, Button, Text } from "@nextui-org/react";
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { useNavigate } from "react-router-dom";
 
 const SignUp = ({signup}) => {
@@ -133,9 +133,9 @@ const SignUp = ({signup}) => {
           </Button>
       </Grid>
       <Grid>
-      <Link to="/login">
+      <NavLink to="/login">
         <Button
-                onClick={handleSubmit}
+                // onClick={handleSubmit}
                 flat
                 auto
                 rounded
@@ -150,7 +150,7 @@ const SignUp = ({signup}) => {
                   LogIn
                 </Text>
               </Button>
-            </Link>
+            </NavLink>
       </Grid>
     </form>
       
