@@ -17,7 +17,7 @@ const BuddyProfile = ({currentUser}) => {
 
     <Image
       className="profile-image"
-      // src={currentUser.photo}
+
       width={320}
       height= "auto"
       
@@ -25,13 +25,10 @@ const BuddyProfile = ({currentUser}) => {
       alt="Default Image"
       objectFit="cover"
       />
-  
-        {/* <Container className='card_container'> */}
 
         <Card className="profile-card" css={{ w: 500, h: "30vh", bg: "Black"}}>
     <Card.Header css={{ position: "absolute", zIndex: 1, top: 5}}>
       <Col>
-        {/* <Text size={24} weight="bold" transform="uppercase"  color="White" >{currentUser.category}</Text> */}
 
         <Text size={15} weight="bold" transform="uppercase"color="#FFCD4E" >NAME</Text>
 
@@ -43,22 +40,14 @@ const BuddyProfile = ({currentUser}) => {
         <Text size={13} h3 color="White">
         {currentUser.username}</Text>
 
-        {/* <Text size={15} weight="bold" transform="uppercase" >Age</Text>
-
-<Text size={13} h3 >{currentUser.age}</Text> */}
-
         <Text size={15} weight="bold" transform="uppercase" color="#FFCD4E">Gender Identity</Text>
 
         <Text size={13} h3 color="White"> {currentUser.gender_identity}</Text>
 
-        {/* <Text size={13} weight="bold" transform="uppercase" color="black">Bio</Text>
-
-<Text size={13} h3 color="black"> {currentUser.bio}</Text> */}
         
       </Col>
       </Card.Header>
       </Card>
-        {/* </Container> */}
     </Container>
       <AddActivityModal />
     </>
