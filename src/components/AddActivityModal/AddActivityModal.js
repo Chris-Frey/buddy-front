@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { Modal, Input, Button, Text } from "@nextui-org/react";
+import { Modal, Input, Button, Text, yellow } from "@nextui-org/react";
 import { useNavigate } from "react-router-dom";
 
 
@@ -38,10 +38,11 @@ const AddActivityModal = ({createActivity, currentUser}) => {
   return (
     <div>
 
-      <Button auto color="#FFCD4E"  shadow onPress={handler}>
-        +
+      <Button auto color={"black"} css={{bg:"#FFCD4E"}}onClick={handler}>
+        Add Activity
       </Button>
       <Modal
+        css={{bg:"#FFCD4E"}}
         closeButton
         blur
         aria-labelledby="modal-title"
@@ -49,7 +50,7 @@ const AddActivityModal = ({createActivity, currentUser}) => {
         onClose={closeHandler}
       >
         <Modal.Header>
-          <Text id="modal-title" size={18}>
+          <Text id="modal-title" weight={"bold"} size={25}>
             CREATE AN ACTIVITY
           </Text>
         </Modal.Header>
@@ -148,11 +149,13 @@ const AddActivityModal = ({createActivity, currentUser}) => {
             contentLeft={<Text fill="currentColor" />}
           />
         </Modal.Body>
+
         <Modal.Footer justify="space-around">
-          <Button auto flat color="#FFCD4E" onClick={closeHandler}>
+           <Button auto fill="currentColor" css={{bg:"black"}} onClick={closeHandler}>
             CLOSE
           </Button>
-          <Button auto color="#FFCD4E" onClick={submitHandler}>
+
+          <Button auto fill="currentColor" css={{bg:"black"}} onClick={submitHandler}>
             CREATE ACTIVITY
           </Button>
         </Modal.Footer>

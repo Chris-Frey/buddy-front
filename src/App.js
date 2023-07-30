@@ -15,10 +15,10 @@ import AboutUs from "./pages/AboutUs";
 function App() {
   const [currentUser, setCurrentUser] = useState(null)
   const [activities, setActivities] = useState([])
+console.log(currentUser);
 
-
-// const url = "http://localhost:3000"
-const url = "buddy-backend.onrender.com"
+const url = "http://localhost:3000"
+// const url = "buddy-backend.onrender.com"
 
 useEffect(() => {
   readActivity()

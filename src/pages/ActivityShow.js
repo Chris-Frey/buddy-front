@@ -42,13 +42,13 @@ const ActivityShow = ({activities, deleteActivity}) => {
 
         <Text size={13} h3 color="white"> {currentActivity?.location}</Text>
 
-        <Text size={15} weight="bold" transform="uppercase" color="yellow">Attendees</Text>
-
-        <Text size={13} h3 color="white">3</Text>
-
         <Text size={15} weight="bold" transform="uppercase" color="yellow">Info</Text>
 
         <Text size={13} h3 color="white">{currentActivity?.description}</Text>
+
+        <Text size={15} weight="bold" transform="uppercase" color="yellow">CREATOR ID</Text>
+
+        <Text size={13} h3 color="white">{currentActivity?.creator_id}</Text>
         
       </Col>
     </Card.Header>

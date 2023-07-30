@@ -53,21 +53,7 @@ const AboutUs = () => {
           Pellentesque in iaculis purus, et sollicitudin eros.
         </p>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis
-          eros molestie, placerat orci porta, lacinia metus. Curabitur tincidunt
-          pulvinar finibus. Etiam at molestie dui. Aenean fringilla, libero
-          vitae feugiat posuere, urna massa venenatis massa, in pellentesque sem
-          mauris maximus velit. Donec lacus nibh, viverra a enim vel, blandit
-          porta magna. Aenean nec purus sagittis, cursus ante ac, ornare nisl.
-          Duis et ligula vitae metus ornare semper ac ut quam. Nunc pretium
-          sollicitudin orci nec accumsan. Vestibulum consequat, ex ac
-          ullamcorper porttitor, nisl tellus dapibus orci, eget laoreet erat
-          ligula sit amet augue. Suspendisse maximus in mauris vel tempus. Nunc
-          dignissim massa at metus tempor, eget semper est tincidunt. Curabitur
-          interdum eros ac ex condimentum dictum. Donec a nisi commodo,
-          facilisis urna at, malesuada arcu. Nullam tincidunt faucibus sem eget
-          tempor. Etiam non libero facilisis, ornare augue quis, maximus ligula.
-          Pellentesque in iaculis purus, et sollicitudin eros.
+        Since he was a child Chris has been playing around with computers, and seeing what he could break. He took a detour through the military, and then earned his Landscape Architecture license, where he honed his leadership and critical thinking skills. He's now knee deep in JavaScript, React, Ruby, and other technologies that affect how we use the world around us.  Chris tries to be an advocate for those who need an extra voice.  When he's not living the code life, he spends time outdoors hiking, camping, and sometimes learning to salsa. He does most of it with his 13 year old dog, Kaylee.
         </p>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis
