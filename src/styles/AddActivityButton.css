@@ -1,4 +1,6 @@
 button {
+  z-index: 1;
+  position: absolute;
   background-color: #FFCD4E;
   border: none;
   width: 50px;

@@ -26,9 +26,7 @@ const BuddyProfile = ({currentUser}) => {
         height={180}  
         src={currentUser.photo}
         alt="User Image"
-        objectFit="cover"
-        
-        // src="https://media.licdn.com/dms/image/C5603AQGPJpuCt00ZfA/profile-displayphoto-shrink_800_800/0/1643264241799?e=1695859200&v=beta&t=qW17TWhrSqxec_5lGllLZUBpsv99I0z8PWieOLwztNI"  
+        objectFit="cover" 
       />
 
         <Card className="profile-card" css={{ w: 500, h: "30vh", bg: "Black"}}>

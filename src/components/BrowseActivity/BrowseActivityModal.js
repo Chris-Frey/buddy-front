@@ -32,7 +32,7 @@ const BrowseActivityModal = () => {
 
         <Modal.Body>
         <NavLink to="/weight_lifting">
-          <Text className="modal-title" color={"black"} weight={"bold"} size={20} onClick={closeHandler}>
+          <Text className="modal-title" auto color={"black"} weight={"bold"} size={20} onClick={closeHandler}>
             WEIGHT LIFTING
           </Text>
           </NavLink>

@@ -35,7 +35,7 @@ const AboutUs = () => {
         <h2>Padge</h2>
       </div>
       <div className="aboutustext">
-        <p>
+        <p className="paragraphs">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis
           eros molestie, placerat orci porta, lacinia metus. Curabitur tincidunt
           pulvinar finibus. Etiam at molestie dui. Aenean fringilla, libero
@@ -52,10 +52,10 @@ const AboutUs = () => {
           tempor. Etiam non libero facilisis, ornare augue quis, maximus ligula.
           Pellentesque in iaculis purus, et sollicitudin eros.
         </p>
-        <p>
+        <p className="paragraphs">
         Since he was a child Chris has been playing around with computers, and seeing what he could break. He took a detour through the military, and then earned his Landscape Architecture license, where he honed his leadership and critical thinking skills. He's now knee deep in JavaScript, React, Ruby, and other technologies that affect how we use the world around us.  Chris tries to be an advocate for those who need an extra voice.  When he's not living the code life, he spends time outdoors hiking, camping, and sometimes learning to salsa. He does most of it with his 13 year old dog, Kaylee.
         </p>
-        <p>
+        <p className="paragraphs">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis
           eros molestie, placerat orci porta, lacinia metus. Curabitur tincidunt
           pulvinar finibus. Etiam at molestie dui. Aenean fringilla, libero

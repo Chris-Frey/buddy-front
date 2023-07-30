@@ -3,6 +3,7 @@ import PictureCard from "../components/PictureCard";
 import { Card, Col, Row, Button, Text } from "@nextui-org/react";
 import AddActivityModal from '../components/AddActivityModal/AddActivityModal'
 import { useParams, Link, NavLink } from "react-router-dom"
+import styles from '../styles/ActivityShow.css'
 
 
 const ActivityShow = ({activities, deleteActivity}) => {
@@ -16,12 +17,10 @@ const ActivityShow = ({activities, deleteActivity}) => {
 
   return (
     <>
-      <div>Your Activity</div>
-
       <div className='activityShowBody'>
         <PictureCard currentActivity={currentActivity}/>
         <Card css={{ w: 500, h: "70vh" }}>
-    <Card.Header css={{ position: "absolute", zIndex: 1, top: 5 }}>
+    <Card.Header className='activity-card' css={{ position: "absolute", zIndex: 1, top: 5 }}>
       <Col>
         <Text size={24} weight="bold" transform="uppercase" color="white">{currentActivity?.category}</Text>
 

@@ -1,0 +1,12 @@
+.activityShowBody {
+  display: flex;
+}
+
+button {
+  border: none;
+  color: black;
+  background-color: #ffcd4e;
+  margin: 10px;
+  border-radius: 5px;
+  padding: 10px;
+}

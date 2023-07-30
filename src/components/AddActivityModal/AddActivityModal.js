@@ -64,7 +64,7 @@ const AddActivityModal = ({createActivity, currentUser}) => {
             clearable
             bordered
             fullWidth
-            color="primary"
+            color="black"
             size="lg"
             placeholder="WHICH CATEGORY IS YOUR ACTIVITY IN?"
             contentLeft={<Text fill="currentColor" />}
@@ -77,7 +77,7 @@ const AddActivityModal = ({createActivity, currentUser}) => {
             clearable
             bordered
             fullWidth
-            color="primary"
+            color="black"
             size="lg"
             placeholder="GIVE IT A NAME"
             contentLeft={<Text fill="currentColor" />}
@@ -90,7 +90,7 @@ const AddActivityModal = ({createActivity, currentUser}) => {
             clearable
             bordered
             fullWidth
-            color="primary"
+            color="black"
             size="lg"
             placeholder="WHEN DO YOU WANT TO START?"
             contentLeft={<Text fill="currentColor" />}
@@ -103,7 +103,7 @@ const AddActivityModal = ({createActivity, currentUser}) => {
             clearable
             bordered
             fullWidth
-            color="primary"
+            color="black"
             size="lg"
             placeholder="ADDRESS OF ACTIVITY"
             contentLeft={<Text fill="currentColor" />}
@@ -116,7 +116,7 @@ const AddActivityModal = ({createActivity, currentUser}) => {
             clearable
             bordered
             fullWidth
-            color="primary"
+            color="black"
             size="lg"
             placeholder="A SHORT DESCRIPTION"
             contentLeft={<Text fill="currentColor" />}
@@ -129,7 +129,7 @@ const AddActivityModal = ({createActivity, currentUser}) => {
             clearable
             bordered
             fullWidth
-            color="primary"
+            color="black"
             size="lg"
             type="float"
             placeholder="HOW LONG IS YOUR EVENT?"
@@ -143,7 +143,7 @@ const AddActivityModal = ({createActivity, currentUser}) => {
             clearable
             bordered
             fullWidth
-            color="primary"
+            color="black"
             size="lg"
             placeholder="INSERT A LINK"
             contentLeft={<Text fill="currentColor" />}
