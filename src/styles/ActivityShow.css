@@ -1,5 +1,5 @@
 .activityShowBody {
-  display: flex;
+  margin-left: 20px;
 }
 
 button {
@@ -9,4 +9,9 @@ button {
   margin: 10px;
   border-radius: 5px;
   padding: 10px;
+}
+
+.cards {
+  display: flex;
+  margin-top: 30px;
 }

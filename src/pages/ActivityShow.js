@@ -17,12 +17,17 @@ const ActivityShow = ({activities, deleteActivity}) => {
 
   return (
     <>
-      <div className='activityShowBody'>
+      <div className='cards'>
         <PictureCard currentActivity={currentActivity}/>
-        <Card css={{ w: 500, h: "70vh" }}>
-    <Card.Header className='activity-card' css={{ position: "absolute", zIndex: 1, top: 5 }}>
-      <Col>
-        <Text size={24} weight="bold" transform="uppercase" color="white">{currentActivity?.category}</Text>
+        <div className='activityShowBody'>
+        <Card css={{ w: 400, h: "55vh" }}>
+          <Card.Header className='activity-card' css={{ color: 'white', bg: 'black' }}>
+          <Text size={24} weight="bold" transform="uppercase" color="white">{currentActivity?.category}</Text>
+    </Card.Header>
+    
+    <Card.Body css={{ p: 0, color: "#94f9f0" ,bg: "#030303" }}>
+    <Col>
+  
 
         <Text size={15} weight="bold" transform="uppercase" color="yellow">ACTIVITY NAME</Text>
 
@@ -50,27 +55,10 @@ const ActivityShow = ({activities, deleteActivity}) => {
         <Text size={13} h3 color="white">{currentActivity?.creator_id}</Text>
         
       </Col>
-    </Card.Header>
-    <Card.Body css={{ p: 0, color: "#94f9f0" ,bg: "#030303" }}>
     </Card.Body>
-    <Card.Footer
-      isBlurred
-      css={{
-        position: "absolute",
-        bgBlur: "#0f111466",
-        borderTop: "$borderWeights$light solid $gray800",
-        bottom: 0,
-        zIndex: 1,
-      }}
-    >
-      <Row>
-        <Col>
-          <Row>
-          </Row>
-        </Col>
-        <Col>
-          <Row justify="flex-end">
-            
+  </Card>
+  </div>
+  
             <NavLink to={`/`}>
               <button onClick={handleDelete}>DELETE</button>
             </NavLink>
@@ -82,14 +70,9 @@ const ActivityShow = ({activities, deleteActivity}) => {
             <NavLink to={`/activityedit/${currentActivity.id}`}>
               <button>EDIT</button>
             </NavLink>
-            
-          </Row>
-        </Col>
-      </Row>
-    </Card.Footer>
-  </Card>
+            </div>
         <AddActivityModal />
-      </div>
+
     </>
   )
 }

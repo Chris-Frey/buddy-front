@@ -31,49 +31,49 @@ const BrowseActivityModal = () => {
         </Modal.Header>
 
         <Modal.Body>
-        <NavLink to="/weight_lifting">
+        <NavLink to="/display/weight_lifting">
           <Text className="modal-title" auto color={"black"} weight={"bold"} size={20} onClick={closeHandler}>
             WEIGHT LIFTING
           </Text>
           </NavLink>
 
-          <NavLink to="/running">
+          <NavLink to="/display/running">
           <Text className="modal-title" color={"black"} weight={"bold"} size={20} onClick={closeHandler}>
             RUNNING
           </Text>
           </NavLink>
 
-          <NavLink to="/yoga">
+          <NavLink to="/display/yoga">
           <Text className="modal-title" color={"black"} weight={"bold"} size={20} onClick={closeHandler}>
             YOGA
           </Text>
           </NavLink>
 
-          <NavLink to="/basketball">
+          <NavLink to="/display/basketball">
           <Text className="modal-title" color={"black"} weight={"bold"} size={20} onClick={closeHandler}>
             BASKETBALL
           </Text>
           </NavLink>
 
-          <NavLink to="/soccer">
+          <NavLink to="/display/soccer">
           <Text className="modal-title" color={"black"} weight={"bold"} size={20} onClick={closeHandler}>
             SOCCER
           </Text>
           </NavLink>
 
-          <NavLink to="/hiking">
+          <NavLink to="/display/hiking">
           <Text className="modal-title" color={"black"} weight={"bold"} size={20} onClick={closeHandler}>
             HIKING
           </Text>
           </NavLink>
 
-          <NavLink to="/cycling">
+          <NavLink to="/display/cycling">
           <Text className="modal-title" color={"black"} weight={"bold"} size={20} onClick={closeHandler}>
             CYCLING
           </Text>
           </NavLink>
 
-          <NavLink to="/dancing">
+          <NavLink to="/display/dancing">
           <Text className="modal-title" color={"black"} weight={"bold"} size={20} onClick={closeHandler}>
             DANCING
           </Text>

@@ -32,12 +32,12 @@ const Header = ({currentUser, logout}) => {
         <Navbar.Content hideIn="xs">
           <NavLink to="/" >HOME</NavLink>
           <NavLink to="/aboutus" >ABOUT US</NavLink>
-          <NavLink to={`/buddyprofile/${currentUser?.id}` }>BUDDY PROFILE</NavLink>
+          <NavLink to={`/buddyprofile/${currentUser?.id}` } >BUDDY PROFILE</NavLink>
 
         </Navbar.Content>
 
       <Navbar.Content>
-        <Navbar.Link color="inherit" href="/LogIn" onClick={handleClick}>
+        <Navbar.Link color="black" href="/LogIn" onClick={handleClick} css={{color: 'black'}}>
           LOG OUT
         </Navbar.Link>
         <Navbar.Item>

@@ -3,6 +3,7 @@ import AddActivityModal from '../components/AddActivityModal/AddActivityModal'
 import ActivityCard from '../components/ActivityCard'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import styles from '../styles/Home.css'
 
 
 const Home = (props) => {
@@ -72,7 +73,8 @@ const Home = (props) => {
 
   return (
     <>
-    <h3>ACTIVITIES HAPPENING IN THE NEXT<br/>30 MIN</h3>
+    <body>
+    <h3 className='title'>ACTIVITIES HAPPENING IN THE NEXT<br/><span className='time-frame'>30 MIN</span></h3>
     <Carousel 
       partialVisible
       infinite
@@ -81,7 +83,7 @@ const Home = (props) => {
         {activityFilter800}
     </Carousel>
 
-    <h3>ACTIVITIES HAPPENING IN THE NEXT<br/>HOUR</h3>
+    <h3 className='title'>ACTIVITIES HAPPENING IN THE NEXT<br/><span className='time-frame'>1 HOUR</span></h3>
     <Carousel 
       partialVisible
       infinite
@@ -90,7 +92,7 @@ const Home = (props) => {
     {activityFilter900}
     </Carousel>
 
-    <h3>ACTIVITIES HAPPENING IN THE NEXT<br/>2 HOURS</h3>
+    <h3 className='title'>ACTIVITIES HAPPENING IN THE NEXT<br/><span className='time-frame'>2 HOURS</span></h3>
     <Carousel 
       partialVisible
       infinite
@@ -99,7 +101,7 @@ const Home = (props) => {
     {activityFilter1100}
     </Carousel>
 
-    <h3>ACTIVITIES HAPPENING IN THE NEXT<br/>4 HOURS</h3>
+    <h3 className='title'>ACTIVITIES HAPPENING IN THE NEXT<br/><span className='time-frame'>4 HOURS</span></h3>
     <Carousel 
       partialVisible
       infinite
@@ -108,7 +110,7 @@ const Home = (props) => {
     {activityFilter1500}
     </Carousel>
 
-    <h3>ACTIVITIES HAPPENING IN THE NEXT<br/>8 HOURS</h3>
+    <h3 className='title'>ACTIVITIES HAPPENING IN THE NEXT<br/><span className='time-frame'>8 HOURS</span></h3>
     <Carousel 
       partialVisible
       infinite
@@ -118,6 +120,7 @@ const Home = (props) => {
     </Carousel>
 
     <AddActivityModal currentUser={props.currentUser} activities={props.activities} createActivity={props.createActivity}/>
+    </body>
     </>
   )
 }

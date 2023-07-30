@@ -1,4 +1,12 @@
 body {
-  color: yellow;
+  /* color: yellow; */
   background-color: #020202;
+}
+
+.title {
+  color: white;
+}
+
+.time-frame {
+  color: #ffcd4e;
 }

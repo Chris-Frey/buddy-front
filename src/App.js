@@ -10,6 +10,7 @@ import SignUp from "./pages/SignUp";
 import ActivityEdit from "./pages/ActivityEdit";
 import ActivityFilter from "./pages/ActivityFilter";
 import AboutUs from "./pages/AboutUs";
+import Error from "./pages/Error";
 
 
 function App() {
@@ -140,13 +141,14 @@ const deleteActivity = (id) => {
       <Header currentUser={currentUser} logout={logout}/>
       <Routes>
         <Route path="/" element={<Home activities={activities} currentUser={currentUser} createActivity={createActivity} />} />
-        <Route path="/:category?" element={<ActivityFilter activities={activities}/>} />
+        <Route path="/display/:category?" element={<ActivityFilter activities={activities}/>} />
         <Route path="/buddyprofile/:id" element={<BuddyProfile currentUser={currentUser}/>} />
         <Route path="/login" element={<LogIn login={login}/>} />
         <Route path="/activityshow/:id" element={<ActivityShow activities={activities} updateActivity={updateActivity} deleteActivity={deleteActivity} />} />
         <Route path="/signup" element={<SignUp signup={signup}/>} />
         <Route path="/activityedit/:id" element={<ActivityEdit activities={activities} updateActivity={updateActivity}/>} />
         <Route path="/aboutus" element={<AboutUs />} />
+        <Route path="*" element={<Error />} />
       </Routes>
       </>
   );
