@@ -118,17 +118,6 @@ const SignUp = ({signup}) => {
             label="Gender Identity"
             placeholder="Enter gender"
             />
-        <Spacer y={1} />
-          <Input
-          clearable
-          color="warning"
-          helperText="bio"
-          width="300px"
-          name="bio"
-          type="text"
-          label="Bio"
-          placeholder="Enter bio"
-          />
         
   <div className="buttons">
        <Spacer y={1} />

@@ -37,7 +37,7 @@ const ActivityEdit = ({activities, updateActivity}) => {
         <PictureCard currentActivity={currentActivity}/>
         </div>
         <div className='card-body'>
-        <Card css={{ w: 400, h: "90vh", color: 'white' }}>
+        <Card css={{ w: 400, h: "80vh", color: 'white' }}>
           <Card.Header css={{ position: "absolute", zIndex: 1, top: 5 }}>
           </Card.Header>
           <Card.Body css={{ p: 5, color: "#94f9f0" ,bg: "white" }}>

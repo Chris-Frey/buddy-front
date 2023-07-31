@@ -36,14 +36,7 @@ const BuddyProfile = ({currentUser, userActivity, activities}) => {
           alt="Default Image"
           />
     <div className='pic_fields'>
-      {/* <Image
-        className="profile-image"
-        width={320}
-        height={180}  
-        src={currentUser.photo}
-        alt="User Image"
-        objectFit="cover" 
-      /> */}
+
 
         <Card className="profile-card" css={{ w: 400, h: "50vh", bg: "Black", pl: "30px"}}>
         <Card.Header css={{ position: "absolute", zIndex: 1, top: 5}}>
@@ -61,10 +54,6 @@ const BuddyProfile = ({currentUser, userActivity, activities}) => {
         <Text size={15} weight="bold" transform="uppercase" color="#FFCD4E">Gender Identity</Text>
 
         <Text size={13} h3 color="White"> {currentUser.gender_identity}</Text>        
-
-        {/* <Text size={15} weight="bold" transform="uppercase" color="#FFCD4E">your creator id</Text>
-
-        <Text size={13} h3 color="White"> {currentUser.id}</Text>    */}
 
         <Text size={15} weight="bold" transform="uppercase" color="#FFCD4E">My Events</Text>
 
