@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PictureCard from "../components/PictureCard";
 import { Card, Col, Row, Button, Text } from "@nextui-org/react";
 import AddActivityModal from '../components/AddActivityModal/AddActivityModal'
@@ -6,21 +6,37 @@ import { useParams, Link, NavLink } from "react-router-dom"
 import styles from '../styles/ActivityShow.css'
 
 
-const ActivityShow = ({activities, deleteActivity}) => {
-    const { id } = useParams()
-    let currentActivity = activities?.find((activity) => activity.id === +id)
-  
-    const handleDelete = () => {
-      deleteActivity(currentActivity?.id)
-    }
+const ActivityShow = ({activities, deleteActivity, currentUser, createUserActivity}) => {
 
+
+  const { id } = useParams()
+  let currentActivity = activities?.find((activity) => activity.id === +id)
+
+  const handleDelete = () => {
+    deleteActivity(currentActivity?.id)
+  }
+  console.log(currentUser.id)
+  const [userActivityState, setUserActivityState] = useState({
+    user_id: +"",
+    activity_id: currentActivity?.id 
+  })
+
+ 
+
+  const submitHandler = () => {
+    console.log(userActivityState);
+    createUserActivity(userActivityState)
+  
+  }
+
+     const buddyUp = currentUser.id
 
   return (
     <>
       <div className='cards'>
         <PictureCard currentActivity={currentActivity}/>
         <div className='activityShowBody'>
-        <Card css={{ w: 400, h: "55vh" }}>
+        <Card css={{ w: 400, h: "70vh" }}>
           <Card.Header className='activity-card' css={{ color: 'white', bg: 'black' }}>
           <Text size={24} weight="bold" transform="uppercase" color="white">{currentActivity?.category}</Text>
     </Card.Header>
@@ -52,7 +68,11 @@ const ActivityShow = ({activities, deleteActivity}) => {
 
         <Text size={15} weight="bold" transform="uppercase" color="yellow">CREATOR ID</Text>
 
-        <Text size={13} h3 color="white">{currentActivity?.creator_id}</Text>
+        <Text size={13} h3 color="white">{userActivityState.user_id}</Text>
+
+        <Text size={15} weight="bold" transform="uppercase" color="yellow">Attendees</Text>
+
+        <Text size={13} h3 color="white">{buddyUp}</Text>
         
       </Col>
     </Card.Body>
@@ -70,6 +90,9 @@ const ActivityShow = ({activities, deleteActivity}) => {
             <NavLink to={`/activityedit/${currentActivity.id}`}>
               <button>EDIT</button>
             </NavLink>
+
+              <button onClick={submitHandler}>Buddy Up</button>
+
             </div>
         <AddActivityModal />
 
@@ -78,3 +101,4 @@ const ActivityShow = ({activities, deleteActivity}) => {
 }
 
 export default ActivityShow
+

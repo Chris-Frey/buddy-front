@@ -73,7 +73,7 @@ const Home = (props) => {
 
   return (
     <>
-    <body>
+    <div className='body'>
     <h3 className='title'>ACTIVITIES HAPPENING IN THE NEXT<br/><span className='time-frame'>30 MIN</span></h3>
     <Carousel 
       partialVisible
@@ -120,7 +120,7 @@ const Home = (props) => {
     </Carousel>
 
     <AddActivityModal currentUser={props.currentUser} activities={props.activities} createActivity={props.createActivity}/>
-    </body>
+    </div>
     </>
   )
 }
