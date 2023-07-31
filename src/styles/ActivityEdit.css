@@ -1,0 +1,11 @@
+.activityEditBody {
+  display: flex;
+  justify-content: center;
+  margin-right: 140px;
+  margin-top: 50px;
+}
+
+.edit-pic {
+  margin-right: 150px;
+  margin-top: 50px;
+}
