@@ -15,21 +15,21 @@ const ActivityShow = ({activities, deleteActivity, currentUser, createUserActivi
   const handleDelete = () => {
     deleteActivity(currentActivity?.id)
   }
-  console.log(currentUser.id)
+ 
   const [userActivityState, setUserActivityState] = useState({
-    user_id: +"",
+    user_id: currentUser?.id,
     activity_id: currentActivity?.id 
   })
 
- 
+  const [buddyUp, setBuddyUp] = useState(false)
 
   const submitHandler = () => {
-    console.log(userActivityState);
+      setBuddyUp(!buddyUp)
     createUserActivity(userActivityState)
   
   }
 
-     const buddyUp = currentUser.id
+  
 
   return (
     <>
@@ -68,11 +68,13 @@ const ActivityShow = ({activities, deleteActivity, currentUser, createUserActivi
 
         <Text size={15} weight="bold" transform="uppercase" color="yellow">CREATOR ID</Text>
 
-        <Text size={13} h3 color="white">{userActivityState.user_id}</Text>
+        <Text size={13} h3 color="white">{currentUser?.id}</Text>
 
         <Text size={15} weight="bold" transform="uppercase" color="yellow">Attendees</Text>
 
-        <Text size={13} h3 color="white">{buddyUp}</Text>
+        {buddyUp?
+          <Text size={13} h3 color="white">{currentUser.name}</Text>
+        :null}
         
       </Col>
     </Card.Body>
@@ -91,7 +93,7 @@ const ActivityShow = ({activities, deleteActivity, currentUser, createUserActivi
               <button>EDIT</button>
             </NavLink>
 
-              <button onClick={submitHandler}>Buddy Up</button>
+              <button onClick={submitHandler} >Buddy Up</button>
 
             </div>
         <AddActivityModal />
