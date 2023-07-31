@@ -1,106 +1,182 @@
-import React, { useState } from 'react'
-import PictureCard from "../components/PictureCard";
-import { Card, Col, Row, Button, Text } from "@nextui-org/react";
-import AddActivityModal from '../components/AddActivityModal/AddActivityModal'
-import { useParams, Link, NavLink } from "react-router-dom"
-import styles from '../styles/ActivityShow.css'
+import { Routes, Route } from "react-router-dom"
+import { useState, useEffect } from "react";
+import './App.css';
+import Header from './components/Header/Header'
+import Home from "./pages/Home";
+import BuddyProfile from "./pages/BuddyProfile";
+import LogIn from "./pages/LogIn";
+import ActivityShow from "./pages/ActivityShow";
+import SignUp from "./pages/SignUp";
+import ActivityEdit from "./pages/ActivityEdit";
+import ActivityFilter from "./pages/ActivityFilter";
+import AboutUs from "./pages/AboutUs";
+import Error from "./pages/Error";
 
 
-const ActivityShow = ({activities, deleteActivity, currentUser, createUserActivity}) => {
+function App() {
+  const [currentUser, setCurrentUser] = useState(null)
+  const [activities, setActivities] = useState([])
+  const [userActivity, setUserActivity] = useState([])
+  const url = "http://localhost:3000"
+// const url = "buddy-backend.onrender.com"
 
+useEffect(() => {
+  readActivity()
+}, [])
 
-  const { id } = useParams()
-  let currentActivity = activities?.find((activity) => activity.id === +id)
-
-  const handleDelete = () => {
-    deleteActivity(currentActivity?.id)
+useEffect(() => {
+  const loggedInUser = localStorage.getItem("token")
+  if (loggedInUser) {
+    setCurrentUser(loggedInUser)
   }
- 
-  const [userActivityState, setUserActivityState] = useState({
-    user_id: currentUser?.id,
-    activity_id: currentActivity?.id 
+  readActivity()
+}, [])
+
+//user_activities
+  useEffect(() => {
+    readUserActivity();
+  }, [])
+
+  const readUserActivity = () => {
+    fetch(`${url}/user_activities/`)
+    .then((response) => response.json())
+    .then((payload) => {
+      setUserActivity(payload)
+    })
+    .catch((error) => console.log(error))
+  }
+  console.log(userActivity)
+
+  const createUserActivity = (activity) => {
+  fetch(`${url}/user_activities`, {
+    body: JSON.stringify(activity),
+    headers: {"Content-Type": "application/json"},
+    method: "POST"
   })
-
-  const [buddyUp, setBuddyUp] = useState(false)
-
-  const submitHandler = () => {
-      setBuddyUp(!buddyUp)
-    createUserActivity(userActivityState)
-  
+    .then((response) => response.json())
+    .then((payload) => readUserActivity())
+    .catch((errors) => console.log("Activity create errors:", errors))
   }
 
-  
-
-  return (
-    <>
-      <div className='cards'>
-        <PictureCard currentActivity={currentActivity}/>
-        <div className='activityShowBody'>
-        <Card css={{ w: 400, h: "70vh" }}>
-          <Card.Header className='activity-card' css={{ color: 'white', bg: 'black' }}>
-          <Text size={24} weight="bold" transform="uppercase" color="white">{currentActivity?.category}</Text>
-    </Card.Header>
-    
-    <Card.Body css={{ p: 0, color: "#94f9f0" ,bg: "#030303" }}>
-    <Col>
-  
-
-        <Text size={15} weight="bold" transform="uppercase" color="yellow">ACTIVITY NAME</Text>
-
-        <Text size={13} h3 color="white">
-        {currentActivity?.activity_name}</Text>
-
-        <Text size={15} weight="bold" transform="uppercase" color="yellow">Time</Text>
-
-        <Text size={13} h3 color="white">{currentActivity?.start_time}</Text>
-
-        <Text size={15} weight="bold" transform="uppercase" color="yellow">Duration</Text>
-
-        <Text size={13} h3 color="white"> {currentActivity?.duration}</Text>
-
-        <Text size={15} weight="bold" transform="uppercase" color="yellow">Location</Text>
-
-        <Text size={13} h3 color="white"> {currentActivity?.location}</Text>
-
-        <Text size={15} weight="bold" transform="uppercase" color="yellow">Info</Text>
-
-        <Text size={13} h3 color="white">{currentActivity?.description}</Text>
-
-        <Text size={15} weight="bold" transform="uppercase" color="yellow">CREATOR ID</Text>
-
-        <Text size={13} h3 color="white">{currentUser?.id}</Text>
-
-        <Text size={15} weight="bold" transform="uppercase" color="yellow">Attendees</Text>
-
-        {buddyUp?
-          <Text size={13} h3 color="white">{currentUser.name}</Text>
-        :null}
-        
-      </Col>
-    </Card.Body>
-  </Card>
-  </div>
-  
-            <NavLink to={`/`}>
-              <button onClick={handleDelete}>DELETE</button>
-            </NavLink>
-
-            <NavLink to={`/`}>
-              <button>CANCEL</button>
-            </NavLink>
-
-            <NavLink to={`/activityedit/${currentActivity.id}`}>
-              <button>EDIT</button>
-            </NavLink>
-
-              <button onClick={submitHandler} >Buddy Up</button>
-
-            </div>
-        <AddActivityModal />
-
-    </>
-  )
+// authentication methods
+const login = (userInfo) => {
+  fetch(`${url}/login`, {
+    body: JSON.stringify(userInfo),
+    headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    method: "POST"
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw Error(response.statusText)
+    }
+    // store the token
+    localStorage.setItem("token", response.headers.get("Authorization"))
+    return response.json()
+  })
+  .then(payload => {
+    setCurrentUser(payload)
+  })
+  .catch(error => console.log("login errors: ", error))
 }
 
-export default ActivityShow
+const signup = (userInfo) => {
+  fetch(`${url}/signup`, {
+    body: JSON.stringify(userInfo),
+    headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    method: "POST"
+  })
+  .then(response => {
+      if (!response.ok) {
+      throw Error(response.statusText)
+    }
+    // store the token
+  localStorage.setItem("token", response.headers.get("Authorization"))
+  return response.json()
+  })
+  .then(payload => {
+    setCurrentUser(payload)
+  })
+  .catch(error => console.log("login errors: ", error))
+}
 
+const logout = () => {
+  fetch(`${url}/logout`, {
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": localStorage.getItem("token") //retrieve the token
+    },
+    method: "DELETE"
+  })
+  .then(payload => {
+    localStorage.removeItem("token")  // remove the token
+    setCurrentUser(null)
+  })
+  .catch(error => console.log("log out errors: ", error))
+}
+
+const readActivity = () => {
+  fetch(`${url}/activities`)
+    .then((response) => response.json())
+    .then((payload) => {
+      setActivities(payload)
+    })
+    .catch((error) => console.log(error))
+}
+
+const createActivity = (activity) => {
+  fetch(`${url}/activities`, {
+    body: JSON.stringify(activity),
+    headers: {"Content-Type": "application/json"},
+    method: "POST"
+  })
+    .then((response) => response.json())
+    .then((payload) => readActivity())
+    .catch((errors) => console.log("Activity create errors:", errors))
+}
+
+const updateActivity = (activity, id) => {
+  fetch(`${url}/activities/${id}/`, {
+    body: JSON.stringify(activity),
+    headers: {"Content-Type": "application/json"},
+    method: "PATCH"
+  })
+    .then((response) => response.json())
+    .then((payload) => readActivity())
+    .catch((errors) => console.log("Activity update errors:", errors))
+}
+
+const deleteActivity = (id) => {
+  fetch(`${url}/activities/${id}`, {
+    headers: {"Content-Type": "application/json"},
+    method: "DELETE"
+  })
+    .then((response) => response.json())
+    .then((payload) => readActivity())
+    .catch((errors) => console.log("delete errors:", errors))
+}
+
+  return (
+      <>
+      <Header currentUser={currentUser} logout={logout}/>
+      <Routes>
+        <Route path="/" element={<Home activities={activities} currentUser={currentUser} createActivity={createActivity} />} />
+        <Route path="/display/:category?" element={<ActivityFilter activities={activities}/>} />
+        <Route path="/buddyprofile/:id" element={<BuddyProfile currentUser={currentUser} userActivity={userActivity} activities={activities}/>} />
+        <Route path="/login" element={<LogIn login={login}/>} />
+        <Route path="/activityshow/:id" element={<ActivityShow activities={activities} currentUser={currentUser} updateActivity={updateActivity} deleteActivity={deleteActivity} createUserActivity={createUserActivity}/>} />
+        <Route path="/signup" element={<SignUp signup={signup}/>} />
+        <Route path="/activityedit/:id" element={<ActivityEdit activities={activities} updateActivity={updateActivity}/>} />
+        <Route path="/aboutus" element={<AboutUs />} />
+        <Route path="*" element={<Error />} />
+      </Routes>
+      </>
+  );
+}
+
+export default App;
