@@ -28,6 +28,10 @@ button {
   height: 80px;
   width: 80px;
 }
+.show_button:hover {
+transform: scale(1.07);
+cursor: pointer;
+}
 #pic_card_links{
 display: flex;
 }

@@ -23,3 +23,6 @@
   height: 50px;
   width: 50px;
 }
+.home_card:hover{
+  transform: scale(1.07);
+}

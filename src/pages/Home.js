@@ -96,11 +96,12 @@ const Home = (props) => {
 
     <h3 className='title'>ACTIVITIES HAPPENING IN THE NEXT<br/><span className='time-frame'>2 HOURS</span></h3>
     <Carousel 
+   
       partialVisible
       infinite
       responsive={responsive}
       >
-    {activityFilter1100}
+      {activityFilter1100}
     </Carousel>
 
     <h3 className='title'>ACTIVITIES HAPPENING IN THE NEXT<br/><span className='time-frame'>4 HOURS</span></h3>
