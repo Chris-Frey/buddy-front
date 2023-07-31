@@ -1,7 +1,8 @@
 import React, {useRef} from "react";
-import { Input, useInput, Grid, Button, Text } from "@nextui-org/react";
+import { Input, useInput, Spacer, Button, Text } from "@nextui-org/react";
 import { NavLink } from 'react-router-dom'
 import { useNavigate } from "react-router-dom";
+import styles from "../styles/SignUp.css"
 
 const SignUp = ({signup}) => {
   const formRef = useRef ()
@@ -38,136 +39,140 @@ const SignUp = ({signup}) => {
   
   return (
     <>
-    <Grid.Container gap={2}>
+    <div className="title">
+    <img src="/buddy.png"/>
+    <h1 id="buddy">BUDDY</h1>
+    </div>
       <form ref={formRef} onSubmit={handleSubmit}>
-      <Grid>
-        <Input
-          {...bindings}
-          clearable
-          shadow={false}
-          onClearClick={reset}
-          status={helper.color}
-          color="warning"
-          
-          helperColor={helper.color}
-          helperText={helper.text}
-          type="email"
-          name="email"
-          label="Email"
-          placeholder="Enter email"
-          />
-      </Grid>
-      <Grid>
-        <Input
-          clearable
-          color="warning"
-          helperText="Please enter your name"
-          type="text"
-          label="Name"
-          name="name"
-          placeholder="Enter your name"
-          />
-      </Grid>
-      <Grid>
-        <Input
-          clearable
-          color="warning"
-          helperText="Excellent username"
-          name="username"
-          type="text"
-          label="Username"
-          placeholder="Enter your username"
-          />
-      </Grid>
-      <Grid>
-        <Input.Password
-          clearable
-          color="warning"
-          helperText="Insecure password"
-          name="password"
-          type="password"
-          label="Password"
-          placeholder="Enter your password"
-          />
-      </Grid>
-      <Grid>
-        <Input.Password
-          clearable
-          color="warning"
-          helperText="Insecure password"
-          name="password_confirmation"
-          type="password"
-          label="Confirm Password"
-          placeholder="Confirm your password"
-          />
-      </Grid>
-      <Grid>
-        <Input
-          clearable
-          color="warning"
-          initialValue=""
-          helperText="Excellent username"
-          name="gender_identity"
-          type="text"
-          label="Gender Identity"
-          placeholder="Enter gender"
-          />
-      </Grid>
-      {/* <Grid>
-        <Input
+        <div className="container">
+        <Spacer y={1} />
+            <Input
+            {...bindings}
+            clearable
+            width="300px"
+            shadow={false}
+            onClearClick={reset}
+            status={helper.color}
+            color="warning"
+            
+            helperColor={helper.color}
+            helperText={helper.text}
+            type="email"
+            name="email"
+            label="Email"
+            placeholder="Enter email"
+            />
+        <Spacer y={1} />
+          <Input
+            clearable
+            color="warning"
+            helperText="Please enter your name"
+            width="300px"
+            type="text"
+            label="Name"
+            name="name"
+            placeholder="Enter your name"
+            />
+        <Spacer y={1} />
+          <Input
+            clearable
+            color="warning"
+            width="300px"
+            helperText="Excellent username"
+            name="username"
+            type="text"
+            label="Username"
+            placeholder="Enter your username"
+            />
+        <Spacer y={1} />
+          <Input.Password
+            clearable
+            color="warning"
+            helperText="Insecure password"
+            width="300px"
+            name="password"
+            type="password"
+            label="Password"
+            placeholder="Enter your password"
+            />
+        <Spacer y={1} />
+          <Input.Password
+            clearable
+            color="warning"
+            helperText="Insecure password"
+            name="password_confirmation"
+            width="300px"
+            type="password"
+            label="Confirm Password"
+            placeholder="Confirm your password"
+            />
+        <Spacer y={1} />
+          <Input
+            clearable
+            color="warning"
+            initialValue=""
+            width="300px"
+            helperText="Excellent username"
+            name="gender_identity"
+            type="text"
+            label="Gender Identity"
+            placeholder="Enter gender"
+            />
+        <Spacer y={1} />
+          <Input
           clearable
           color="warning"
           helperText="bio"
+          width="300px"
           name="bio"
           type="text"
           label="Bio"
           placeholder="Enter bio"
           />
-      </Grid> */}
+        
+  <div className="buttons">
+       <Spacer y={1} />
 
-      <Grid>
-
-      <Button
-            onClick={handleSubmit}
-            flat
-            auto
-            rounded
-            css={{ color: "black", bg: "#FFCD4E" }}
-            >
-            <Text
-              css={{ color: "inherit" }}
-              size={12}
-              weight="bold"
-              transform="uppercase"
-              >
-              Sign Up
-            </Text>
-          </Button>
-      </Grid>
-      <Grid>
-      <NavLink to="/login">
         <Button
-                // onClick={handleSubmit}
-                flat
-                auto
-                rounded
-                css={{ color: "black", bg: "#FFCD4E" }}
+              onClick={handleSubmit}
+              flat
+              auto
+              rounded
+              css={{ color: "black", bg: "#FFCD4E" }}
+              >
+              <Text
+                css={{ color: "inherit" }}
+                size={12}
+                weight="bold"
+                transform="uppercase"
                 >
-                <Text
-                  css={{ color: "inherit" }}
-                  size={12}
-                  weight="bold"
-                  transform="uppercase"
+                Sign Up
+              </Text>
+            </Button>
+        <Spacer y={1} />
+        <NavLink to="/login">
+          <Button
+                  // onClick={handleSubmit}
+                  flat
+                  auto
+                  rounded
+                  css={{ color: "black", bg: "#FFCD4E" }}
                   >
-                  LogIn
-                </Text>
-              </Button>
-            </NavLink>
-      </Grid>
-    </form>
-      
-    </Grid.Container>
-  </>
+                  <Text
+                    css={{ color: "inherit" }}
+                    size={12}
+                    weight="bold"
+                    transform="uppercase"
+                    >
+                    LogIn
+                  </Text>
+                </Button>
+              </NavLink>
+        {/* </Grid> */}
+      </div>
+      </div>
+      </form>
+    </>
   );
 };
 

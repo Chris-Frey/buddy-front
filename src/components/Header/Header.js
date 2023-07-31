@@ -8,6 +8,7 @@ import {Link} from "react-router-dom"
 import Logo from "./Logo.js"
 
 
+
 const Header = ({currentUser, logout}) => {
   const navigate = useNavigate()
   const handleClick = () => {
@@ -16,7 +17,9 @@ const Header = ({currentUser, logout}) => {
   }
   const [variant, setVariant] = React.useState("static");
   const colors = ["primary", "secondary", "success", "warning", "error"]
- 
+ const styled = {
+  color: 'black',
+ }
   
   return (
       <>
@@ -30,19 +33,19 @@ const Header = ({currentUser, logout}) => {
             <Logo/>
            <img width={100}  src="/buddy.png"/>
            
-            <Text b color="black" hideIn="xs">
+            <Text b color="black" weight={"bold"} size={30} hideIn="xs">
               BUDDY
             </Text>
           </Navbar.Brand>
-        <Navbar.Content hideIn="xs">
-          <NavLink to="/" >HOME</NavLink>
-          <NavLink to="/aboutus" >ABOUT US</NavLink>
-          <NavLink to={`/buddyprofile/${currentUser?.id}` } >BUDDY PROFILE</NavLink>
+        <Navbar.Content>
+          <NavLink style={styled} to="/" >HOME</NavLink>
+          <NavLink style={styled} to="/aboutus" >ABOUT US</NavLink>
+          <NavLink style={styled} to={`/buddyprofile/${currentUser?.id}` } >BUDDY PROFILE</NavLink>
 
         </Navbar.Content>
 
       <Navbar.Content>
-        <Navbar.Link color="black" href="/LogIn" onClick={handleClick} css={{color: 'black'}}>
+        <Navbar.Link href="/LogIn" onClick={handleClick}>
           LOG OUT
         </Navbar.Link>
         <Navbar.Item>

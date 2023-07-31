@@ -28,7 +28,6 @@ const LogIn = ({login}) => {
       <Input.Password width="250px" labelPlaceholder="Password" type='password' name='password' initialValue="" color="warning"/>
       <Spacer y={1.5} />
       <div className='buttons'>
-
         <Grid>
         <Link to="/Home">
           <Button 
@@ -50,7 +49,6 @@ const LogIn = ({login}) => {
           </Link>
         </Grid>
       </div>
- 
     </div>
     </form>
   </>
