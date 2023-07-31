@@ -4,6 +4,7 @@ import { Card, Col, Row, Button, Text, Input } from "@nextui-org/react";
 import PictureCard from "../components/PictureCard";
 import { Link, NavLink } from 'react-router-dom'
 import AddActivityModal from '../components/AddActivityModal/AddActivityModal'
+import styles from "../styles/ActivityEdit.css";
 
 const ActivityEdit = ({activities, updateActivity}) => {
     const { id } = useParams()
@@ -32,12 +33,14 @@ const ActivityEdit = ({activities, updateActivity}) => {
     <>
       <div>Your Activity</div>
       <div className='activityEditBody'>
+        <div className='edit-pic'>
         <PictureCard currentActivity={currentActivity}/>
-
-        <Card css={{ w: 500, h: "75vh" }}>
+        </div>
+        <div className='card-body'>
+        <Card css={{ w: 400, h: "90vh", color: 'white' }}>
           <Card.Header css={{ position: "absolute", zIndex: 1, top: 5 }}>
           </Card.Header>
-          <Card.Body css={{ p: 0, color: "#94f9f0" ,bg: "white" }}>
+          <Card.Body css={{ p: 5, color: "#94f9f0" ,bg: "white" }}>
             <Input
               onChange={handleChange} 
               name='category'
@@ -46,12 +49,13 @@ const ActivityEdit = ({activities, updateActivity}) => {
               clearable
               bordered
               fullWidth
-              color="primary"
+              color="black"
               size="lg"
               placeholder={currentActivity?.category}
-              contentLeft={<Text fill="currentColor" />}
+              contentLeft={<Text fill="white" />}
             />
             <Input
+            text="white"
               onChange={handleChange} 
               name='activity_name'
               value={changeActivity?.activity_name}
@@ -59,7 +63,7 @@ const ActivityEdit = ({activities, updateActivity}) => {
               clearable
               bordered
               fullWidth
-              color="primary"
+              color="black"
               size="lg"
               placeholder={currentActivity?.activity_name}
               contentLeft={<Text fill="currentColor" />}
@@ -72,7 +76,7 @@ const ActivityEdit = ({activities, updateActivity}) => {
               clearable
               bordered
               fullWidth
-              color="primary"
+              color="black"
               size="lg"
               placeholder={currentActivity?.start_time}
               contentLeft={<Text fill="currentColor" />}
@@ -85,7 +89,7 @@ const ActivityEdit = ({activities, updateActivity}) => {
               clearable
               bordered
               fullWidth
-              color="primary"
+              color="black"
               size="lg"
               placeholder={currentActivity?.location}
               contentLeft={<Text fill="currentColor" />}
@@ -98,7 +102,7 @@ const ActivityEdit = ({activities, updateActivity}) => {
               clearable
               bordered
               fullWidth
-              color="primary"
+              color="black"
               size="lg"
               placeholder={currentActivity?.description}
               contentLeft={<Text fill="currentColor" />}
@@ -111,7 +115,7 @@ const ActivityEdit = ({activities, updateActivity}) => {
               clearable
               bordered
               fullWidth
-              color="primary"
+              color="black"
               size="lg"
               type="float"
               placeholder={currentActivity?.duration}
@@ -125,7 +129,7 @@ const ActivityEdit = ({activities, updateActivity}) => {
               clearable
               bordered
               fullWidth
-              color="primary"
+              color="black"
               size="lg"
               placeholder={currentActivity?.activity_photo}
               contentLeft={<Text fill="currentColor" />}
@@ -157,6 +161,7 @@ const ActivityEdit = ({activities, updateActivity}) => {
             </Row>
           </Card.Footer>
         </Card>
+        </div>
         <AddActivityModal />
       </div>
     </>
@@ -164,3 +169,4 @@ const ActivityEdit = ({activities, updateActivity}) => {
 }
 
 export default ActivityEdit
+
