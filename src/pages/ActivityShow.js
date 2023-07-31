@@ -4,6 +4,7 @@ import { Card, Col, Row, Button, Text } from "@nextui-org/react";
 import AddActivityModal from '../components/AddActivityModal/AddActivityModal'
 import { useParams, Link, NavLink } from "react-router-dom"
 import styles from '../styles/ActivityShow.css'
+import shadows from '@mui/material/styles/shadows';
 
 
 const ActivityShow = ({activities, deleteActivity, currentUser, createUserActivity}) => {
@@ -37,11 +38,11 @@ const ActivityShow = ({activities, deleteActivity, currentUser, createUserActivi
         <div className='card_and_links'>
         <div className='activityShowBody'>
         <Card css={{ w: 400, h: "70vh" }}>
-          <Card.Header className='activity-card' css={{ color: 'white', bg: 'black' }}>
+          <Card.Header  className='activity-card' css={{ pl: 150, color: 'white', bg: 'black'}}>
           <Text size={24} weight="bold" transform="uppercase" color="white">{currentActivity?.category}</Text>
     </Card.Header>
     
-    <Card.Body css={{ p: 0, color: "#94f9f0" ,bg: "#030303" }}>
+    <Card.Body css={{ pl: 50, color: "#94f9f0" ,bg: "#030303" }}>
  
         <Text size={15} weight="bold" transform="uppercase" color="#FFCD4E">ACTIVITY NAME</Text>
 

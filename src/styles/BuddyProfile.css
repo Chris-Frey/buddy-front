@@ -2,6 +2,8 @@
   display:flex;
   color: #FFCD4E;
   padding-bottom: 30px;
+  margin-left: 330px;
+  margin-top: 35px;
 }
 
 p {
@@ -9,14 +11,19 @@ p {
   flex-direction: row;
 }
 
-.profile-image {
-  justify-content: left;
+.profileimg1{
   color: white;
-  border-radius: 40px;
+  height: 400px;
+  width: auto;
+  border-radius: 50px;
+  margin-right: 60px;
+  margin-top: 20px;
+  
 }
 
 .profile-card{
   color: white;
+  padding-right: 400px;
 }
 
 .card_container {
@@ -25,11 +32,15 @@ p {
   margin-top: 50px;
 }
 
-.pic_fields{
+/* .pic_fields{
   display: flex;
-  justify-content: space-between;
-}
+  justify-content: space-around;
+} */
 
 .activity-list {
   color: white;
+}
+.pic_info_buddy{
+  display: flex;
+  justify-content: center;
 }
