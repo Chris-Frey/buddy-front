@@ -39,7 +39,7 @@ const SignUp = ({signup}) => {
   
   return (
     <>
-    <div className="title">
+    <div className="title_logo">
     <img src="/buddy.png"/>
     <h1 id="buddy">BUDDY</h1>
     </div>

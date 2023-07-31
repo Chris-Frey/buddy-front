@@ -20,6 +20,10 @@ const LogIn = ({login}) => {
 
   return (
     <>
+    <div className="title_logo">
+    <img src="/buddy.png"/>
+    <h1 id="buddy">BUDDY</h1>
+    </div>
     <form ref={formRef} onSubmit={handleSubmit}>
     <div className='container-card'>
       <Spacer y={2.5} />

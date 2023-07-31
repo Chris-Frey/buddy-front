@@ -4,7 +4,7 @@ import ActivityCard from '../components/ActivityCard'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { useParams } from "react-router-dom"
-
+import styles from "../styles/ActivityFilter.css"
 const ActivityFilter = (props) => {
 
   const { category } = useParams()
@@ -40,7 +40,7 @@ const ActivityFilter = (props) => {
   return (
     <>
 
-  <h3>ACTIVITIES HAPPENING <br/>SOON</h3>
+  <h3 className='filter_page_titles'>ACTIVITIES HAPPENING <br/>SOON</h3>
     <Carousel 
       partialVisible
       infinite

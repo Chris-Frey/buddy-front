@@ -9,7 +9,7 @@
     flex-direction: column;
     align-items: center;
 }
-.title {
+.title_logo {
     display: flex;
     flex-direction: row;
     justify-content: center;
