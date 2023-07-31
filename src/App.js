@@ -167,7 +167,7 @@ const deleteActivity = (id) => {
       <Routes>
         <Route path="/" element={<Home activities={activities} currentUser={currentUser} createActivity={createActivity} />} />
         <Route path="/display/:category?" element={<ActivityFilter activities={activities}/>} />
-        <Route path="/buddyprofile/:id" element={<BuddyProfile currentUser={currentUser}/>} />
+        <Route path="/buddyprofile/:id" element={<BuddyProfile currentUser={currentUser} userActivity={userActivity} activities={activities}/>} />
         <Route path="/login" element={<LogIn login={login}/>} />
         <Route path="/activityshow/:id" element={<ActivityShow activities={activities} currentUser={currentUser} updateActivity={updateActivity} deleteActivity={deleteActivity} createUserActivity={createUserActivity}/>} />
         <Route path="/signup" element={<SignUp signup={signup}/>} />
