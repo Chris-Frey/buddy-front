@@ -6,6 +6,7 @@ import "react-multi-carousel/lib/styles.css";
 import styles from '../styles/Home.css'
 
 
+
 const Home = (props) => {
   //parameters for carousel
   const responsive = {
@@ -65,15 +66,20 @@ const Home = (props) => {
 
   const activityFilter2300 = props.activities?.filter(value => {
     return +value.start_time >= 1500 && +value.start_time < 2300
-   })
-   .map((value,index) => {
+  })
+  .map((value,index) => {
     return <div><ActivityCard activities={value} key={index}/></div>
   })
-
-
+  
+  
   return (
     <>
+<<<<<<< Updated upstream
     <div className='body'>
+=======
+    <body>
+    <AddActivityModal className='add_activity_button' currentUser={props.currentUser} activities={props.activities} createActivity={props.createActivity}/>
+>>>>>>> Stashed changes
     <h3 className='title'>ACTIVITIES HAPPENING IN THE NEXT<br/><span className='time-frame'>30 MIN</span></h3>
     <Carousel 
       partialVisible
@@ -119,8 +125,12 @@ const Home = (props) => {
     {activityFilter2300}
     </Carousel>
 
+<<<<<<< Updated upstream
     <AddActivityModal currentUser={props.currentUser} activities={props.activities} createActivity={props.createActivity}/>
     </div>
+=======
+    </body>
+>>>>>>> Stashed changes
     </>
   )
 }

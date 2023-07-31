@@ -39,11 +39,13 @@ const AddActivityModal = ({createActivity, currentUser}) => {
   }
 
   return (
-    <div>
-
-      <Button auto color={"black"} css={{bg:"#FFCD4E"}}onClick={handler}>
+    <>
+      <div>
+      <Button className="button" auto color={"black"} css={{bg:"#FFCD4E", margin:"0"}}onClick={handler}>
         Add Activity
       </Button>
+      <div/>
+    
       <Modal
         css={{bg:"#FFCD4E"}}
         closeButton
@@ -51,7 +53,7 @@ const AddActivityModal = ({createActivity, currentUser}) => {
         aria-labelledby="modal-title"
         open={visible}
         onClose={closeHandler}
-      >
+        >
         <Modal.Header>
           <Text id="modal-title" weight={"bold"} size={25}>
             CREATE AN ACTIVITY
@@ -71,7 +73,7 @@ const AddActivityModal = ({createActivity, currentUser}) => {
             size="lg"
             placeholder="WHICH CATEGORY IS YOUR ACTIVITY IN?"
             contentLeft={<Text fill="currentColor" />}
-          />
+            />
           <Input
             onChange={handleChange} 
             name='activity_name'
@@ -84,7 +86,7 @@ const AddActivityModal = ({createActivity, currentUser}) => {
             size="lg"
             placeholder="GIVE IT A NAME"
             contentLeft={<Text fill="currentColor" />}
-          />
+            />
           <Input
             onChange={handleChange} 
             name='start_time'
@@ -97,7 +99,7 @@ const AddActivityModal = ({createActivity, currentUser}) => {
             size="lg"
             placeholder="WHEN DO YOU WANT TO START?"
             contentLeft={<Text fill="currentColor" />}
-          />
+            />
           <Input
             onChange={handleChange} 
             name='location'
@@ -110,7 +112,7 @@ const AddActivityModal = ({createActivity, currentUser}) => {
             size="lg"
             placeholder="ADDRESS OF ACTIVITY"
             contentLeft={<Text fill="currentColor" />}
-          />
+            />
           <Input
             onChange={handleChange} 
             name='description'
@@ -123,7 +125,7 @@ const AddActivityModal = ({createActivity, currentUser}) => {
             size="lg"
             placeholder="A SHORT DESCRIPTION"
             contentLeft={<Text fill="currentColor" />}
-          />
+            />
           <Input
             onChange={handleChange} 
             name='duration'
@@ -137,7 +139,7 @@ const AddActivityModal = ({createActivity, currentUser}) => {
             type="float"
             placeholder="HOW LONG IS YOUR EVENT?"
             contentLeft={<Text fill="currentColor" />}
-          />
+            />
           <Input
             onChange={handleChange} 
             name='activity_photo'
@@ -150,7 +152,7 @@ const AddActivityModal = ({createActivity, currentUser}) => {
             size="lg"
             placeholder="INSERT A LINK"
             contentLeft={<Text fill="currentColor" />}
-          />
+            />
         </Modal.Body>
 
         <Modal.Footer justify="space-around">
@@ -164,7 +166,9 @@ const AddActivityModal = ({createActivity, currentUser}) => {
         </Modal.Footer>
       </Modal>
     </div>
+    </>
   );
 }
+            
 
 export default AddActivityModal

@@ -1,10 +1,11 @@
-button {
+/* .add_activity_button {
   z-index: 1;
-  position: absolute;
-  background-color: #FFCD4E;
+  position: fixed;
+  /* right: 100px; */
+  /* background-color: #FFCD4E;
   border: none;
   width: 50px;
   height: 50px;
   border-radius: 100%;
-  font-size: 30px;
-}
+  font-size: 30px; */ 
+/* } */

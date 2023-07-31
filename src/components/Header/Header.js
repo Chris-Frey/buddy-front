@@ -1,10 +1,12 @@
 import React from "react";
 import { Navbar, Text, css } from "@nextui-org/react";
 import { Layout } from "./Layout.js";
-import Logo from "./Logo.js";
 import BrowseActivityModal from "../BrowseActivity/BrowseActivityModal.js";
 import {useNavigate} from "react-router-dom"
 import { NavLink } from "react-router-dom";
+import {Link} from "react-router-dom"
+import Logo from "./Logo.js"
+
 
 const Header = ({currentUser, logout}) => {
   const navigate = useNavigate()
@@ -14,6 +16,7 @@ const Header = ({currentUser, logout}) => {
   }
   const [variant, setVariant] = React.useState("static");
   const colors = ["primary", "secondary", "success", "warning", "error"]
+ 
   
   return (
       <>
@@ -24,7 +27,9 @@ const Header = ({currentUser, logout}) => {
           }}
         >
           <Navbar.Brand>
-          <Logo />
+            <Logo/>
+           <img width={100}  src="/buddy.png"/>
+           
             <Text b color="black" hideIn="xs">
               BUDDY
             </Text>

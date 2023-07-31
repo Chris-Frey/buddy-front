@@ -10,3 +10,16 @@
 .time-frame {
   color: #ffcd4e;
 }
+
+.button {
+  z-index: 1;
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  background-color: #FFCD4E;
+  border: none;
+  border-radius: 20px;
+  font-size: 20px;
+  height: 50px;
+  width: 50px;
+}
