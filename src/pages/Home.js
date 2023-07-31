@@ -74,12 +74,8 @@ const Home = (props) => {
   
   return (
     <>
-<<<<<<< Updated upstream
-    <div className='body'>
-=======
     <body>
     <AddActivityModal className='add_activity_button' currentUser={props.currentUser} activities={props.activities} createActivity={props.createActivity}/>
->>>>>>> Stashed changes
     <h3 className='title'>ACTIVITIES HAPPENING IN THE NEXT<br/><span className='time-frame'>30 MIN</span></h3>
     <Carousel 
       partialVisible
@@ -125,12 +121,7 @@ const Home = (props) => {
     {activityFilter2300}
     </Carousel>
 
-<<<<<<< Updated upstream
-    <AddActivityModal currentUser={props.currentUser} activities={props.activities} createActivity={props.createActivity}/>
-    </div>
-=======
     </body>
->>>>>>> Stashed changes
     </>
   )
 }
