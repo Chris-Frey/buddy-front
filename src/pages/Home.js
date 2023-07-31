@@ -5,8 +5,6 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import styles from '../styles/Home.css'
 
-
-
 const Home = (props) => {
   //parameters for carousel
   const responsive = {
@@ -29,12 +27,6 @@ const Home = (props) => {
     }
   };
 
-
-
-// maps through activity objects and displays them
-  // const activityDisplay = props.activities?.map((value,index) => {
-  //   return <div><ActivityCard activities={value} key={index}/></div>
-  // })
   //filters activities by time
   const activityFilter800 = props.activities?.filter(value => {
     return +value.start_time < 800
@@ -122,8 +114,6 @@ const Home = (props) => {
     {activityFilter2300}
     </Carousel>
   </div>
-
-    
     </>
   )
 }

@@ -64,7 +64,7 @@ const BuddyProfile = ({currentUser, userActivity, activities}) => {
 
         <Text size={15} weight="bold" transform="uppercase" color="#FFCD4E">My Events</Text>
 
-        <Text size={13} h3>{myActivities}</Text>        
+        <Text size={13} h3 color="White" >{myActivities}</Text>        
   
       </Col>
       </Card.Header>

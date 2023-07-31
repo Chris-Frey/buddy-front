@@ -8,7 +8,6 @@ import {Link} from "react-router-dom"
 import Logo from "./Logo.js"
 
 
-
 const Header = ({currentUser, logout}) => {
   const navigate = useNavigate()
   const handleClick = () => {
@@ -31,31 +30,31 @@ const Header = ({currentUser, logout}) => {
         >
           <Navbar.Brand>
             <Logo/>
-           <img width={100}  src="/buddy.png"/>
-           
+            <img width={100}  src="/buddy.png"/>
+            
             <Text b color="black" weight={"bold"} size={30} hideIn="xs">
               BUDDY
             </Text>
           </Navbar.Brand>
-        <Navbar.Content>
-          <NavLink style={styled} to="/" >HOME</NavLink>
-          <NavLink style={styled} to="/aboutus" >ABOUT US</NavLink>
-          <NavLink style={styled} to={`/buddyprofile/${currentUser?.id}` } >BUDDY PROFILE</NavLink>
 
-        </Navbar.Content>
+          <Navbar.Content>
+            <NavLink style={styled} to="/" >HOME</NavLink>
+            <NavLink style={styled} to="/aboutus" >ABOUT US</NavLink>
+            <NavLink style={styled} to={`/buddyprofile/${currentUser?.id}` } >BUDDY PROFILE</NavLink>
+          </Navbar.Content>
 
-      <Navbar.Content>
-        <Navbar.Link href="/LogIn" onClick={handleClick}>
-          LOG OUT
-        </Navbar.Link>
-        <Navbar.Item>
-        <BrowseActivityModal />
-        </Navbar.Item>
-      </Navbar.Content>
-      </Navbar>
+          <Navbar.Content>
+          <Navbar.Link href="/LogIn" onClick={handleClick}>
+            LOG OUT
+          </Navbar.Link>
+          <Navbar.Item>
+          <BrowseActivityModal />
+          </Navbar.Item>
+          </Navbar.Content>
+        </Navbar>
       </Layout>
       </>
-      )
-    }
+  )
+}
     
     export default Header

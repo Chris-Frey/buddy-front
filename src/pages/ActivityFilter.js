@@ -39,19 +39,17 @@ const ActivityFilter = (props) => {
   };
   return (
     <>
-
-  <h3 className='filter_page_titles'>ACTIVITIES HAPPENING <br/>SOON</h3>
-    <Carousel 
-      partialVisible
-      infinite
-      responsive={responsive}
-      >
-      {activityFilter}
-    </Carousel>
-        
-    <AddActivityModal/>
+      <h3 className='filter_page_titles'>ACTIVITIES HAPPENING <br/>SOON</h3>
+      <Carousel 
+        partialVisible
+        infinite
+        responsive={responsive}
+        >
+        {activityFilter}
+      </Carousel>
+          
+      <AddActivityModal/>
     </>
-
   )
 }
 

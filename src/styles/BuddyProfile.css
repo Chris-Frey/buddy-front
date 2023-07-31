@@ -29,3 +29,7 @@ p {
   display: flex;
   justify-content: space-between;
 }
+
+.activity-list {
+  color: white;
+}

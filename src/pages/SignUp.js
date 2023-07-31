@@ -152,7 +152,6 @@ const SignUp = ({signup}) => {
         <Spacer y={1} />
         <NavLink to="/login">
           <Button
-                  // onClick={handleSubmit}
                   flat
                   auto
                   rounded
@@ -168,7 +167,6 @@ const SignUp = ({signup}) => {
                   </Text>
                 </Button>
               </NavLink>
-        {/* </Grid> */}
       </div>
       </div>
       </form>

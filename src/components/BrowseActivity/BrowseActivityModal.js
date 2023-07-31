@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 
 
 const BrowseActivityModal = () => {
+
   const [visible, setVisible] = React.useState(false);
   const handler = () => setVisible(true);
   const closeHandler = () => {
@@ -31,7 +32,7 @@ const BrowseActivityModal = () => {
         </Modal.Header>
 
         <Modal.Body>
-        <NavLink to="/display/weight_lifting">
+          <NavLink to="/display/weight_lifting">
           <Text className="modal-title" auto color={"black"} weight={"bold"} size={20} onClick={closeHandler}>
             WEIGHT LIFTING
           </Text>
@@ -79,6 +80,7 @@ const BrowseActivityModal = () => {
           </Text>
           </NavLink>
         </Modal.Body>
+        
         <Modal.Footer justify="space-around">
         </Modal.Footer>
       </Modal>

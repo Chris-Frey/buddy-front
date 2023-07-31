@@ -4,7 +4,6 @@ import { Modal, Input, Button, Text, yellow } from "@nextui-org/react";
 import { useNavigate } from "react-router-dom";
 
 
-
 const AddActivityModal = ({createActivity, currentUser}) => {
 
   const [newActivity, setNewActivity] = useState({
@@ -19,11 +18,10 @@ const AddActivityModal = ({createActivity, currentUser}) => {
   })
 
   const navigate = useNavigate()
+
   const handleChange = (e) => {
     setNewActivity({...newActivity, [e.target.name]: e.target.value})
   }
-
-
   const [visible, setVisible] = React.useState(false);
   const handler = () => setVisible(true);
   const closeHandler = () => {
@@ -31,19 +29,16 @@ const AddActivityModal = ({createActivity, currentUser}) => {
   };
 
   const submitHandler = () => {
-
     createActivity(newActivity);
-
-    // createUserActivity(currentUser.id, newActivity.id)
     closeHandler()
   }
 
   return (
     <>
       <div>
-      <Button className="button" auto color={"black"} css={{bg:"#FFCD4E", margin:"0"}}onClick={handler}>
-        Add Activity
-      </Button>
+        <Button className="button" auto color={"black"} css={{bg:"#FFCD4E", margin:"0"}}onClick={handler}>
+          Add Activity
+        </Button>
       <div/>
     
       <Modal
@@ -170,5 +165,4 @@ const AddActivityModal = ({createActivity, currentUser}) => {
   );
 }
             
-
 export default AddActivityModal

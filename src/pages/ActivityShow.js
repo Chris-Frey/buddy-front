@@ -26,11 +26,9 @@ const ActivityShow = ({activities, deleteActivity, currentUser, createUserActivi
   const submitHandler = () => {
       setBuddyUp(!buddyUp)
     createUserActivity(userActivityState)
-  
   }
 
   
-
   return (
     <>
       <div className='activity_pic'>
@@ -44,7 +42,7 @@ const ActivityShow = ({activities, deleteActivity, currentUser, createUserActivi
     </Card.Header>
     
     <Card.Body css={{ p: 0, color: "#94f9f0" ,bg: "#030303" }}>
-    {/* <Col> */}
+ 
         <Text size={15} weight="bold" transform="uppercase" color="#FFCD4E">ACTIVITY NAME</Text>
 
         <Text size={13} h3 color="white">
@@ -75,7 +73,6 @@ const ActivityShow = ({activities, deleteActivity, currentUser, createUserActivi
         {buddyUp?
           <Text size={13} h3 color="white">{currentUser.name}</Text>
         :null}
-      {/* </Col> */}
     </Card.Body>
   </Card>
   </div>
@@ -98,7 +95,6 @@ const ActivityShow = ({activities, deleteActivity, currentUser, createUserActivi
             </div>
         <AddActivityModal />
           </div>
-
     </>
   )
 }

@@ -45,7 +45,7 @@ useEffect(() => {
     })
     .catch((error) => console.log(error))
   }
-  console.log(userActivity)
+
 
   const createUserActivity = (activity) => {
   fetch(`${url}/user_activities`, {
