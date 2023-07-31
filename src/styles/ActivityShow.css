@@ -1,6 +1,6 @@
-.activityShowBody {
+/* .activityShowBody {
   margin-left: 20px;
-}
+} */
 
 button {
   border: none;
@@ -11,7 +11,29 @@ button {
   padding: 10px;
 }
 
-.cards {
+/* .cards {
   display: flex;
   margin-top: 30px;
+} */
+.card_and_links {
+  display: flex;
+  flex-direction: row;
+}
+.show_links{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.show_button {
+  height: 80px;
+  width: 80px;
+}
+#pic_card_links{
+display: flex;
+}
+.activity_pic {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-top: 90px;
 }
