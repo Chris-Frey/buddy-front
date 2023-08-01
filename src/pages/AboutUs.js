@@ -7,7 +7,7 @@ const AboutUs = () => {
   return (
     <>
       <div className="title">
-        <h1>Meet The Team!</h1>
+        <h1 className="title">Meet The Team!</h1>
       </div>
 
       <div className="images">
