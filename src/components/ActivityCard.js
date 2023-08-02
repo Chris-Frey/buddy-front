@@ -8,8 +8,9 @@ const ActivityCard = (props) => {
     <Link to={`/activityshow/${props.activities.id}`} >
     <Card css={{ bg: "$black", w: 200, h: 250, display: "inline-flex"}} > 
       <Card.Header css={{ position: "absolute", zIndex: 1, bottom: -4, width: 200}}>
+
         <Col>
-          <Text h4 color="white">{props.activities.category}</Text>
+          <Text transform="uppercase" h4 color="white">{props.activities.category}</Text>
           <Text size={12} weight="bold" transform="uppercase" color="#ffffffAA">
             WHAT: {props.activities.activity_name}
           </Text>

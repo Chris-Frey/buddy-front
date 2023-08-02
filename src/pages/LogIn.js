@@ -20,6 +20,10 @@ const LogIn = ({login}) => {
 
   return (
     <>
+    <div className="title_logo">
+    <img src="/buddy.png"/>
+    <h1 id="buddy">BUDDY</h1>
+    </div>
     <form ref={formRef} onSubmit={handleSubmit}>
     <div className='container-card'>
       <Spacer y={2.5} />
@@ -28,7 +32,6 @@ const LogIn = ({login}) => {
       <Input.Password width="250px" labelPlaceholder="Password" type='password' name='password' initialValue="" color="warning"/>
       <Spacer y={1.5} />
       <div className='buttons'>
-
         <Grid>
         <Link to="/Home">
           <Button 
@@ -50,7 +53,6 @@ const LogIn = ({login}) => {
           </Link>
         </Grid>
       </div>
- 
     </div>
     </form>
   </>

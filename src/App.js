@@ -10,14 +10,14 @@ import SignUp from "./pages/SignUp";
 import ActivityEdit from "./pages/ActivityEdit";
 import ActivityFilter from "./pages/ActivityFilter";
 import AboutUs from "./pages/AboutUs";
+import Error from "./pages/Error";
 
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null)
   const [activities, setActivities] = useState([])
-
-
-// const url = "http://localhost:3000"
+  const [userActivity, setUserActivity] = useState([])
+  // const url = "http://localhost:3000"
 const url = "buddy-backend.onrender.com"
 
 useEffect(() => {
@@ -31,6 +31,32 @@ useEffect(() => {
   }
   readActivity()
 }, [])
+
+//user_activities
+  useEffect(() => {
+    readUserActivity();
+  }, [])
+
+  const readUserActivity = () => {
+    fetch(`${url}/user_activities/`)
+    .then((response) => response.json())
+    .then((payload) => {
+      setUserActivity(payload)
+    })
+    .catch((error) => console.log(error))
+  }
+
+
+  const createUserActivity = (activity) => {
+  fetch(`${url}/user_activities`, {
+    body: JSON.stringify(activity),
+    headers: {"Content-Type": "application/json"},
+    method: "POST"
+  })
+    .then((response) => response.json())
+    .then((payload) => readUserActivity())
+    .catch((errors) => console.log("Activity create errors:", errors))
+  }
 
 // authentication methods
 const login = (userInfo) => {
@@ -140,13 +166,14 @@ const deleteActivity = (id) => {
       <Header currentUser={currentUser} logout={logout}/>
       <Routes>
         <Route path="/" element={<Home activities={activities} currentUser={currentUser} createActivity={createActivity} />} />
-        <Route path="/:category?" element={<ActivityFilter activities={activities}/>} />
-        <Route path="/buddyprofile/:id" element={<BuddyProfile currentUser={currentUser}/>} />
+        <Route path="/display/:category?" element={<ActivityFilter activities={activities}/>} />
+        <Route path="/buddyprofile/:id" element={<BuddyProfile currentUser={currentUser} userActivity={userActivity} activities={activities}/>} />
         <Route path="/login" element={<LogIn login={login}/>} />
-        <Route path="/activityshow/:id" element={<ActivityShow activities={activities} updateActivity={updateActivity} deleteActivity={deleteActivity} />} />
+        <Route path="/activityshow/:id" element={<ActivityShow activities={activities} currentUser={currentUser} updateActivity={updateActivity} deleteActivity={deleteActivity} createUserActivity={createUserActivity}/>} />
         <Route path="/signup" element={<SignUp signup={signup}/>} />
         <Route path="/activityedit/:id" element={<ActivityEdit activities={activities} updateActivity={updateActivity}/>} />
         <Route path="/aboutus" element={<AboutUs />} />
+        <Route path="*" element={<Error />} />
       </Routes>
       </>
   );

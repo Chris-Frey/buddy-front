@@ -1,8 +1,7 @@
 import React from "react";
 import { useState } from "react";
-import { Modal, Input, Button, Text } from "@nextui-org/react";
+import { Modal, Input, Button, Text, yellow } from "@nextui-org/react";
 import { useNavigate } from "react-router-dom";
-
 
 
 const AddActivityModal = ({createActivity, currentUser}) => {
@@ -19,11 +18,10 @@ const AddActivityModal = ({createActivity, currentUser}) => {
   })
 
   const navigate = useNavigate()
+
   const handleChange = (e) => {
     setNewActivity({...newActivity, [e.target.name]: e.target.value})
   }
-
-
   const [visible, setVisible] = React.useState(false);
   const handler = () => setVisible(true);
   const closeHandler = () => {
@@ -36,20 +34,23 @@ const AddActivityModal = ({createActivity, currentUser}) => {
   }
 
   return (
-    <div>
-
-      <Button auto color="#FFCD4E"  shadow onPress={handler}>
-        +
-      </Button>
+    <>
+      <div>
+        <Button className="button" auto color={"black"} css={{bg:"#FFCD4E", margin:"0"}}onClick={handler}>
+          Add Activity
+        </Button>
+      <div/>
+    
       <Modal
+        css={{bg:"#FFCD4E"}}
         closeButton
         blur
         aria-labelledby="modal-title"
         open={visible}
         onClose={closeHandler}
-      >
+        >
         <Modal.Header>
-          <Text id="modal-title" size={18}>
+          <Text id="modal-title" weight={"bold"} size={25}>
             CREATE AN ACTIVITY
           </Text>
         </Modal.Header>
@@ -63,11 +64,11 @@ const AddActivityModal = ({createActivity, currentUser}) => {
             clearable
             bordered
             fullWidth
-            color="primary"
+            color="black"
             size="lg"
             placeholder="WHICH CATEGORY IS YOUR ACTIVITY IN?"
             contentLeft={<Text fill="currentColor" />}
-          />
+            />
           <Input
             onChange={handleChange} 
             name='activity_name'
@@ -76,11 +77,11 @@ const AddActivityModal = ({createActivity, currentUser}) => {
             clearable
             bordered
             fullWidth
-            color="primary"
+            color="black"
             size="lg"
             placeholder="GIVE IT A NAME"
             contentLeft={<Text fill="currentColor" />}
-          />
+            />
           <Input
             onChange={handleChange} 
             name='start_time'
@@ -89,11 +90,11 @@ const AddActivityModal = ({createActivity, currentUser}) => {
             clearable
             bordered
             fullWidth
-            color="primary"
+            color="black"
             size="lg"
             placeholder="WHEN DO YOU WANT TO START?"
             contentLeft={<Text fill="currentColor" />}
-          />
+            />
           <Input
             onChange={handleChange} 
             name='location'
@@ -102,11 +103,11 @@ const AddActivityModal = ({createActivity, currentUser}) => {
             clearable
             bordered
             fullWidth
-            color="primary"
+            color="black"
             size="lg"
             placeholder="ADDRESS OF ACTIVITY"
             contentLeft={<Text fill="currentColor" />}
-          />
+            />
           <Input
             onChange={handleChange} 
             name='description'
@@ -115,11 +116,11 @@ const AddActivityModal = ({createActivity, currentUser}) => {
             clearable
             bordered
             fullWidth
-            color="primary"
+            color="black"
             size="lg"
             placeholder="A SHORT DESCRIPTION"
             contentLeft={<Text fill="currentColor" />}
-          />
+            />
           <Input
             onChange={handleChange} 
             name='duration'
@@ -128,12 +129,12 @@ const AddActivityModal = ({createActivity, currentUser}) => {
             clearable
             bordered
             fullWidth
-            color="primary"
+            color="black"
             size="lg"
             type="float"
             placeholder="HOW LONG IS YOUR EVENT?"
             contentLeft={<Text fill="currentColor" />}
-          />
+            />
           <Input
             onChange={handleChange} 
             name='activity_photo'
@@ -142,23 +143,26 @@ const AddActivityModal = ({createActivity, currentUser}) => {
             clearable
             bordered
             fullWidth
-            color="primary"
+            color="black"
             size="lg"
             placeholder="INSERT A LINK"
             contentLeft={<Text fill="currentColor" />}
-          />
+            />
         </Modal.Body>
+
         <Modal.Footer justify="space-around">
-          <Button auto flat color="#FFCD4E" onClick={closeHandler}>
+           <Button auto fill="currentColor" css={{bg:"black"}} onClick={closeHandler}>
             CLOSE
           </Button>
-          <Button auto color="#FFCD4E" onClick={submitHandler}>
+
+          <Button auto fill="currentColor" css={{bg:"black"}} onClick={submitHandler}>
             CREATE ACTIVITY
           </Button>
         </Modal.Footer>
       </Modal>
     </div>
+    </>
   );
 }
-
+            
 export default AddActivityModal

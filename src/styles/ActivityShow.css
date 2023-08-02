@@ -1,0 +1,43 @@
+/* .activityShowBody {
+  margin-left: 20px;
+} */
+
+button {
+  border: none;
+  color: black;
+  background-color: #ffcd4e;
+  margin: 10px;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+/* .cards {
+  display: flex;
+  margin-top: 30px;
+} */
+.card_and_links {
+  display: flex;
+  flex-direction: row;
+}
+.show_links{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.show_button {
+  height: 80px;
+  width: 80px;
+}
+.show_button:hover {
+transform: scale(1.07);
+cursor: pointer;
+}
+#pic_card_links{
+display: flex;
+}
+.activity_pic {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-top: 80px;
+}

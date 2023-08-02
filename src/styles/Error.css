@@ -1,0 +1,14 @@
+h1 {
+  color: yellow;
+}
+
+.img-yea {
+ display: flex;
+ justify-content: center;
+}
+
+.error-body {
+  background-color: black;
+  height: 100%;
+  overscroll-behavior: none;
+}

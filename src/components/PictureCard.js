@@ -1,4 +1,4 @@
-import { Card, Col, Text } from "@nextui-org/react";
+import { Card } from "@nextui-org/react";
 
 const PictureCard = ({currentActivity}) => {
 return(

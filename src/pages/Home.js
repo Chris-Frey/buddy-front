@@ -3,7 +3,7 @@ import AddActivityModal from '../components/AddActivityModal/AddActivityModal'
 import ActivityCard from '../components/ActivityCard'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-
+import styles from '../styles/Home.css'
 
 const Home = (props) => {
   //parameters for carousel
@@ -27,12 +27,6 @@ const Home = (props) => {
     }
   };
 
-
-
-// maps through activity objects and displays them
-  // const activityDisplay = props.activities?.map((value,index) => {
-  //   return <div><ActivityCard activities={value} key={index}/></div>
-  // })
   //filters activities by time
   const activityFilter800 = props.activities?.filter(value => {
     return +value.start_time < 800
@@ -64,15 +58,17 @@ const Home = (props) => {
 
   const activityFilter2300 = props.activities?.filter(value => {
     return +value.start_time >= 1500 && +value.start_time < 2300
-   })
-   .map((value,index) => {
+  })
+  .map((value,index) => {
     return <div><ActivityCard activities={value} key={index}/></div>
   })
-
-
+  
+  
   return (
     <>
-    <h3>ACTIVITIES HAPPENING IN THE NEXT<br/>30 MIN</h3>
+    <div className='home_background'>
+    <AddActivityModal className='add_activity_button' currentUser={props.currentUser} activities={props.activities} createActivity={props.createActivity}/>
+    <h3 className='title'>ACTIVITIES HAPPENING IN THE NEXT<br/><span className='time-frame'>30 MIN</span></h3>
     <Carousel 
       partialVisible
       infinite
@@ -81,7 +77,7 @@ const Home = (props) => {
         {activityFilter800}
     </Carousel>
 
-    <h3>ACTIVITIES HAPPENING IN THE NEXT<br/>HOUR</h3>
+    <h3 className='title'>ACTIVITIES HAPPENING IN THE NEXT<br/><span className='time-frame'>1 HOUR</span></h3>
     <Carousel 
       partialVisible
       infinite
@@ -90,16 +86,17 @@ const Home = (props) => {
     {activityFilter900}
     </Carousel>
 
-    <h3>ACTIVITIES HAPPENING IN THE NEXT<br/>2 HOURS</h3>
+    <h3 className='title'>ACTIVITIES HAPPENING IN THE NEXT<br/><span className='time-frame'>2 HOURS</span></h3>
     <Carousel 
+   
       partialVisible
       infinite
       responsive={responsive}
       >
-    {activityFilter1100}
+      {activityFilter1100}
     </Carousel>
 
-    <h3>ACTIVITIES HAPPENING IN THE NEXT<br/>4 HOURS</h3>
+    <h3 className='title'>ACTIVITIES HAPPENING IN THE NEXT<br/><span className='time-frame'>4 HOURS</span></h3>
     <Carousel 
       partialVisible
       infinite
@@ -108,7 +105,7 @@ const Home = (props) => {
     {activityFilter1500}
     </Carousel>
 
-    <h3>ACTIVITIES HAPPENING IN THE NEXT<br/>8 HOURS</h3>
+    <h3 className='title'>ACTIVITIES HAPPENING IN THE NEXT<br/><span className='time-frame'>8 HOURS</span></h3>
     <Carousel 
       partialVisible
       infinite
@@ -116,8 +113,7 @@ const Home = (props) => {
       >
     {activityFilter2300}
     </Carousel>
-
-    <AddActivityModal currentUser={props.currentUser} activities={props.activities} createActivity={props.createActivity}/>
+  </div>
     </>
   )
 }
