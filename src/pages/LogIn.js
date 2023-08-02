@@ -1,8 +1,7 @@
 import React, { useRef } from 'react'
 import { Input, Spacer, Button, Grid } from "@nextui-org/react";
-import { NavLink, Link } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import styles from "../styles/LogIn.css"
-import { useNavigate } from 'react-router-dom';
 
 const LogIn = ({login}) => {
   const formRef = useRef()
@@ -37,13 +36,17 @@ const LogIn = ({login}) => {
           <Button 
           auto
           css={{ color: "black", bg: "#FFCD4E" }}
-          onClick={handleSubmit}>
+          type='submit'>
             Log In
           </Button>
           </NavLink>
         </Grid>
         <Spacer y={1.5} />
-        <Grid>
+     
+      </div>
+    </div>
+    </form>
+    <Grid>
         <NavLink to="/signup">
           <Button 
           auto
@@ -52,9 +55,6 @@ const LogIn = ({login}) => {
           </Button>
           </NavLink>
         </Grid>
-      </div>
-    </div>
-    </form>
   </>
   )
 }
