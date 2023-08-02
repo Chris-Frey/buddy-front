@@ -44,9 +44,7 @@ const Header = ({currentUser, logout}) => {
           </Navbar.Content>
 
           <Navbar.Content>
-          <Navbar.Link href="/login" onClick={handleClick}>
-            LOG OUT
-          </Navbar.Link>
+          <NavLink to="/login" onClick={handleClick}>LOG OUT</NavLink>
           <Navbar.Item>
           <BrowseActivityModal />
           </Navbar.Item>
