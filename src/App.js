@@ -18,7 +18,7 @@ function App() {
   const [activities, setActivities] = useState([])
   const [userActivity, setUserActivity] = useState([])
   // const url = "http://localhost:3000"
-const url = "buddy-backend.onrender.com"
+const url = "https://buddy-backend.onrender.com"
 
 useEffect(() => {
   readActivity()
@@ -120,6 +120,7 @@ const logout = () => {
   .catch(error => console.log("log out errors: ", error))
 }
 
+//CRUD fetch requests
 const readActivity = () => {
   fetch(`${url}/activities`)
     .then((response) => response.json())
