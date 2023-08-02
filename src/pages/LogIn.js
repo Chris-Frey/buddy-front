@@ -38,7 +38,7 @@ const LogIn = ({login}) => {
           auto
           css={{ color: "black", bg: "#FFCD4E" }}
           onClick={handleSubmit}>
-            Sign In
+            Log In
           </Button>
           </Link>
         </Grid>

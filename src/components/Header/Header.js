@@ -44,7 +44,7 @@ const Header = ({currentUser, logout}) => {
           </Navbar.Content>
 
           <Navbar.Content>
-          <Navbar.Link href="/LogIn" onClick={handleClick}>
+          <Navbar.Link href="/login" onClick={handleClick}>
             LOG OUT
           </Navbar.Link>
           <Navbar.Item>
