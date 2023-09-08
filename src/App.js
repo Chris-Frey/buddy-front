@@ -17,8 +17,8 @@ function App() {
   const [currentUser, setCurrentUser] = useState(null)
   const [activities, setActivities] = useState([])
   const [userActivity, setUserActivity] = useState([])
-  // const url = "http://localhost:3000"
-const url = "https://buddy-backend.onrender.com"
+  const url = "http://localhost:3000"
+// const url = "https://buddy-backend.onrender.com"
 
 useEffect(() => {
   readActivity()
@@ -166,10 +166,10 @@ const deleteActivity = (id) => {
       <>
       <Header currentUser={currentUser} logout={logout}/>
       <Routes>
-        <Route path="/" element={<Home activities={activities} currentUser={currentUser} createActivity={createActivity} />} />
+        <Route path="/browse" element={<Home activities={activities} currentUser={currentUser} createActivity={createActivity} />} />
         <Route path="/display/:category?" element={<ActivityFilter activities={activities}/>} />
         <Route path="/buddyprofile/:id" element={<BuddyProfile currentUser={currentUser} userActivity={userActivity} activities={activities}/>} />
-        <Route path="/login" element={<LogIn login={login}/>} />
+        <Route path="/" element={<LogIn login={login}/>} />
         <Route path="/activityshow/:id" element={<ActivityShow activities={activities} currentUser={currentUser} updateActivity={updateActivity} deleteActivity={deleteActivity} createUserActivity={createUserActivity}/>} />
         <Route path="/signup" element={<SignUp signup={signup}/>} />
         <Route path="/activityedit/:id" element={<ActivityEdit activities={activities} updateActivity={updateActivity}/>} />
