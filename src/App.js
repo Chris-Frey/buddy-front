@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom"
+import { Routes, Route, useNavigate } from "react-router-dom"
 import { useState, useEffect } from "react";
 import './App.css';
 import Header from './components/Header/Header'
@@ -19,6 +19,7 @@ function App() {
   const [userActivity, setUserActivity] = useState([])
   const url = "http://localhost:3000"
 // const url = "https://buddy-backend.onrender.com"
+const navigate = useNavigate()
 
 useEffect(() => {
   readActivity()
@@ -70,6 +71,7 @@ const login = (userInfo) => {
   })
   .then(response => {
     if (!response.ok) {
+      alert("invalid credentials")
       throw Error(response.statusText)
     }
     // store the token
@@ -106,7 +108,7 @@ const signup = (userInfo) => {
 }
 
 const logout = () => {
-  fetch(`${url}/logout`, {
+  fetch(`${url}/login`, {
     headers: {
       "Content-Type": "application/json",
       "Authorization": localStorage.getItem("token") //retrieve the token
@@ -164,14 +166,16 @@ const deleteActivity = (id) => {
 
   return (
       <>
+      {currentUser && (
       <Header currentUser={currentUser} logout={logout}/>
+      )}
       <Routes>
-        <Route path="/browse" element={<Home activities={activities} currentUser={currentUser} createActivity={createActivity} />} />
+        <Route path="/signup" element={<SignUp signup={signup}/>} />
+        <Route path="/login" element={<LogIn login={login} currentUser={currentUser}/>} />
+        <Route path="/" element={<Home activities={activities} currentUser={currentUser} createActivity={createActivity} />} />
         <Route path="/display/:category?" element={<ActivityFilter activities={activities}/>} />
         <Route path="/buddyprofile/:id" element={<BuddyProfile currentUser={currentUser} userActivity={userActivity} activities={activities}/>} />
-        <Route path="/" element={<LogIn login={login}/>} />
         <Route path="/activityshow/:id" element={<ActivityShow activities={activities} currentUser={currentUser} updateActivity={updateActivity} deleteActivity={deleteActivity} createUserActivity={createUserActivity}/>} />
-        <Route path="/signup" element={<SignUp signup={signup}/>} />
         <Route path="/activityedit/:id" element={<ActivityEdit activities={activities} updateActivity={updateActivity}/>} />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="*" element={<Error />} />
