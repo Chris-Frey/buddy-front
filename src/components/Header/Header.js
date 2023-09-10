@@ -4,7 +4,6 @@ import { Layout } from "./Layout.js";
 import BrowseActivityModal from "../BrowseActivity/BrowseActivityModal.js";
 import {useNavigate} from "react-router-dom"
 import { NavLink } from "react-router-dom";
-import {Link} from "react-router-dom"
 import Logo from "./Logo.js"
 
 
@@ -12,7 +11,6 @@ const Header = ({currentUser, logout}) => {
   const navigate = useNavigate()
   const handleLogOut = () => {
     logout()
-    // navigate("/")
   }
   const [variant, setVariant] = React.useState("static");
   const colors = ["primary", "secondary", "success", "warning", "error"]

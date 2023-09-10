@@ -1,6 +1,6 @@
 import React, {useRef} from "react";
 import { Input, useInput, Spacer, Button, Text } from "@nextui-org/react";
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 import { useNavigate } from "react-router-dom";
 import styles from "../styles/SignUp.css"
 
@@ -145,21 +145,21 @@ const SignUp = ({signup}) => {
         <Spacer y={1} />
         <NavLink to="/login">
           <Button
-                  flat
-                  auto
-                  rounded
-                  css={{ color: "black", bg: "#FFCD4E" }}
-                  >
-                  <Text
-                    css={{ color: "inherit" }}
-                    size={12}
-                    weight="bold"
-                    transform="uppercase"
-                    >
-                    LogIn
-                  </Text>
-                </Button>
-              </NavLink>
+            flat
+            auto
+            rounded
+            css={{ color: "black", bg: "#FFCD4E" }}
+            >
+            <Text
+              css={{ color: "inherit" }}
+              size={12}
+              weight="bold"
+              transform="uppercase"
+              >
+              LogIn
+            </Text>
+          </Button>
+        </NavLink>
       </div>
       </div>
       </form>
