@@ -38,14 +38,15 @@ const Header = ({currentUser, logout}) => {
           <Navbar.Content>
             <NavLink style={styled} to="/" >HOME</NavLink>
             <NavLink style={styled} to="/aboutus" >ABOUT US</NavLink>
-            <NavLink style={styled} to={`/buddyprofile/${currentUser?.id}` } >BUDDY PROFILE</NavLink>
+            <NavLink style={styled} to={`/buddyprofile/${currentUser?.id}` } >PROFILE</NavLink>
           </Navbar.Content>
 
           <Navbar.Content>
-            <NavLink to="/login" onClick={handleLogOut}>LOG OUT</NavLink>
-            <Navbar.Item>
+          <Navbar.Item>
             <BrowseActivityModal />
             </Navbar.Item>
+            <NavLink to="/login" onClick={handleLogOut}>LOG OUT</NavLink>
+
           </Navbar.Content>
         </Navbar>
       </Layout>

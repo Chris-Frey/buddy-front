@@ -3,19 +3,19 @@ import { Input, Spacer, Button, Grid } from "@nextui-org/react";
 import { NavLink, useNavigate } from 'react-router-dom'
 import styles from "../styles/LogIn.css"
 
-const LogIn = ({login, currentUser}) => {
+const LogIn = ({login}) => {
   const formRef = useRef()
   const navigate = useNavigate()
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
+    e.preventDefault()
     const formData = new FormData(formRef.current)
     const data = Object.fromEntries(formData)
     const userInfo = {
       "user":{ email: data.email, password: data.password}
     }
-    login(userInfo)
-    navigate("/")
-
+      await login(userInfo)
+      navigate("/")
   }
 
   return (
