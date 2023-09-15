@@ -1,6 +1,6 @@
 import React, {useRef} from "react";
 import { Input, useInput, Spacer, Button, Text } from "@nextui-org/react";
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 import { useNavigate } from "react-router-dom";
 import styles from "../styles/SignUp.css"
 
@@ -9,15 +9,20 @@ const SignUp = ({signup}) => {
   const navigate = useNavigate()
 
   const handleSubmit = (e) => {
+    // stores the form entries in a variable
     const formData = new FormData(formRef.current)
+    // creates an object from entries
     const data = Object.fromEntries(formData)
+    // stores user info in a format for JWT
     const userInfo = {
       "user":{ email: data.email, password: data.password, name: data.name, username: data.username, gender_identity: data.gender_identity, bio: data.bio}
     }
     signup(userInfo)
+    e.target.reset()
     navigate("/")
+
   }
-  
+
   const { value, reset, bindings } = useInput("");
 
   const validateEmail = (value) => {
@@ -36,7 +41,7 @@ const SignUp = ({signup}) => {
       color: isValid ? "success" : "error",
     };
   }, [value]);
-  
+
   return (
     <>
     <div className="title_logo">
@@ -54,7 +59,7 @@ const SignUp = ({signup}) => {
             onClearClick={reset}
             status={helper.color}
             color="warning"
-            
+
             helperColor={helper.color}
             helperText={helper.text}
             type="email"
@@ -118,7 +123,7 @@ const SignUp = ({signup}) => {
             label="Gender Identity"
             placeholder="Enter gender"
             />
-        
+
   <div className="buttons">
        <Spacer y={1} />
 
@@ -141,21 +146,21 @@ const SignUp = ({signup}) => {
         <Spacer y={1} />
         <NavLink to="/login">
           <Button
-                  flat
-                  auto
-                  rounded
-                  css={{ color: "black", bg: "#FFCD4E" }}
-                  >
-                  <Text
-                    css={{ color: "inherit" }}
-                    size={12}
-                    weight="bold"
-                    transform="uppercase"
-                    >
-                    LogIn
-                  </Text>
-                </Button>
-              </NavLink>
+            flat
+            auto
+            rounded
+            css={{ color: "black", bg: "#FFCD4E" }}
+            >
+            <Text
+              css={{ color: "inherit" }}
+              size={12}
+              weight="bold"
+              transform="uppercase"
+              >
+              LogIn
+            </Text>
+          </Button>
+        </NavLink>
       </div>
       </div>
       </form>

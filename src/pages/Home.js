@@ -6,6 +6,7 @@ import "react-multi-carousel/lib/styles.css";
 import styles from '../styles/Home.css'
 
 const Home = (props) => {
+
   //parameters for carousel
   const responsive = {
 
@@ -62,14 +63,15 @@ const Home = (props) => {
   .map((value,index) => {
     return <div><ActivityCard activities={value} key={index}/></div>
   })
-  
-  
+
+
   return (
     <>
+
     <div className='home_background'>
     <AddActivityModal className='add_activity_button' currentUser={props.currentUser} activities={props.activities} createActivity={props.createActivity}/>
     <h3 className='title'>ACTIVITIES HAPPENING IN THE NEXT<br/><span className='time-frame'>30 MIN</span></h3>
-    <Carousel 
+    <Carousel
       partialVisible
       infinite
       responsive={responsive}
@@ -78,7 +80,7 @@ const Home = (props) => {
     </Carousel>
 
     <h3 className='title'>ACTIVITIES HAPPENING IN THE NEXT<br/><span className='time-frame'>1 HOUR</span></h3>
-    <Carousel 
+    <Carousel
       partialVisible
       infinite
       responsive={responsive}
@@ -87,8 +89,7 @@ const Home = (props) => {
     </Carousel>
 
     <h3 className='title'>ACTIVITIES HAPPENING IN THE NEXT<br/><span className='time-frame'>2 HOURS</span></h3>
-    <Carousel 
-   
+    <Carousel
       partialVisible
       infinite
       responsive={responsive}
@@ -97,7 +98,7 @@ const Home = (props) => {
     </Carousel>
 
     <h3 className='title'>ACTIVITIES HAPPENING IN THE NEXT<br/><span className='time-frame'>4 HOURS</span></h3>
-    <Carousel 
+    <Carousel
       partialVisible
       infinite
       responsive={responsive}
@@ -106,7 +107,7 @@ const Home = (props) => {
     </Carousel>
 
     <h3 className='title'>ACTIVITIES HAPPENING IN THE NEXT<br/><span className='time-frame'>8 HOURS</span></h3>
-    <Carousel 
+    <Carousel
       partialVisible
       infinite
       responsive={responsive}

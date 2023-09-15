@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom"
+import { Routes, Route, useNavigate, NavLink, Navigate } from "react-router-dom"
 import { useState, useEffect } from "react";
 import './App.css';
 import Header from './components/Header/Header'
@@ -11,14 +11,16 @@ import ActivityEdit from "./pages/ActivityEdit";
 import ActivityFilter from "./pages/ActivityFilter";
 import AboutUs from "./pages/AboutUs";
 import Error from "./pages/Error";
+import ProtectedRoutes from "./components/ProtectedRoutes";
 
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null)
   const [activities, setActivities] = useState([])
   const [userActivity, setUserActivity] = useState([])
-  // const url = "http://localhost:3000"
-const url = "https://buddy-backend.onrender.com"
+  const url = "http://localhost:3000"
+// const url = "https://buddy-backend.onrender.com"
+const navigate = useNavigate()
 
 useEffect(() => {
   readActivity()
@@ -32,7 +34,7 @@ useEffect(() => {
   readActivity()
 }, [])
 
-//user_activities
+// user_activities
   useEffect(() => {
     readUserActivity();
   }, [])
@@ -79,6 +81,7 @@ const login = (userInfo) => {
   .then(payload => {
     setCurrentUser(payload)
   })
+  .then(() => navigate("/"))
   .catch(error => console.log("login errors: ", error))
 }
 
@@ -164,17 +167,23 @@ const deleteActivity = (id) => {
 
   return (
       <>
+      {currentUser && (
       <Header currentUser={currentUser} logout={logout}/>
+      )}
       <Routes>
-        <Route path="/" element={<Home activities={activities} currentUser={currentUser} createActivity={createActivity} />} />
-        <Route path="/display/:category?" element={<ActivityFilter activities={activities}/>} />
-        <Route path="/buddyprofile/:id" element={<BuddyProfile currentUser={currentUser} userActivity={userActivity} activities={activities}/>} />
+        <Route path="/signup" element={<SignUp signup={signup} currentUser={currentUser}/>} />
         <Route path="/login" element={<LogIn login={login}/>} />
-        <Route path="/activityshow/:id" element={<ActivityShow activities={activities} currentUser={currentUser} updateActivity={updateActivity} deleteActivity={deleteActivity} createUserActivity={createUserActivity}/>} />
-        <Route path="/signup" element={<SignUp signup={signup}/>} />
-        <Route path="/activityedit/:id" element={<ActivityEdit activities={activities} updateActivity={updateActivity}/>} />
         <Route path="/aboutus" element={<AboutUs />} />
-        <Route path="*" element={<Error />} />
+
+{/* Protected routes */}
+        <Route element={<ProtectedRoutes currentUser={currentUser}/>} >
+          <Route path="/" element={<Home activities={activities} currentUser={currentUser} createActivity={createActivity} exact/>}/>
+          <Route path="/display/:category?" element={<ActivityFilter activities={activities}/>} />
+          <Route path="/buddyprofile/:id" element={<BuddyProfile currentUser={currentUser} userActivity={userActivity} activities={activities}/>} />
+          <Route path="/activityshow/:id" element={<ActivityShow activities={activities} currentUser={currentUser} updateActivity={updateActivity} deleteActivity={deleteActivity} createUserActivity={createUserActivity}/>} />
+          <Route path="/activityedit/:id" element={<ActivityEdit activities={activities} updateActivity={updateActivity}/>} />
+          <Route path="*" element={<Error />} />
+        </Route>
       </Routes>
       </>
   );
