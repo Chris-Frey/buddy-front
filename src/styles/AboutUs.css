@@ -25,14 +25,8 @@ h2 {
   font-size: 35px;
 }
 
-.images {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 20px;
-}
-
-image {
-  height: auto;
+img {
+  height: 50px;
   margin-right: 20px;
 }
 .icons {
@@ -63,4 +57,9 @@ body {
 .aboutusnames {
   display: flex;
   justify-content: space-around;
+}
+
+.kaylee {
+  height: 100px;
+  width: 100px;
 }

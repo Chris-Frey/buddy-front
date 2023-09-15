@@ -20,7 +20,7 @@ function App() {
   const [userActivity, setUserActivity] = useState([])
   const url = "http://localhost:3000"
 // const url = "https://buddy-backend.onrender.com"
-const navigate = useNavigate()
+  const navigate = useNavigate()
 
 useEffect(() => {
   readActivity()

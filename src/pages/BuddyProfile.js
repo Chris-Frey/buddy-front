@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Image } from '@nextui-org/react';
+// import { Container, Image } from '@nextui-org/react';
 import styles from "../styles/BuddyProfile.css";
 import { Card, Col, Text } from "@nextui-org/react";
 import { useParams } from 'react-router-dom';
@@ -25,14 +25,14 @@ const BuddyProfile = ({currentUser, userActivity, activities}) => {
   })
 
   return (
-    <>  
+    <>
     <h1 className='your_profile'>
       Your Profile
     </h1>
     <div className='pic_info_buddy'>
       <img
           className="profileimg1"
-          src="https://media.licdn.com/dms/image/C5603AQGPJpuCt00ZfA/profile-displayphoto-shrink_800_800/0/1643264241799?e=1695859200&v=beta&t=qW17TWhrSqxec_5lGllLZUBpsv99I0z8PWieOLwztNI"
+          src="src/assets/PXL_20230325_185527781.jpg"
           alt="Default Image"
           />
     <div className='pic_fields'>
@@ -53,14 +53,14 @@ const BuddyProfile = ({currentUser, userActivity, activities}) => {
 
         <Text size={15} weight="bold" transform="uppercase" color="#FFCD4E">Gender Identity</Text>
 
-        <Text size={13} h3 color="White"> {currentUser.gender_identity}</Text>        
+        <Text size={13} h3 color="White"> {currentUser.gender_identity}</Text>
 
         <Text size={15} weight="bold" transform="uppercase" color="#FFCD4E">My Events</Text>
 
-        <Text size={13} h3 color="White" >{myActivities}</Text>        
+        <Text size={13} h3 color="White" >{myActivities}</Text>
       </Col>
       </Card.Header>
-      </Card> 
+      </Card>
        </div>
       </div>
 
