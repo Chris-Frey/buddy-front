@@ -13,7 +13,6 @@ const Header = ({currentUser, logout}) => {
     logout()
   }
   const [variant, setVariant] = React.useState("static");
-  const colors = ["primary", "secondary", "success", "warning", "error"]
  const styled = {
   color: 'black',
  }
@@ -45,8 +44,7 @@ const Header = ({currentUser, logout}) => {
           <Navbar.Item>
             <BrowseActivityModal />
             </Navbar.Item>
-            <NavLink to="/login" onClick={handleLogOut}>LOG OUT</NavLink>
-
+            <Navbar.Item onClick={handleLogOut}>LOG OUT</Navbar.Item>
           </Navbar.Content>
         </Navbar>
       </Layout>

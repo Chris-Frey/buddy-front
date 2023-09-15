@@ -34,10 +34,10 @@ useEffect(() => {
   readActivity()
 }, [])
 
-//user_activities
-  // useEffect(() => {
-  //   readUserActivity();
-  // }, [])
+// user_activities
+  useEffect(() => {
+    readUserActivity();
+  }, [])
 
   const readUserActivity = () => {
     fetch(`${url}/user_activities/`)
@@ -73,7 +73,6 @@ const login = (userInfo) => {
   .then(response => {
     if (!response.ok) {
       throw Error(response.statusText)
-    } else {
     }
     // store the token
     localStorage.setItem("token", response.headers.get("Authorization"))
@@ -82,6 +81,7 @@ const login = (userInfo) => {
   .then(payload => {
     setCurrentUser(payload)
   })
+  .then(() => navigate("/"))
   .catch(error => console.log("login errors: ", error))
 }
 
@@ -109,7 +109,7 @@ const signup = (userInfo) => {
 }
 
 const logout = () => {
-  fetch(`${url}/login`, {
+  fetch(`${url}/logout`, {
     headers: {
       "Content-Type": "application/json",
       "Authorization": localStorage.getItem("token") //retrieve the token
@@ -171,10 +171,9 @@ const deleteActivity = (id) => {
       <Header currentUser={currentUser} logout={logout}/>
       )}
       <Routes>
-        <Route path="/signup" element={<SignUp signup={signup}/>} />
+        <Route path="/signup" element={<SignUp signup={signup} currentUser={currentUser}/>} />
         <Route path="/login" element={<LogIn login={login}/>} />
         <Route path="/aboutus" element={<AboutUs />} />
-        {/* <Route path="/" element={<Home activities={activities} currentUser={currentUser} createActivity={createActivity}/>}/> */}
 
 {/* Protected routes */}
         <Route element={<ProtectedRoutes currentUser={currentUser}/>} >
