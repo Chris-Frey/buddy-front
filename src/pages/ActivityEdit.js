@@ -42,7 +42,7 @@ const ActivityEdit = ({activities, updateActivity}) => {
           </Card.Header>
           <Card.Body css={{ p: 5, color: "#94f9f0" ,bg: "white" }}>
             <Input
-              onChange={handleChange} 
+              onChange={handleChange}
               name='category'
               value={changeActivity?.category}
               label="CATEGORY"
@@ -56,7 +56,7 @@ const ActivityEdit = ({activities, updateActivity}) => {
             />
             <Input
             text="white"
-              onChange={handleChange} 
+              onChange={handleChange}
               name='activity_name'
               value={changeActivity?.activity_name}
               label="ACTIVITY"
@@ -69,7 +69,7 @@ const ActivityEdit = ({activities, updateActivity}) => {
               contentLeft={<Text fill="currentColor" />}
             />
             <Input
-              onChange={handleChange} 
+              onChange={handleChange}
               name='start_time'
               value={changeActivity?.start_time}
               label="TIME"
@@ -82,7 +82,7 @@ const ActivityEdit = ({activities, updateActivity}) => {
               contentLeft={<Text fill="currentColor" />}
             />
             <Input
-              onChange={handleChange} 
+              onChange={handleChange}
               name='location'
               value={changeActivity?.location}
               label="LOCATION"
@@ -95,7 +95,7 @@ const ActivityEdit = ({activities, updateActivity}) => {
               contentLeft={<Text fill="currentColor" />}
             />
             <Input
-              onChange={handleChange} 
+              onChange={handleChange}
               name='description'
               value={changeActivity?.description}
               label="INFO"
@@ -108,7 +108,7 @@ const ActivityEdit = ({activities, updateActivity}) => {
               contentLeft={<Text fill="currentColor" />}
             />
             <Input
-              onChange={handleChange} 
+              onChange={handleChange}
               name='duration'
               value={changeActivity?.duration}
               label="DURATION"
@@ -122,7 +122,7 @@ const ActivityEdit = ({activities, updateActivity}) => {
               contentLeft={<Text fill="currentColor" />}
             />
             <Input
-              onChange={handleChange} 
+              onChange={handleChange}
               name='activity_photo'
               value={changeActivity?.activity_photo}
               label="PHOTO URL"
@@ -152,7 +152,7 @@ const ActivityEdit = ({activities, updateActivity}) => {
                   <NavLink to={`/activityshow/${currentActivity?.id}`}>
                   <button>CANCEL</button>
                   </NavLink>
-                  
+
                   <NavLink to={`/activityshow/${currentActivity?.id}`}>
                   <button onClick={submitHandler}>SAVE</button>
                   </NavLink>

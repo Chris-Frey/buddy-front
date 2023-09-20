@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 
 const AddActivityModal = ({createActivity, currentUser}) => {
-
+// start_time is sent into the database as an ISO8601 format date.  Needs to be read in javascript with a Date.parse method.
   const [newActivity, setNewActivity] = useState({
     category:"",
     activity_name:"",
@@ -40,7 +40,7 @@ const AddActivityModal = ({createActivity, currentUser}) => {
           Add Activity
         </Button>
       <div/>
-    
+
       <Modal
         css={{bg:"#FFCD4E"}}
         closeButton
@@ -57,7 +57,7 @@ const AddActivityModal = ({createActivity, currentUser}) => {
         <Modal.Body>
 
           <Input
-            onChange={handleChange} 
+            onChange={handleChange}
             name='category'
             value={newActivity.category}
             label="CATEGORY"
@@ -70,7 +70,7 @@ const AddActivityModal = ({createActivity, currentUser}) => {
             contentLeft={<Text fill="currentColor" />}
             />
           <Input
-            onChange={handleChange} 
+            onChange={handleChange}
             name='activity_name'
             value={newActivity.activity_name}
             label="ACTIVITY"
@@ -83,10 +83,11 @@ const AddActivityModal = ({createActivity, currentUser}) => {
             contentLeft={<Text fill="currentColor" />}
             />
           <Input
-            onChange={handleChange} 
+            onChange={handleChange}
             name='start_time'
             value={newActivity.start_time}
             label="TIME"
+            type="datetime-local"
             clearable
             bordered
             fullWidth
@@ -96,7 +97,7 @@ const AddActivityModal = ({createActivity, currentUser}) => {
             contentLeft={<Text fill="currentColor" />}
             />
           <Input
-            onChange={handleChange} 
+            onChange={handleChange}
             name='location'
             value={newActivity.location}
             label="LOCATION"
@@ -109,7 +110,7 @@ const AddActivityModal = ({createActivity, currentUser}) => {
             contentLeft={<Text fill="currentColor" />}
             />
           <Input
-            onChange={handleChange} 
+            onChange={handleChange}
             name='description'
             value={newActivity.description}
             label="INFO"
@@ -122,7 +123,7 @@ const AddActivityModal = ({createActivity, currentUser}) => {
             contentLeft={<Text fill="currentColor" />}
             />
           <Input
-            onChange={handleChange} 
+            onChange={handleChange}
             name='duration'
             value={newActivity.duration}
             label="DURATION"
@@ -136,7 +137,7 @@ const AddActivityModal = ({createActivity, currentUser}) => {
             contentLeft={<Text fill="currentColor" />}
             />
           <Input
-            onChange={handleChange} 
+            onChange={handleChange}
             name='activity_photo'
             value={newActivity?.activity_photo}
             label="PHOTO URL"
@@ -164,5 +165,5 @@ const AddActivityModal = ({createActivity, currentUser}) => {
     </>
   );
 }
-            
+
 export default AddActivityModal
