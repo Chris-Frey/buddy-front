@@ -30,11 +30,6 @@ const Home = (props) => {
   // creates new time object to be used to get current time
   const today = new Date()
 
-// sorts activities by start_time
-  // const activitiesSortedByTime = () => {
-  //   props.activities?.sort( (a, b) =>a.start_time.localeCompare(b.start_time))
-  // }
-
   //filters activities by time (milliseconds from Epoch of 1970)
   const activityFilter30Min = props.activities?.filter(value => {
     let startTimeinMillliseconds = Date.parse(value.start_time)

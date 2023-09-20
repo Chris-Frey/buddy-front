@@ -1,9 +1,9 @@
-import { Routes, Route, useNavigate, NavLink, Navigate } from "react-router-dom"
+import { Routes, Route, useNavigate} from "react-router-dom"
 import { useState, useEffect } from "react";
 import './App.css';
 import Header from './components/Header/Header'
 import Home from "./pages/Home";
-import BuddyProfile from "./pages/BuddyProfile";
+import BuddyProfile from "./pages/UserProfile";
 import LogIn from "./pages/LogIn";
 import ActivityShow from "./pages/ActivityShow";
 import SignUp from "./pages/SignUp";
@@ -33,6 +33,8 @@ useEffect(() => {
   }
   readActivity()
 }, [])
+
+
 
 // user_activities
   useEffect(() => {
@@ -182,8 +184,8 @@ const deleteActivity = (id) => {
           <Route path="/buddyprofile/:id" element={<BuddyProfile currentUser={currentUser} userActivity={userActivity} activities={activities}/>} />
           <Route path="/activityshow/:id" element={<ActivityShow activities={activities} currentUser={currentUser} updateActivity={updateActivity} deleteActivity={deleteActivity} createUserActivity={createUserActivity}/>} />
           <Route path="/activityedit/:id" element={<ActivityEdit activities={activities} updateActivity={updateActivity}/>} />
-          <Route path="*" element={<Error />} />
         </Route>
+        <Route path="*" element={<Error />} />
       </Routes>
       </>
   );

@@ -2,7 +2,7 @@ import React from 'react'
 // import { Container, Image } from '@nextui-org/react';
 import styles from "../styles/BuddyProfile.css";
 import { Card, Col, Text } from "@nextui-org/react";
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import AddActivityModal from '../components/AddActivityModal/AddActivityModal'
 
 const BuddyProfile = ({currentUser, userActivity, activities}) => {
@@ -10,17 +10,18 @@ const BuddyProfile = ({currentUser, userActivity, activities}) => {
   const { id } = useParams()
 
   const filteredActivities = userActivity.filter(activity => {
-    return +activity.user_id === +currentUser.id
+    return +activity.user_id === +currentUser?.id
   })
 
   const activityArray = []
   const myEvents = filteredActivities.map(event => {
-    return activityArray.push(event.activity_id)
+    return activityArray.push(event?.activity_id)
   })
 
   const myActivities = activities.map(activity => {
     if(activityArray.includes(activity.id)) {
-      return <ul className='activity-list'>{activity.activity_name}</ul>
+      return <ul className='activity-list'>
+        <Link to={`/activityshow/${activity?.id}`} >{activity?.activity_name}</Link></ul>
     }
   })
 
@@ -44,16 +45,16 @@ const BuddyProfile = ({currentUser, userActivity, activities}) => {
         <Text size={15} weight="bold" transform="uppercase"color="#FFCD4E" >NAME</Text>
 
         <Text size={13} h3 color="White" >
-        {currentUser.name}</Text>
+        {currentUser?.name}</Text>
 
         <Text size={15} weight="bold" transform="uppercase" color="#FFCD4E" > USER NAME</Text>
 
         <Text size={13} h3 color="White">
-        {currentUser.username}</Text>
+        {currentUser?.username}</Text>
 
         <Text size={15} weight="bold" transform="uppercase" color="#FFCD4E">Gender Identity</Text>
 
-        <Text size={13} h3 color="White"> {currentUser.gender_identity}</Text>
+        <Text size={13} h3 color="White"> {currentUser?.gender_identity}</Text>
 
         <Text size={15} weight="bold" transform="uppercase" color="#FFCD4E">My Events</Text>
 
