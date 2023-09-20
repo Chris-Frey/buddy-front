@@ -28,7 +28,7 @@ const LogIn = ({login, currentUser}) => {
         <Input css={{textAlign:'$center'}}width="250px" labelPlaceholder="Email" type='email' name='email' initialValue="" color="warning"/>
         <Spacer y={2.5} />
         <Input.Password width="250px" labelPlaceholder="Password" type='password' name='password' initialValue="" color="warning"/>
-
+        {/* <Button1/> */}
         <Spacer y={1.5} />
         <div className='buttons'>
           <Grid>
