@@ -16,10 +16,10 @@ const ActivityShow = ({activities, deleteActivity, currentUser, createUserActivi
   const handleDelete = () => {
     deleteActivity(currentActivity?.id)
   }
- 
+
   const [userActivityState, setUserActivityState] = useState({
     user_id: currentUser?.id,
-    activity_id: currentActivity?.id 
+    activity_id: currentActivity?.id
   })
 
   const [buddyUp, setBuddyUp] = useState(false)
@@ -29,7 +29,7 @@ const ActivityShow = ({activities, deleteActivity, currentUser, createUserActivi
     createUserActivity(userActivityState)
   }
 
-  
+
   return (
     <>
       <div className='activity_pic'>
@@ -41,9 +41,9 @@ const ActivityShow = ({activities, deleteActivity, currentUser, createUserActivi
           <Card.Header  className='activity-card' css={{ pl: 150, color: 'white', bg: 'black'}}>
           <Text size={24} weight="bold" transform="uppercase" color="white">{currentActivity?.category}</Text>
     </Card.Header>
-    
+
     <Card.Body css={{ pl: 50, color: "#94f9f0" ,bg: "#030303" }}>
- 
+
         <Text size={15} weight="bold" transform="uppercase" color="#FFCD4E">ACTIVITY NAME</Text>
 
         <Text size={13} h3 color="white">
