@@ -18,8 +18,8 @@ function App() {
   const [currentUser, setCurrentUser] = useState(null)
   const [activities, setActivities] = useState([])
   const [userActivity, setUserActivity] = useState([])
-  // const url = "http://localhost:3000"
-const url = "https://whim.onrender.com"
+  const url = "http://localhost:3000"
+// const url = "https://whim.onrender.com"
   const navigate = useNavigate()
 
 useEffect(() => {
@@ -33,8 +33,6 @@ useEffect(() => {
   }
   readActivity()
 }, [])
-
-
 
 // user_activities
   useEffect(() => {
@@ -76,7 +74,7 @@ const login = (userInfo) => {
     if (!response.ok) {
       throw Error(response.statusText)
     }
-    // store the token
+// store the token
     localStorage.setItem("token", response.headers.get("Authorization"))
     return response.json()
   })
