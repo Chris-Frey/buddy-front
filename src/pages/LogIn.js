@@ -19,8 +19,7 @@ const LogIn = ({login, currentUser}) => {
   return (
     <>
     <div className="title_logo">
-    <img src="/buddy.png"/>
-    <h1 id="buddy">BUDDY</h1>
+    <img src="/logo512.png"/>
     </div>
     <form ref={formRef} onSubmit={handleSubmit}>
       <div className='container-card'>
@@ -28,14 +27,13 @@ const LogIn = ({login, currentUser}) => {
         <Input css={{textAlign:'$center'}}width="250px" labelPlaceholder="Email" type='email' name='email' initialValue="" color="warning"/>
         <Spacer y={2.5} />
         <Input.Password width="250px" labelPlaceholder="Password" type='password' name='password' initialValue="" color="warning"/>
-        {/* <Button1/> */}
         <Spacer y={1.5} />
         <div className='buttons'>
           <Grid>
           <NavLink >
             <Button
             auto
-            css={{ color: "black", bg: "#FFCD4E" }}
+            css={{ color: "black", bg: "#fc8bcb" }}
             type='submit'>
               Log In
             </Button>
@@ -50,7 +48,7 @@ const LogIn = ({login, currentUser}) => {
         <NavLink to="/signup">
           <Button
           auto
-          css={{ color: "black", bg: "#FFCD4E" }}>
+          css={{ color: "black", bg: "#fc8bcb" }}>
             Sign Up
           </Button>
           </NavLink>

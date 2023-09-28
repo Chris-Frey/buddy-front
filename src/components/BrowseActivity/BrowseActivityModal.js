@@ -10,14 +10,14 @@ const BrowseActivityModal = () => {
   const closeHandler = () => {
     setVisible(false);
   };
-  
+
   return (
     <div>
-      <Button auto color="#FFCD4E" shadow onClick={handler}>
+      <Button auto color="#fc8bcb" shadow onClick={handler}>
         BROWSE ACTIVITIES
       </Button>
       <Modal
-        css={{bg:"#FFCD4E"}}
+        css={{bg:"#fc8bcb"}}
         closeButton
         blur
         aria-labelledby="modal-title"
@@ -80,7 +80,7 @@ const BrowseActivityModal = () => {
           </Text>
           </NavLink>
         </Modal.Body>
-        
+
         <Modal.Footer justify="space-around">
         </Modal.Footer>
       </Modal>

@@ -1,6 +1,5 @@
 .home_background {
-  /* color: yellow; */
-  background-color: #020202;
+  background-color: #5f7080;
 }
 
 .title {
@@ -8,7 +7,7 @@
 }
 
 .time-frame {
-  color: #ffcd4e;
+  color: #fc8bcb;
 }
 
 .button {
@@ -16,7 +15,7 @@
   position: fixed;
   right: 100px;
   bottom: 50px;
-  background-color: #FFCD4E;
+  background-color: #fc8bcb;
   border: none;
   border-radius: 20px;
   font-size: 20px;

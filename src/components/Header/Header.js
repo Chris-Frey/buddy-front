@@ -22,16 +22,11 @@ const Header = ({currentUser, logout}) => {
       <Layout>
         <Navbar isBordered variant={variant} maxWidth={"fluid"}
           css={{
-            backgroundColor: '$yellow600'
+            backgroundColor: '#5f7080'
           }}
         >
           <Navbar.Brand>
-            <Logo/>
-            <img width={100}  src="/buddy.png"/>
-
-            <Text b color="black" weight={"bold"} size={30} hideIn="xs">
-              BUDDY
-            </Text>
+            <img src="/logo512.png"/>
           </Navbar.Brand>
 
           <Navbar.Content>
