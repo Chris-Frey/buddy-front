@@ -1,15 +1,18 @@
 import React, { useRef, useState } from 'react'
-import { Input, Spacer, Button, Grid } from "@nextui-org/react";
-import { NavLink, useNavigate } from 'react-router-dom'
+// import { Input, Button } from "@nextui-org/react";
+import { NavLink } from 'react-router-dom'
 import styles from "../styles/LogIn.css"
 
-const LogIn = ({login, currentUser}) => {
+const LogIn = ({login}) => {
   const formRef = useRef()
 
   const handleSubmit = (e) => {
     e.preventDefault()
+        // stores the form entries in a variable
     const formData = new FormData(formRef.current)
+        // creates an object from entries
     const data = Object.fromEntries(formData)
+        // stores user info in a format for JWT
     const userInfo = {
       "user":{ email: data.email, password: data.password}
     }
@@ -17,42 +20,31 @@ const LogIn = ({login, currentUser}) => {
   }
 
   return (
-    <>
+  <>
     <div className="title_logo">
-    <img src="/logo512.png"/>
+    <img src="/logo512.png" alt='Whim Logo'/>
     </div>
-    <form ref={formRef} onSubmit={handleSubmit}>
-      <div className='container-card'>
-        <Spacer y={2.5} />
-        <Input css={{textAlign:'$center'}}width="250px" labelPlaceholder="Email" type='email' name='email' initialValue="" color="warning"/>
-        <Spacer y={2.5} />
-        <Input.Password width="250px" labelPlaceholder="Password" type='password' name='password' initialValue="" color="warning"/>
-        <Spacer y={1.5} />
-        <div className='buttons'>
-          <Grid>
-          <NavLink >
-            <Button
-            auto
-            css={{ color: "black", bg: "#fc8bcb" }}
-            type='submit'>
-              Log In
-            </Button>
-            </NavLink>
-          </Grid>
-          <Spacer y={1.5} />
 
-        </div>
-      </div>
+    <form
+      ref={formRef}
+      onSubmit={handleSubmit}
+    >
+      <input
+        type='email'
+        name='email'
+        placeholder='Email'
+      />
+      <input
+        type='password'
+        name='password'
+        placeholder='Password'
+      />
+      <button type='submit' onClick={handleSubmit}>Log In</button>
+      <NavLink to="/signup">
+        <button>Sign Up</button>
+      </NavLink>
     </form>
-    <Grid>
-        <NavLink to="/signup">
-          <Button
-          auto
-          css={{ color: "black", bg: "#fc8bcb" }}>
-            Sign Up
-          </Button>
-          </NavLink>
-        </Grid>
+
   </>
   )
 }
