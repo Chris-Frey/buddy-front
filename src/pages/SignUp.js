@@ -4,7 +4,7 @@ import { NavLink, Link } from 'react-router-dom'
 import { useNavigate } from "react-router-dom";
 import styles from "../styles/SignUp.css"
 
-const SignUp = ({signup}) => {
+const SignUp = ({signup, logout}) => {
   const formRef = useRef ()
   const navigate = useNavigate()
 
@@ -18,9 +18,6 @@ const SignUp = ({signup}) => {
       "user":{ email: data.email, password: data.password, name: data.name, username: data.username, gender_identity: data.gender_identity, bio: data.bio}
     }
     signup(userInfo)
-    e.target.reset()
-    navigate("/")
-
   }
 
   const { value, reset, bindings } = useInput("");

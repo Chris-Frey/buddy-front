@@ -105,6 +105,8 @@ const signup = (userInfo) => {
   .then(payload => {
     setCurrentUser(payload)
   })
+  .then(() => logout())
+  .then(() => navigate("/login"))
   .catch(error => console.log("login errors: ", error))
 }
 
@@ -171,7 +173,7 @@ const deleteActivity = (id) => {
       <Header currentUser={currentUser} logout={logout}/>
       )}
       <Routes>
-        <Route path="/signup" element={<SignUp signup={signup} currentUser={currentUser}/>} />
+        <Route path="/signup" element={<SignUp signup={signup} currentUser={currentUser} logout={logout}/>} />
         <Route path="/login" element={<LogIn login={login}/>} />
         <Route path="/aboutus" element={<AboutUs />} />
 
