@@ -42,8 +42,8 @@ const SignUp = ({signup, logout}) => {
   return (
     <>
     <div className="title_logo">
-    <img src="/buddy.png"/>
-    <h1 id="buddy">BUDDY</h1>
+    <img src="/logo.png"/>
+    <h1 id="buddy">Promptu</h1>
     </div>
       <form ref={formRef} onSubmit={handleSubmit}>
         <div className="container">

@@ -26,12 +26,12 @@ const Header = ({currentUser, logout}) => {
           }}
         >
           <Navbar.Brand>
-            <img src="/logo512.png"/>
+            <img src="/logo.png"/>
           </Navbar.Brand>
 
           <Navbar.Content>
             <NavLink style={styled} to="/" >HOME</NavLink>
-            <NavLink style={styled} to="/aboutus" >ABOUT US</NavLink>
+            <NavLink style={styled} to="/aboutus" >ABOUT</NavLink>
             <NavLink style={styled} to={`/buddyprofile/${currentUser?.id}` } >PROFILE</NavLink>
           </Navbar.Content>
 

@@ -11,7 +11,7 @@ const Logo = () => (
 //   <rect fill="var(--secondary)" height="100%" rx="16" width="100%" />
 //   <path
     clipRule="evenodd"
-    d="src/assets/logo512.png"
+    d="src/assets/logo.png"
     fill="currentColor"
     fillRule="evenodd"
   />
