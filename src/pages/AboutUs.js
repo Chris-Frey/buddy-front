@@ -7,7 +7,7 @@ const AboutUs = () => {
   return (
     <>
       <div className="title">
-        <h1 className="title">Socially Team</h1>
+        <h1 className="title">Whim Team</h1>
       </div>
       <image class='kaylee' src="src/assets/PXL_20230325_185527781.jpg"
         alt="Default Image"

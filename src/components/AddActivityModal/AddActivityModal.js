@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { Modal, Input, Button, Text, yellow } from "@nextui-org/react";
+import { Modal, Input, Button, Text } from "@nextui-org/react";
 import { useNavigate } from "react-router-dom";
 
 
@@ -29,6 +29,7 @@ const AddActivityModal = ({createActivity, currentUser}) => {
   };
 
   const submitHandler = () => {
+    console.log(newActivity)
     createActivity(newActivity);
     closeHandler()
   }

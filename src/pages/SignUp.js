@@ -59,7 +59,6 @@ const SignUp = ({signup}) => {
             onClearClick={reset}
             status={helper.color}
             color="warning"
-
             helperColor={helper.color}
             helperText={helper.text}
             type="email"
@@ -128,21 +127,21 @@ const SignUp = ({signup}) => {
        <Spacer y={1} />
 
         <Button
-              onClick={handleSubmit}
-              flat
-              auto
-              rounded
-              css={{ color: "black", bg: "#FFCD4E" }}
-              >
-              <Text
-                css={{ color: "inherit" }}
-                size={12}
-                weight="bold"
-                transform="uppercase"
-                >
-                Sign Up
-              </Text>
-            </Button>
+          onClick={handleSubmit}
+          flat
+          auto
+          rounded
+          css={{ color: "black", bg: "#FFCD4E" }}
+          >
+          <Text
+            css={{ color: "inherit" }}
+            size={12}
+            weight="bold"
+            transform="uppercase"
+            >
+            Sign Up
+          </Text>
+        </Button>
         <Spacer y={1} />
         <NavLink to="/login">
           <Button
