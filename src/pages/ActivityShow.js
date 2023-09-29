@@ -32,70 +32,60 @@ const ActivityShow = ({activities, deleteActivity, currentUser, createUserActivi
 
   return (
     <>
-      <div className='activity_pic'>
-        <PictureCard currentActivity={currentActivity}/>
+      <div>
+        <img currentActivity={currentActivity}/>
         <div/>
-        <div className='card_and_links'>
-        <div className='activityShowBody'>
-        <Card css={{ w: 400, h: "70vh" }}>
-          <Card.Header  className='activity-card' css={{ pl: 150, color: 'white', bg: 'black'}}>
-          <Text size={24} weight="bold" transform="uppercase" color="white">{currentActivity?.category}</Text>
-    </Card.Header>
 
-    <Card.Body css={{ pl: 50, color: "#94f9f0" ,bg: "#030303" }}>
+          <Text>{currentActivity?.category}</Text>
 
-        <Text size={15} weight="bold" transform="uppercase" color="#FFCD4E">ACTIVITY NAME</Text>
+        <Text>ACTIVITY NAME</Text>
 
-        <Text size={13} h3 color="white">
+        <Text>
         {currentActivity?.activity_name}</Text>
 
-        <Text size={15} weight="bold" transform="uppercase" color="#FFCD4E">Time</Text>
+        <Text>Time</Text>
 
-        <Text size={13} h3 color="white">{currentActivity?.start_time}</Text>
+        <Text>{currentActivity?.start_time}</Text>
 
-        <Text size={15} weight="bold" transform="uppercase" color="#FFCD4E">Duration</Text>
+        <Text>Duration</Text>
 
-        <Text size={13} h3 color="white"> {currentActivity?.duration}</Text>
+        <Text> {currentActivity?.duration}</Text>
 
-        <Text size={15} weight="bold" transform="uppercase" color="#FFCD4E">Location</Text>
+        <Text>Location</Text>
 
-        <Text size={13} h3 color="white"> {currentActivity?.location}</Text>
+        <Text> {currentActivity?.location}</Text>
 
-        <Text size={15} weight="bold" transform="uppercase" color="#FFCD4E">Info</Text>
+        <Text>Info</Text>
 
-        <Text size={13} h3 color="white">{currentActivity?.description}</Text>
+        <Text>{currentActivity?.description}</Text>
 
-        <Text size={15} weight="bold" transform="uppercase" color="#FFCD4E">CREATOR ID</Text>
+        <Text>CREATOR ID</Text>
 
-        <Text size={13} h3 color="white">{currentUser?.id}</Text>
+        <Text>{currentUser?.id}</Text>
 
-        <Text size={15} weight="bold" transform="uppercase" color="#FFCD4E">Attendees</Text>
+        <Text>Attendees</Text>
 
         {buddyUp?
-          <Text size={13} h3 color="white">{currentUser.name}</Text>
+          <Text>{currentUser.name}</Text>
         :null}
-    </Card.Body>
-  </Card>
+
   </div>
-          <div className='show_links'>
-            <NavLink to={`/`}>
-              <button className='show_button' size={50} onClick={handleDelete}>DELETE</button>
-            </NavLink>
+    <div className='show_links'>
+      <NavLink to={`/`}>
+        <button  onClick={handleDelete}>DELETE</button>
+      </NavLink>
 
-            <NavLink to={`/`}>
-              <button className='show_button' size={50}>CANCEL</button>
-            </NavLink>
+      <NavLink to={`/`}>
+        <button>CANCEL</button>
+      </NavLink>
 
-            <NavLink to={`/activityedit/${currentActivity.id}`}>
-              <button className='show_button' size={50}>EDIT</button>
-            </NavLink>
+      <NavLink to={`/activityedit/${currentActivity.id}`}>
+        <button>EDIT</button>
+      </NavLink>
+        <button onClick={submitHandler}>Buddy Up</button>
+    </div>
 
-              <button onClick={submitHandler} className='show_button' size={50} >Buddy Up</button>
-
-            </div>
-            </div>
         <AddActivityModal />
-          </div>
     </>
   )
 }

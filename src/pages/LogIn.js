@@ -22,7 +22,7 @@ const LogIn = ({login}) => {
   return (
   <>
     <div className="title_logo">
-    <img src="/logo512.png" alt='Whim Logo'/>
+    <img src="/logo.png" alt='Promptu Logo'/>
     </div>
 
     <form
