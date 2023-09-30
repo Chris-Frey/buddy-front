@@ -21,11 +21,14 @@ const LogIn = ({login}) => {
 
   return (
   <>
-    <div className="title_logo">
-    <img src="/logo.png" alt='Promptu Logo'/>
-    </div>
+  <body className='loginBody'>
 
+  <div className="titleLogo" >
+    <img src="/logo.png" alt='Promptu Logo'/>
+  </div>
+  <h1>Promptu</h1>
     <form
+      className='loginForm'
       ref={formRef}
       onSubmit={handleSubmit}
     >
@@ -39,12 +42,12 @@ const LogIn = ({login}) => {
         name='password'
         placeholder='Password'
       />
-      <button type='submit' onClick={handleSubmit}>Log In</button>
+      <button className='loginButton' type='submit' onClick={handleSubmit}>Log In</button>
       <NavLink to="/signup">
-        <button>Sign Up</button>
+        <text className='signup'>Sign Up</text>
       </NavLink>
     </form>
-
+    </body>
   </>
   )
 }

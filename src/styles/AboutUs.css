@@ -9,13 +9,7 @@
   font-size: 16px;
   width: 400px;
 }
-h1 {
-  display: flex;
-  justify-content: center;
-  color: #fc8bcb;
-  text-align: center;
-  font-size: 50px;
-}
+
 
 h2 {
   padding: 15px 0 15px 0;
@@ -25,10 +19,6 @@ h2 {
   font-size: 35px;
 }
 
-img {
-  height: 50px;
-  margin-right: 20px;
-}
 .icons {
   margin-right: 10px;
   padding-left: 20px;
@@ -41,11 +31,6 @@ img {
 .profileimg{
   width: 300px;
   border-radius: 50px;
-}
-
-body {
-  background-color: #5f7080;
-  height: 150vh;
 }
 
 .aboutustext {
