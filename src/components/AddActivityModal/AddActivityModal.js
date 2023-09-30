@@ -14,7 +14,7 @@ const AddActivityModal = ({createActivity, currentUser}) => {
     duration: 2.0,
     location:"",
     description:"",
-    creator_id: currentUser?.id
+    creator_id: 2 //currentUser?.id
   })
 
   const navigate = useNavigate()
