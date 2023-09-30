@@ -131,6 +131,8 @@ const readActivity = () => {
     .then((response) => response.json())
     .then((payload) => {
       setActivities(payload)
+      console.log('payload', payload);
+
     })
     .catch((error) => console.log(error))
 }
