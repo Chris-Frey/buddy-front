@@ -20,11 +20,7 @@ const Header = ({currentUser, logout}) => {
   return (
       <>
       <Layout>
-        <Navbar isBordered variant={variant} maxWidth={"fluid"}
-          css={{
-            backgroundColor: '#5f7080'
-          }}
-        >
+        <Navbar >
           <Navbar.Brand>
             <img src="/logo.png"/>
           </Navbar.Brand>

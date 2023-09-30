@@ -15,7 +15,7 @@
   margin: 3rem;
 }
 
-input {
+.loginForm > input {
   margin: 0.5rem;
   border-style: none;
   border-radius: 0.5rem;
@@ -46,6 +46,7 @@ input {
 .signup {
   color: #fd8a03;
 }
-h1 {
+
+.loginBody > h1 {
   color: white;
 }
