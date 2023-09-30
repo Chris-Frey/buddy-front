@@ -76,7 +76,7 @@ const Home = (props) => {
     <>
 
     <div className='home_background'>
-      <AddActivityModal className='add_activity_button' currentUser={props.currentUser} activities={props.activities} createActivity={props.createActivity}/>
+      {/* <AddActivityModal className='add_activity_button' currentUser={props.currentUser} activities={props.activities} createActivity={props.createActivity}/> */}
       <h3 className='title'>ACTIVITIES HAPPENING IN THE NEXT<br/><span className='time-frame'>30 MIN</span></h3>
       <Carousel
         partialVisible

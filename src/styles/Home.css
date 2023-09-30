@@ -1,3 +1,9 @@
+:root {
+  --primary-color: #fe8904;
+  --secondary-color: ;
+  --background-color: ;
+}
+
 .home_background {
   background-color: #5f7080;
 }

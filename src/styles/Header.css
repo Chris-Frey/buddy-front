@@ -1,0 +1,36 @@
+@media screen and (max-width:768px) {
+.headerBody {
+  visibility: hidden;
+  visibility: collapse;
+  height: 0;
+}
+  .headerBody > ul {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.headerBody > li {
+  font-size: 1.5rem;
+}
+
+.headerBody > ul > img {
+  max-height: 3rem;
+}
+}
+/* @media screen and (max-width:768px) {
+  .headerBody {
+    background-color: yellow;
+  }
+  .headerBody > ul {
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+} */
