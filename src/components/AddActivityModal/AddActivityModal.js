@@ -14,7 +14,7 @@ const AddActivityModal = ({createActivity, currentUser}) => {
     duration: 2.0,
     location:"",
     description:"",
-    creator_id: 2 //currentUser?.id
+    creator_id: currentUser?.id
   })
 
   const navigate = useNavigate()
@@ -153,13 +153,13 @@ const AddActivityModal = ({createActivity, currentUser}) => {
         </Modal.Body>
 
         <Modal.Footer justify="space-around">
-           <Button auto fill="currentColor" css={{bg:"black"}} onClick={closeHandler}>
+           <button onClick={closeHandler}>
             CLOSE
-          </Button>
+          </button>
 
-          <Button auto fill="currentColor" css={{bg:"black"}} onClick={submitHandler}>
+          <button onClick={submitHandler}>
             CREATE ACTIVITY
-          </Button>
+          </button>
         </Modal.Footer>
       </Modal>
     </div>
