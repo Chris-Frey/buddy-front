@@ -20,33 +20,36 @@ const LogIn = ({login}) => {
 
   return (
   <>
-  <body className='loginBody'>
-
-  <div className="titleLogo" >
-    <img src="/logo.png" alt='Promptu Logo'/>
-  </div>
-  <h1>Promptu</h1>
-    <form
-      className='loginForm'
-      ref={formRef}
-      onSubmit={handleSubmit}
-    >
-      <input
-        type='email'
-        name='email'
-        placeholder='Email'
-      />
-      <input
-        type='password'
-        name='password'
-        placeholder='Password'
-      />
-      <button className='loginButton' type='submit' onClick={handleSubmit}>Log In</button>
-      <NavLink to="/signup">
-        <text className='signup'>Sign Up</text>
-      </NavLink>
-    </form>
-    </body>
+    <div className='loginBody'>
+    <div className="titleLogo" >
+      <img src="/logo.png" alt='Promptu Logo'/>
+    </div>
+    <h1>Promptu</h1>
+      <form
+        className='loginForm'
+        ref={formRef}
+        onSubmit={handleSubmit}
+      >
+        <input
+          type='email'
+          name='email'
+          placeholder='Email'
+        />
+        <input
+          type='password'
+          name='password'
+          placeholder='Password'
+        />
+        <button
+          className='loginButton'
+          type='submit'
+          onClick={handleSubmit}>Log In
+        </button>
+        <NavLink to="/signup">
+          Sign Up
+        </NavLink>
+      </form>
+    </div>
   </>
   )
 }

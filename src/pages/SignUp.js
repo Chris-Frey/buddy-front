@@ -142,16 +142,10 @@ const SignUp = ({signup, logout}) => {
         <Spacer y={1} />
         <NavLink to="/login">
           <Button
-            flat
-            auto
-            rounded
-            css={{ color: "black", bg: "#FFCD4E" }}
+
             >
             <Text
-              css={{ color: "inherit" }}
-              size={12}
-              weight="bold"
-              transform="uppercase"
+
               >
               LogIn
             </Text>
