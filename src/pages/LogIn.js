@@ -20,11 +20,9 @@ const LogIn = ({login}) => {
 
   return (
   <>
-  <body className='loginBody'>
-
-  <div className="titleLogo" >
+  <div className='loginBody'>
     <img src="/logo.png" alt='Promptu Logo'/>
-  </div>
+
   <h1>Promptu</h1>
     <form
       className='loginForm'
@@ -41,12 +39,14 @@ const LogIn = ({login}) => {
         name='password'
         placeholder='Password'
       />
-      <button className='loginButton' type='submit' onClick={handleSubmit}>Log In</button>
-      <NavLink to="/signup">
-        <text className='signup'>Sign Up</text>
+      <button className='loginButton' type='submit' onClick={handleSubmit}>
+        Log In
+      </button>
+      <NavLink to="/signup" className='signup'>
+        Sign Up
       </NavLink>
     </form>
-    </body>
+    </div>
   </>
   )
 }

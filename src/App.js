@@ -190,9 +190,9 @@ const deleteActivity = (id) => {
           <Route path="/activityedit/:id" element={<ActivityEdit activities={activities} updateActivity={updateActivity}/>} />
         </Route>
       </Routes>
-      {/* {currentUser && (
+      {currentUser && (
         <MobileNavBar currentUser={currentUser} logout={logout}/>
-      )} */}
+      )}
       </>
   );
 }

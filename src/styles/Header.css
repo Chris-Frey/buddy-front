@@ -1,13 +1,13 @@
-@media screen and (max-width:768px) {
 .headerBody {
-  visibility: hidden;
-  visibility: collapse;
-  height: 0;
+  margin: none;
+  padding: none;
 }
-  .headerBody > ul {
+
+.headerBody > ul {
+
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
+  background-color: black;
   justify-content: space-around;
   align-items: center;
 }
@@ -19,18 +19,13 @@
 .headerBody > ul > img {
   max-height: 3rem;
 }
+/* BELOW FOR MOBILE */
+@media screen and (max-width:768px) {
+.headerBody {
+  visibility: hidden;
+  visibility: collapse;
+  height: 0;
+  background-color: black;
 }
-/* @media screen and (max-width:768px) {
-  .headerBody {
-    background-color: yellow;
-  }
-  .headerBody > ul {
-    position: fixed;
-    bottom: 0;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-  }
-} */
+
+}
