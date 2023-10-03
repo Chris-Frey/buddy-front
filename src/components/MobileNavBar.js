@@ -10,26 +10,33 @@ export const MobileNavBar = ({currentUser, logout}) => {
   return (
     <>
     <div className='mobileBody'>
-    <nav className='navBar'>
-      <li>
-        <NavLink to={`/buddyprofile/${currentUser?.id}`}>
-          Profile
-        </NavLink>
-      </li>
-      <li>
-        <NavLink to={`/friends/${currentUser?.id}`}>
-          Friends
-        </NavLink>
-      </li>
-      <li className='myLink'>
-        <NavLink to={`/`}>
-          Home
-        </NavLink>
-      </li>
-      <li>Browse</li>
-      <li className='mobile-nav-element' onClick={handleLogOut}>logout</li>
-      <li className='actionButton'>+</li>
-    </nav>
+      <nav className='navBar'>
+        <li>
+          <NavLink to={`/buddyprofile/${currentUser?.id}`} className='myLink'>
+            Profile
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to={`/friends/${currentUser?.id}`} className='myLink'>
+            Friends
+          </NavLink>
+        </li>
+        <li >
+          <NavLink to={`/`} className='myLink' >
+            Home
+          </NavLink>
+        </li>
+        <li >
+          <NavLink to={`/`} className='myLink' >
+            Browse
+          </NavLink>
+        </li>
+
+        <li className='myLink' onClick={handleLogOut}>logout</li>
+        <div className='actionButton'>
+          <li>+</li>
+        </div>
+      </nav>
     </div>
     </>
   )

@@ -1,24 +1,11 @@
 
-
-
-
-
-.mobileBody {
-  visibility: hidden;
-  list-style: none;
-  display: flex;
-  justify-content: space-around;
-  background-color: black;
-  color: var(--primary-color);
-}
-@media screen and (max-width:768px) {
   .mobileBody {
     visibility: visible;
-    text-decoration: none;
-    height: 4rem;
-    background-color: var(--background-color);
+    list-style: none;
+    background-color: black;
+    position: fixed;
+    bottom: 0;
   }
-
   .mobileBody > .navBar {
     width: 100vw;
     display: flex;
@@ -26,9 +13,39 @@
     align-items: center;
   }
 
-  .mobileBody > .myLink {
-    color: yellow;
+  .myLink {
+    color: #F9C784;
+    text-decoration: none;
+  }
+  .myLink:hover {
+    color: blue;
+    background-color: red;
+  }
+  .myLink:active:visited {
+    background-color: white;
+  }
+
+  .actionButton {
+    background-color: #FC7A1E;
+    border-radius: 100%;
+    width: 3rem;
+    height: 3rem;
+    justify-content: center;
+    align-items: center;
   }
 
 
-}
+
+@media screen and (min-width:768px) {
+    .mobileBody {
+      visibility: hidden;
+      text-decoration: none;
+      height: 0;
+      background-color: #023047;
+    }
+
+    .mobileBody > .navBar {
+      display: flex;
+      align-items: center;
+    }
+  }

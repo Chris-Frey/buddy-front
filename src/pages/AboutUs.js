@@ -6,7 +6,7 @@ import {Link} from "react-router-dom"
 const AboutUs = () => {
   return (
     <>
-      <div className="title">
+      <div className="aboutBody">
         <h1 className="title">Promptu</h1>
       </div>
       <image className='kaylee' src="src/assets/PXL_20230325_185527781.jpg"
