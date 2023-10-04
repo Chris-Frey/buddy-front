@@ -1,3 +1,7 @@
+.modalBackground {
+  background-color: yellow;
+}
+
 .modalCard {
   width: 30rem;
   background-color: chocolate;

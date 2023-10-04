@@ -176,7 +176,7 @@ const deleteActivity = (id) => {
   return (
       <>
       {currentUser && (
-        <Header currentUser={currentUser} logout={logout} handleModal={handleModal} openModal={openModal}/>
+        <Header currentUser={currentUser} logout={logout} handleModal={handleModal} openModal={openModal} createActivity={createActivity}/>
       )}
 
 
