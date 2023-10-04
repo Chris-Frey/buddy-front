@@ -6,7 +6,7 @@ import Logo from "./Header/Logo.js"
 import styles from "../styles/Header.css"
 
 
-const Header = ({currentUser, logout, handleModal, openModal}) => {
+const Header = ({currentUser, logout, handleModal, openModal, createActivity}) => {
 
   const handleLogOut = () => {
     logout()
@@ -25,7 +25,7 @@ const Header = ({currentUser, logout, handleModal, openModal}) => {
           <li> <NavLink onClick={handleLogOut}>LOG OUT</NavLink></li>
         </ul>
         <div className="headerModal">
-          {openModal && <AddActivityModal handleModal={handleModal}/>}
+          {openModal && <AddActivityModal handleModal={handleModal} createActivity={createActivity} currentUser={currentUser}/>}
           <button className='addActivityButton' onClick={handleModal}>Create Activity</button>
         </div>
       </div>
