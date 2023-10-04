@@ -1,20 +1,16 @@
-import React from "react";
+import { React, useState } from "react";
 import BrowseActivityModal from "./BrowseActivity/BrowseActivityModal.js";
-// import {useNavigate} from "react-router-dom"
 import { NavLink } from "react-router-dom";
+import AddActivityModal from "./AddActivityModal.js";
 import Logo from "./Header/Logo.js"
 import styles from "../styles/Header.css"
 
 
-const Header = ({currentUser, logout}) => {
-  // const navigate = useNavigate()
+const Header = ({currentUser, logout, handleModal, openModal}) => {
+
   const handleLogOut = () => {
     logout()
   }
-  const [variant, setVariant] = React.useState("static");
- const styled = {
-  color: 'black',
- }
 
   return (
       <>
@@ -28,7 +24,10 @@ const Header = ({currentUser, logout}) => {
           <li> <BrowseActivityModal /></li>
           <li> <NavLink onClick={handleLogOut}>LOG OUT</NavLink></li>
         </ul>
-
+        <div className="headerModal">
+          {openModal && <AddActivityModal handleModal={handleModal}/>}
+          <button className='addActivityButton' onClick={handleModal}>Create Activity</button>
+        </div>
       </div>
       </>
   )

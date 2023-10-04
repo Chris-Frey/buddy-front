@@ -1,6 +1,7 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef } from 'react'
 import { NavLink } from 'react-router-dom'
 import styles from "../styles/LogIn.css"
+import AddActivityModal from '../components/AddActivityModal'
 
 const LogIn = ({login}) => {
   const formRef = useRef()
@@ -46,6 +47,7 @@ const LogIn = ({login}) => {
         Sign Up
       </NavLink>
     </form>
+
     </div>
   </>
   )

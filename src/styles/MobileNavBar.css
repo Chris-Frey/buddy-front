@@ -3,7 +3,7 @@
     visibility: visible;
     list-style: none;
     background-color: black;
-    position: fixed;
+    position: sticky;
     bottom: 0;
   }
   .mobileBody > .navBar {

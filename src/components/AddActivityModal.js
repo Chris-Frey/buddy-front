@@ -2,9 +2,10 @@ import React from "react";
 import { useState } from "react";
 import { Modal, Input, Button, Text } from "@nextui-org/react";
 import { useNavigate } from "react-router-dom";
+import styles from "../styles/AddActivityModal.css"
 
 
-const AddActivityModal = ({createActivity, currentUser}) => {
+const AddActivityModal = ({createActivity, currentUser, handleModal}) => {
 // start_time is sent into the database as an ISO8601 format date.  Needs to be read in javascript with a Date.parse method.
   const [newActivity, setNewActivity] = useState({
     category:"",
@@ -36,7 +37,38 @@ const AddActivityModal = ({createActivity, currentUser}) => {
 
   return (
     <>
-      <div>
+
+      <div className="modalBackground" onClick={handleModal}>
+        <div className="modalCard">
+          <div className="modalTitle">
+            Add Activity Details
+          </div>
+          <div className="modalBody">
+            <input label="Category" type="text" name="category" placeholder="e.g. Soccer"/>
+            <input label="Category" type="text" name="title" placeholder="e.g. 3v3"/>
+            <input type="text" name="address" placeholder="e.g. 400 B St, San Diego, CA"/>
+            <input type="number" name="length" placeholder="e.g. 90"/>
+            <input type="text" name="description" placeholder="e.g. bring your own water and shin guards!"/>
+            <input type="datetime-local" name="length" placeholder="e.g. 90"/>
+            <input type="text" name="length" placeholder="e.g. https://www..."/>
+          </div>
+          <div className="modalFooter">
+          <button onClick={handleModal}>Close</button>
+          <button>Submit</button>
+          </div>
+
+
+        </div>
+      </div>
+
+
+
+
+
+
+
+    {/* old modal below */}
+      {/* <div>
         <Button className="button" auto color={"black"} css={{bg:"#FFCD4E", margin:"0"}}onClick={handler}>
           Add Activity
         </Button>
@@ -162,7 +194,7 @@ const AddActivityModal = ({createActivity, currentUser}) => {
           </Button>
         </Modal.Footer>
       </Modal>
-    </div>
+    </div> */}
     </>
   );
 }

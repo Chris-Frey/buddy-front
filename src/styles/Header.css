@@ -1,6 +1,8 @@
 .headerBody {
   margin: none;
   padding: none;
+  position: sticky;
+  top: 0;
 }
 
 .headerBody > ul {
@@ -20,6 +22,19 @@
 .headerBody > ul > img {
   max-height: 3rem;
 }
+
+.headerModal {
+  z-index: 1;
+}
+
+/* .addActivityButton {
+
+  z-index: 1;
+  position: relative;
+  bottom: -45rem;
+  left: 3rem;
+} */
+
 /* BELOW FOR MOBILE */
 @media screen and (max-width:768px) {
 .headerBody {
@@ -28,5 +43,19 @@
   height: 0;
   background-color: black;
 }
+
+.addActivityButton {
+  visibility: hidden;
+  z-index: 1;
+  bottom: 0rem;
+
+}
+
+.modalBackground {
+  visibility: hidden;
+  visibility: collapse;
+  height: 0;
+}
+
 
 }

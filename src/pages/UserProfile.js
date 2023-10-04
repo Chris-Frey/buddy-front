@@ -3,7 +3,7 @@ import React from 'react'
 import styles from "../styles/BuddyProfile.css";
 import { Card, Col, Text } from "@nextui-org/react";
 import { useParams, Link } from 'react-router-dom';
-import AddActivityModal from '../components/AddActivityModal/AddActivityModal'
+import AddActivityModal from '../components/AddActivityModal'
 
 const BuddyProfile = ({currentUser, userActivity, activities}) => {
 
@@ -46,7 +46,7 @@ const BuddyProfile = ({currentUser, userActivity, activities}) => {
               <li className='categoryValue'>{currentUser?.username}</li>
               <li>GENDER</li>
               <li className='categoryValue'>{currentUser?.gender_identity}</li>
-              <li>EVENTS</li>
+              <li>EVENTS YOU'RE ATTENDING</li>
               <li className='categoryValue'>{myActivities}</li>
             </ul>
           </div>
