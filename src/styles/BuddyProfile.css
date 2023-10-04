@@ -1,46 +1,8 @@
-.your_profile {
-  display:flex;
-  color: #FFCD4E;
-  padding-bottom: 30px;
-  margin-left: 330px;
-  margin-top: 35px;
+.myProfileBody {
+  background-color: #feefde;
+  height: 100vh;
 }
 
-p {
-  display: flex;
-  flex-direction: row;
-}
-
-.profileimg1{
-  color: white;
-  height: 400px;
-  width: auto;
-  border-radius: 50px;
-  margin-right: 60px;
-  margin-top: 20px;
-  
-}
-
-.profile-card{
-  color: white;
-  padding-right: 400px;
-}
-
-.card_container {
-  display: flex;
-  justify-content: center;
-  margin-top: 50px;
-}
-
-/* .pic_fields{
-  display: flex;
-  justify-content: space-around;
-} */
-
-.activity-list {
-  color: white;
-}
-.pic_info_buddy{
-  display: flex;
-  justify-content: center;
+.categoryValue {
+  font-size: 1.5rem;
 }

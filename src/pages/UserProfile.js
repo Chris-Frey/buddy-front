@@ -3,7 +3,7 @@ import React from 'react'
 import styles from "../styles/BuddyProfile.css";
 import { Card, Col, Text } from "@nextui-org/react";
 import { useParams, Link } from 'react-router-dom';
-import AddActivityModal from '../components/AddActivityModal/AddActivityModal'
+import AddActivityModal from '../components/AddActivityModal'
 
 const BuddyProfile = ({currentUser, userActivity, activities}) => {
 
@@ -27,43 +27,34 @@ const BuddyProfile = ({currentUser, userActivity, activities}) => {
 
   return (
     <>
+    <div className='myProfileBody'>
     <h1 className='your_profile'>
       Your Profile
     </h1>
-    <div className='pic_info_buddy'>
+
       <img
           className="profileimg1"
           src="src/assets/PXL_20230325_185527781.jpg"
-          alt="Default Image"
-          />
-    <div className='pic_fields'>
+          alt="User Profile Picture"
+      />
+
+          <div className='userCard'>
+            <ul>
+              <li >NAME</li>
+              <li className='categoryValue'>{currentUser?.name}</li>
+              <li>USER NAME</li>
+              <li className='categoryValue'>{currentUser?.username}</li>
+              <li>GENDER</li>
+              <li className='categoryValue'>{currentUser?.gender_identity}</li>
+              <li>EVENTS YOU'RE ATTENDING</li>
+              <li className='categoryValue'>{myActivities}</li>
+            </ul>
+          </div>
 
 
-        <Card className="profile-card" css={{ w: 400, h: "50vh", bg: "Black", pl: "30px"}}>
-        <Card.Header css={{ position: "absolute", zIndex: 1, top: 5}}>
-      <Col>
-        <Text size={15} weight="bold" transform="uppercase"color="#FFCD4E" >NAME</Text>
 
-        <Text size={13} h3 color="White" >
-        {currentUser?.name}</Text>
-
-        <Text size={15} weight="bold" transform="uppercase" color="#FFCD4E" > USER NAME</Text>
-
-        <Text size={13} h3 color="White">
-        {currentUser?.username}</Text>
-
-        <Text size={15} weight="bold" transform="uppercase" color="#FFCD4E">Gender Identity</Text>
-
-        <Text size={13} h3 color="White"> {currentUser?.gender_identity}</Text>
-
-        <Text size={15} weight="bold" transform="uppercase" color="#FFCD4E">My Events</Text>
-
-        <Text size={13} h3 color="White" >{myActivities}</Text>
-      </Col>
-      </Card.Header>
-      </Card>
-       </div>
       </div>
+
 
       <div className='modal'>
       <AddActivityModal />

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import PictureCard from "../components/PictureCard";
 import { Card, Text } from "@nextui-org/react";
-import AddActivityModal from '../components/AddActivityModal/AddActivityModal'
+import AddActivityModal from '../components/AddActivityModal'
 import { useParams, Link, NavLink } from "react-router-dom"
 import styles from '../styles/ActivityShow.css'
 import shadows from '@mui/material/styles/shadows';

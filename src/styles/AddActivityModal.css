@@ -1,0 +1,15 @@
+.modalCard {
+  width: 30rem;
+  background-color: chocolate;
+  border-radius: .5rem;
+}
+
+.modalBody {
+  display: flex;
+  flex-direction: column;
+  padding: .5rem;
+}
+
+.modalBody > input {
+  border-radius: .5rem;
+}

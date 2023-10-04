@@ -1,5 +1,5 @@
 import React from 'react'
-import AddActivityModal from '../components/AddActivityModal/AddActivityModal'
+import AddActivityModal from '../components/AddActivityModal'
 import ActivityCard from '../components/ActivityCard'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -74,9 +74,8 @@ const Home = (props) => {
 
   return (
     <>
-
+    <div className='homeBody'>
     <div className='home_background'>
-      <AddActivityModal className='add_activity_button' currentUser={props.currentUser} activities={props.activities} createActivity={props.createActivity}/>
       <h3 className='title'>ACTIVITIES HAPPENING IN THE NEXT<br/><span className='time-frame'>30 MIN</span></h3>
       <Carousel
         partialVisible
@@ -122,6 +121,7 @@ const Home = (props) => {
         >
         {activityFilter8hour}
       </Carousel>
+    </div>
     </div>
     </>
   )

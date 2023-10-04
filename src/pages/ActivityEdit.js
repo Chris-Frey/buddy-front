@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom"
 import { Card, Col, Row, Button, Text, Input } from "@nextui-org/react";
 import PictureCard from "../components/PictureCard";
 import { Link, NavLink } from 'react-router-dom'
-import AddActivityModal from '../components/AddActivityModal/AddActivityModal'
+import AddActivityModal from '../components/AddActivityModal'
 import styles from "../styles/ActivityEdit.css";
 
 const ActivityEdit = ({activities, updateActivity}) => {

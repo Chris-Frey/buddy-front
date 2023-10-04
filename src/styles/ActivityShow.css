@@ -24,9 +24,11 @@
 transform: scale(1.07);
 cursor: pointer;
 }
+
 #pic_card_links{
 display: flex;
 }
+
 .activity_pic {
   display: flex;
   flex-direction: row;
