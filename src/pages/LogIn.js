@@ -1,6 +1,7 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef } from 'react'
 import { NavLink } from 'react-router-dom'
 import styles from "../styles/LogIn.css"
+import AddActivityModal from '../components/AddActivityModal'
 
 const LogIn = ({login}) => {
   const formRef = useRef()
@@ -20,35 +21,33 @@ const LogIn = ({login}) => {
 
   return (
   <>
-    <div className='loginBody'>
-    <div className="titleLogo" >
-      <img src="/logo.png" alt='Promptu Logo'/>
-    </div>
-    <h1>Promptu</h1>
-      <form
-        className='loginForm'
-        ref={formRef}
-        onSubmit={handleSubmit}
-      >
-        <input
-          type='email'
-          name='email'
-          placeholder='Email'
-        />
-        <input
-          type='password'
-          name='password'
-          placeholder='Password'
-        />
-        <button
-          className='loginButton'
-          type='submit'
-          onClick={handleSubmit}>Log In
-        </button>
-        <NavLink to="/signup">
-          Sign Up
-        </NavLink>
-      </form>
+  <div className='loginBody'>
+    <img src="/logo.png" alt='Promptu Logo'/>
+
+  <h1>Promptu</h1>
+    <form
+      className='loginForm'
+      ref={formRef}
+      onSubmit={handleSubmit}
+    >
+      <input
+        type='email'
+        name='email'
+        placeholder='Email'
+      />
+      <input
+        type='password'
+        name='password'
+        placeholder='Password'
+      />
+      <button className='loginButton' type='submit' onClick={handleSubmit}>
+        Log In
+      </button>
+      <NavLink to="/signup" className='signup'>
+        Sign Up
+      </NavLink>
+    </form>
+
     </div>
   </>
   )

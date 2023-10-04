@@ -1,13 +1,20 @@
-.home_background {
-  background-color: #5f7080;
+:root {
+  --primary-color: #fe8904;
+  --secondary-color: ;
+  --background-color: black;
 }
 
-.title {
+.home_background {
+  background-color: #8ECAE6;
+  height: 100vh;
+}
+
+.homeBody > .title {
   color: white;
 }
 
 .time-frame {
-  color: #fc8bcb;
+  color: #F24C00;
 }
 
 .button {

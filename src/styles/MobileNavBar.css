@@ -1,0 +1,51 @@
+
+  .mobileBody {
+    visibility: visible;
+    list-style: none;
+    background-color: black;
+    position: sticky;
+    bottom: 0;
+  }
+  .mobileBody > .navBar {
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .myLink {
+    color: #F9C784;
+    text-decoration: none;
+  }
+  .myLink:hover {
+    color: blue;
+    background-color: red;
+  }
+  .myLink:active:visited {
+    background-color: white;
+  }
+
+  .actionButton {
+    background-color: #FC7A1E;
+    border-radius: 100%;
+    width: 3rem;
+    height: 3rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+
+@media screen and (min-width:768px) {
+    .mobileBody {
+      visibility: hidden;
+      text-decoration: none;
+      height: 0;
+      background-color: #023047;
+    }
+
+    .mobileBody > .navBar {
+      display: flex;
+      align-items: center;
+    }
+  }

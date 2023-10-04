@@ -1,7 +1,8 @@
 import { Routes, Route, useNavigate} from "react-router-dom"
 import { useState, useEffect } from "react";
 import './App.css';
-import Header from './components/Header/Header'
+import Header from './components/Header'
+import { MobileNavBar } from "./components/MobileNavBar";
 import Home from "./pages/Home";
 import BuddyProfile from "./pages/UserProfile";
 import LogIn from "./pages/LogIn";
@@ -21,6 +22,11 @@ function App() {
   // const url = "http://localhost:3000"
 const url = "https://whim.onrender.com"
   const navigate = useNavigate()
+
+  const [openModal, setOpenModal] = useState(false)
+  const handleModal = () => {
+    setOpenModal(!openModal)
+  }
 
 useEffect(() => {
   readActivity()
@@ -170,23 +176,32 @@ const deleteActivity = (id) => {
   return (
       <>
       {currentUser && (
-      <Header currentUser={currentUser} logout={logout}/>
+        <Header currentUser={currentUser} logout={logout} handleModal={handleModal} openModal={openModal}/>
       )}
+
+
       <Routes>
-        <Route path="/signup" element={<SignUp signup={signup} currentUser={currentUser} logout={logout}/>} />
+        <Route path="/signup" element={<SignUp signup={signup} currentUser={currentUser}/>} />
         <Route path="/login" element={<LogIn login={login}/>} />
         <Route path="/aboutus" element={<AboutUs />} />
+        <Route path="*" element={<Error />} />
 
 {/* Protected routes */}
         <Route element={<ProtectedRoutes currentUser={currentUser}/>} >
           <Route path="/" element={<Home activities={activities} currentUser={currentUser} createActivity={createActivity} exact/>}/>
+
           <Route path="/display/:category?" element={<ActivityFilter activities={activities}/>} />
+
           <Route path="/buddyprofile/:id" element={<BuddyProfile currentUser={currentUser} userActivity={userActivity} activities={activities}/>} />
+
           <Route path="/activityshow/:id" element={<ActivityShow activities={activities} currentUser={currentUser} updateActivity={updateActivity} deleteActivity={deleteActivity} createUserActivity={createUserActivity}/>} />
+
           <Route path="/activityedit/:id" element={<ActivityEdit activities={activities} updateActivity={updateActivity}/>} />
         </Route>
-        <Route path="*" element={<Error />} />
       </Routes>
+      {currentUser && (
+        <MobileNavBar currentUser={currentUser} logout={logout}/>
+      )}
       </>
   );
 }
