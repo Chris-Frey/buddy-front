@@ -34,6 +34,12 @@
     align-items: center;
   }
 
+  .mobileActivityButton {
+    z-index: 2;
+    position: sticky;
+    bottom: 0;
+  }
+
 
 
 @media screen and (min-width:768px) {

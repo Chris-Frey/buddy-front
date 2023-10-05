@@ -19,14 +19,9 @@ function App() {
   const [currentUser, setCurrentUser] = useState(null)
   const [activities, setActivities] = useState([])
   const [userActivity, setUserActivity] = useState([])
-  // const url = "http://localhost:3000"
-const url = "https://whim.onrender.com"
+  const url = "http://localhost:3000"
+// const url = "https://whim.onrender.com"
   const navigate = useNavigate()
-
-  const [openModal, setOpenModal] = useState(false)
-  const handleModal = () => {
-    setOpenModal(!openModal)
-  }
 
 useEffect(() => {
   readActivity()
@@ -176,7 +171,7 @@ const deleteActivity = (id) => {
   return (
       <>
       {currentUser && (
-        <Header currentUser={currentUser} logout={logout} handleModal={handleModal} openModal={openModal} createActivity={createActivity}/>
+        <Header currentUser={currentUser} logout={logout} createActivity={createActivity}/>
       )}
 
 
@@ -200,7 +195,7 @@ const deleteActivity = (id) => {
         </Route>
       </Routes>
       {currentUser && (
-        <MobileNavBar currentUser={currentUser} logout={logout}/>
+        <MobileNavBar currentUser={currentUser} logout={logout} createActivity={createActivity}/>
       )}
       </>
   );
