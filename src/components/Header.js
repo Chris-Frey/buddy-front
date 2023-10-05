@@ -6,8 +6,12 @@ import Logo from "./Header/Logo.js"
 import styles from "../styles/Header.css"
 
 
-const Header = ({currentUser, logout, handleModal, openModal, createActivity}) => {
+const Header = ({currentUser, logout, createActivity}) => {
 
+  const [openModal, setOpenModal] = useState(false)
+  const handleModal = () => {
+    setOpenModal(!openModal)
+  }
   const handleLogOut = () => {
     logout()
   }

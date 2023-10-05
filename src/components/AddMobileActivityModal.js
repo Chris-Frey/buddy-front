@@ -1,9 +1,8 @@
 import { React, useState } from "react";
-// import { useNavigate } from "react-router-dom";
-import styles from "../styles/AddActivityModal.css"
+// import styles from "../styles/AddMobileActivityModal.css"
 
 
-const AddActivityModal = ({createActivity, currentUser, handleModal}) => {
+const AddMobileActivityModal = ({createActivity, currentUser, handleModal}) => {
 // start_time is sent into the database as an ISO8601 format date.  Needs to be read in javascript with a Date.parse method.
   const [newActivity, setNewActivity] = useState({
     category:"",
@@ -16,8 +15,6 @@ const AddActivityModal = ({createActivity, currentUser, handleModal}) => {
     creator_id: currentUser?.id
   })
 
-  // const navigate = useNavigate()
-
   const handleChange = (e) => {
     setNewActivity({...newActivity, [e.target.name]: e.target.value})
   }
@@ -25,18 +22,18 @@ const AddActivityModal = ({createActivity, currentUser, handleModal}) => {
   const submitHandler = () => {
     console.log(newActivity)
     createActivity(newActivity);
-    handleChange()
+    handleModal()
   }
 
   return (
     <>
 
-      <div className="modalBackground" >
-        <div className="modalCard">
-          <div className="modalTitle">
+      <div className="mobileModalBackground" >
+        <div className="mobileModalCard">
+          <div className="mobileModalTitle">
             Add Activity Details
           </div>
-          <div className="modalBody">
+          <div className="mobileModalBody">
             <input
               label="Category"
               value={newActivity.category}
@@ -80,21 +77,22 @@ const AddActivityModal = ({createActivity, currentUser, handleModal}) => {
               placeholder="e.g. 90"
               onChange={handleChange}/>
             <input
-            label="photo"
-            value={newActivity.activity_photo}
+              label="photo"
+              value={newActivity.activity_photo}
               type="text"
               name="activity_photo"
               placeholder="e.g. https://www..."
               onChange={handleChange}/>
           </div>
-          <div className="modalFooter">
+          <div className="mobileModalFooter">
           <button onClick={handleModal}>Close</button>
           <button type="submit" onClick={submitHandler}>Submit</button>
           </div>
         </div>
       </div>
+
     </>
   );
 }
 
-export default AddActivityModal
+export default AddMobileActivityModal
