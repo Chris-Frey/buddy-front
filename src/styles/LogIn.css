@@ -11,6 +11,12 @@
   height: 8rem;
 }
 
+.welcomeMessage {
+  max-width: 700px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
 .loginForm {
   display: flex;
   flex-direction: column;

@@ -162,7 +162,6 @@ const ActivityEdit = ({activities, updateActivity}) => {
           </Card.Footer>
         </Card>
         </div>
-        <AddActivityModal />
       </div>
     </>
   )

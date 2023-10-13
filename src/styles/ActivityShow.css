@@ -1,37 +1,24 @@
-/* button {
-  border: none;
-  color: black;
-  background-color: #ffcd4e;
-  margin: 10px;
-  border-radius: 5px;
+.activityShowBody {
+  background-color: var(--base-color);
   padding: 10px;
-} */
-
-.card_and_links {
-  display: flex;
-  flex-direction: row;
-}
-.show_links{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-}
-.show_button {
-  height: 80px;
-  width: 80px;
-}
-.show_button:hover {
-transform: scale(1.07);
-cursor: pointer;
 }
 
-#pic_card_links{
-display: flex;
+.activityShowBody > h2 {
+  font-size: 1rem;
+  color: var(--primary-color);
 }
 
-.activity_pic {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  padding-top: 80px;
+.button {
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: .7rem;
+}
+
+
+.show_links {
+  background-color: var(--base-color);
+}
+
+.activityShowBody > p {
+  font-size: 1.5rem;
 }

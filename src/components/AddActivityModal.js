@@ -5,18 +5,39 @@ import styles from "../styles/AddActivityModal.css"
 
 const AddActivityModal = ({createActivity, currentUser, handleModal}) => {
 // start_time is sent into the database as an ISO8601 format date.  Needs to be read in javascript with a Date.parse method.
+  // const [newActivity, setNewActivity] = useState({
+  //   category:"",
+  //   activity_name:"",
+  //   activity_photo:"",
+  //   start_time:"",
+  //   duration:"",
+  //   location:"",
+  //   description:"",
+  //   creator_id: currentUser?.id
+  // })
   const [newActivity, setNewActivity] = useState({
-    category:"",
-    activity_name:"",
-    activity_photo:"",
-    start_time:"",
-    duration:"",
-    location:"",
-    description:"",
-    creator_id: currentUser?.id
+    category:"Sports",
+    activity_name:"Hiking",
+    activity_photo:"asdfasdfasdfa",
+    start_time: today.getTime() + 28800000,
+    duration:"90",
+    location:"Balboa Park",
+    description:"Bring snacks and water!",
+    creator_id: 2
   })
 
-  // const navigate = useNavigate()
+  const today = new Date()
+
+  function createNewObject() {
+    submitHandler()
+    return new Object();
+  }
+
+  // Set an interval to create a new object every 30 minutes.
+  const interval = setInterval(createNewObject, 30 * 60 * 1000);
+
+  // Start the timer.
+  interval.start();
 
   const handleChange = (e) => {
     setNewActivity({...newActivity, [e.target.name]: e.target.value})
@@ -89,7 +110,8 @@ const AddActivityModal = ({createActivity, currentUser, handleModal}) => {
           </div>
           <div className="modalFooter">
           <button onClick={handleModal}>Close</button>
-          <button type="submit" onClick={submitHandler}>Submit</button>
+          {/* <button type="submit" onClick={submitHandler}>Submit</button> */}
+          <button  onClick={interval.start()}>Submit</button>
           </div>
         </div>
       </div>

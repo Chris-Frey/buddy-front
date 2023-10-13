@@ -28,7 +28,7 @@ const ProfileShow = ({currentUser, userActivity, activities}) => {
   return (
     <>
     <h1 className='your_profile'>
-      Your Profile
+      You
     </h1>
     <div className='pic_info_buddy'>
       <img
@@ -65,9 +65,9 @@ const ProfileShow = ({currentUser, userActivity, activities}) => {
        </div>
       </div>
 
-      <div className='modal'>
+      {/* <div className='modal'>
       <AddActivityModal />
-      </div>
+      </div> */}
     </>
   );
 }
