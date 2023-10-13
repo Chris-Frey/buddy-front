@@ -25,7 +25,7 @@ const Header = ({currentUser, logout, createActivity}) => {
           <li> <NavLink to="/" >HOME</NavLink></li>
           <li> <NavLink to="/aboutus" >ABOUT</NavLink></li>
           <li> <NavLink to={`/buddyprofile/${currentUser?.id}` } >PROFILE</NavLink></li>
-          <li> <BrowseActivityModal /></li>
+          {/* <li> <BrowseActivityModal /></li> */}
           <li> <NavLink onClick={handleLogOut}>LOG OUT</NavLink></li>
         </ul>
         {/* <div className="headerModal">

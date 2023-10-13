@@ -19,8 +19,8 @@ function App() {
   const [currentUser, setCurrentUser] = useState(null)
   const [activities, setActivities] = useState([])
   const [userActivity, setUserActivity] = useState([])
-  // const url = "http://localhost:3000"
-const url = "https://whim.onrender.com"
+  const url = "http://localhost:3000"
+// const url = "https://whim.onrender.com"
   const navigate = useNavigate()
 
 useEffect(() => {
@@ -170,9 +170,9 @@ const deleteActivity = (id) => {
 
   return (
       <>
-      {currentUser && (
+      {/* {currentUser && ( */}
         <Header currentUser={currentUser} logout={logout} createActivity={createActivity}/>
-      )}
+       {/* )} */}
 
 
       <Routes>
@@ -183,7 +183,7 @@ const deleteActivity = (id) => {
         <Route path="/" element={<Home activities={activities} currentUser={currentUser} createActivity={createActivity} exact/>}/>
 
 {/* Protected routes */}
-        <Route element={<ProtectedRoutes currentUser={currentUser}/>} >
+        {/* <Route element={<ProtectedRoutes currentUser={currentUser}/>} > */}
 
 
           <Route path="/display/:category?" element={<ActivityFilter activities={activities}/>} />
@@ -193,11 +193,11 @@ const deleteActivity = (id) => {
           <Route path="/activityshow/:id" element={<ActivityShow activities={activities} currentUser={currentUser} updateActivity={updateActivity} deleteActivity={deleteActivity} createUserActivity={createUserActivity}/>} />
 
           <Route path="/activityedit/:id" element={<ActivityEdit activities={activities} updateActivity={updateActivity}/>} />
-        </Route>
+        {/* </Route> */}
       </Routes>
-      {currentUser && (
+      {/* {currentUser && ( */}
         <MobileNavBar currentUser={currentUser} logout={logout} createActivity={createActivity}/>
-      )}
+      {/* )} */}
       </>
   );
 }

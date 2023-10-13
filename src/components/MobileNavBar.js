@@ -25,21 +25,13 @@ export const MobileNavBar = ({currentUser, logout, createActivity}) => {
       <button className='mobileActivityButton' onClick={handleModal}>Create Activity</button>
 
       <nav className='navBar'>
-        <li>
-          <NavLink to={`/buddyprofile/${currentUser?.id}`} className='myLink'>
-            Profile
-          </NavLink>
-        </li>
-        <li>
+
+        {/* <li>
           <NavLink to={`/friends/${currentUser?.id}`} className='myLink'>
             Friends
           </NavLink>
-        </li>
-        <li >
-          <NavLink to={`/`} className='myLink' >
-            Home
-          </NavLink>
-        </li>
+        </li> */}
+
         {/* <li >
           <NavLink to={`/`} className='myLink' >
             Browse
@@ -49,6 +41,16 @@ export const MobileNavBar = ({currentUser, logout, createActivity}) => {
         <li className='myLink' onClick={handleLogOut}>logout</li>
         {/* <div className='actionButton'>
         </div> */}
+         <li >
+          <NavLink to={`/`} className='myLink' >
+            Home
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to={`/buddyprofile/${currentUser?.id}`} className='myLink'>
+            You
+          </NavLink>
+        </li>
       </nav>
     </div>
     </>

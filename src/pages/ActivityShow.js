@@ -1,10 +1,8 @@
 import React, { useState } from 'react'
 import PictureCard from "../components/PictureCard";
 import { Card, Text } from "@nextui-org/react";
-import AddActivityModal from '../components/AddActivityModal'
 import { useParams, Link, NavLink } from "react-router-dom"
 import styles from '../styles/ActivityShow.css'
-import shadows from '@mui/material/styles/shadows';
 
 
 const ActivityShow = ({activities, deleteActivity, currentUser, createUserActivity}) => {
@@ -17,7 +15,7 @@ const ActivityShow = ({activities, deleteActivity, currentUser, createUserActivi
     deleteActivity(currentActivity?.id)
   }
 
-  const [userActivityState, setUserActivityState] = useState({
+  const [userActivityState] = useState({
     user_id: currentUser?.id,
     activity_id: currentActivity?.id
   })
@@ -32,60 +30,51 @@ const ActivityShow = ({activities, deleteActivity, currentUser, createUserActivi
 
   return (
     <>
-      <div>
-        <img currentActivity={currentActivity}/>
-        <div/>
+    <div className='activityShowBody'>
 
-          <Text>{currentActivity?.category}</Text>
+        {/* <img currentActivity={currentActivity}/> */}
 
-        <Text>ACTIVITY NAME</Text>
+        {/* <p>{currentActivity?.category}</p> */}
 
-        <Text>
-        {currentActivity?.activity_name}</Text>
+        <h2>ACTIVITY NAME</h2>
+        <p>
+        {currentActivity?.activity_name}</p>
 
-        <Text>Time</Text>
+        <h2>Time</h2>
+        <p>{currentActivity?.start_time}</p>
 
-        <Text>{currentActivity?.start_time}</Text>
+        <h2>Duration</h2>
+        <p> {currentActivity?.duration}</p>
 
-        <Text>Duration</Text>
+        <h2>Location</h2>
+        <p> {currentActivity?.location}</p>
 
-        <Text> {currentActivity?.duration}</Text>
+        <h2>Info</h2>
+        <p>{currentActivity?.description}</p>
 
-        <Text>Location</Text>
+        <h2>Activity Owner</h2>
+        <p>{currentUser?.name}</p>
 
-        <Text> {currentActivity?.location}</Text>
-
-        <Text>Info</Text>
-
-        <Text>{currentActivity?.description}</Text>
-
-        <Text>CREATOR ID</Text>
-
-        <Text>{currentUser?.id}</Text>
-
-        <Text>Attendees</Text>
-
+        <h2>Attendees</h2>
         {buddyUp?
-          <Text>{currentUser.name}</Text>
+          <p>{currentUser.name}</p>
         :null}
 
-  </div>
-    <div className='show_links'>
-      <NavLink to={`/`}>
-        <button  onClick={handleDelete}>DELETE</button>
-      </NavLink>
+      </div>
+      <div className='show_links'>
+        <NavLink to={`/`}>
+          <button className='button' onClick={handleDelete}>DELETE</button>
+        </NavLink>
 
-      <NavLink to={`/`}>
-        <button>CANCEL</button>
-      </NavLink>
+        <NavLink to={`/`}>
+          <button className='button'>CANCEL</button>
+        </NavLink>
 
-      <NavLink to={`/activityedit/${currentActivity.id}`}>
-        <button>EDIT</button>
-      </NavLink>
-        <button onClick={submitHandler}>Buddy Up</button>
-    </div>
-
-        <AddActivityModal />
+        <NavLink to={`/activityedit/${currentActivity.id}`}>
+          <button className='button'>EDIT</button>
+        </NavLink>
+          <button className='button' onClick={submitHandler}>Buddy Up</button>
+      </div>
     </>
   )
 }
