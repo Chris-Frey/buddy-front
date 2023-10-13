@@ -1,5 +1,4 @@
 import React from 'react'
-import AddActivityModal from '../components/AddActivityModal'
 import ActivityCard from '../components/ActivityCard'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";

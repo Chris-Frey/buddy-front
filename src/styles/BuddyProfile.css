@@ -1,6 +1,8 @@
 .myProfileBody {
-  background-color: #feefde;
+  padding: 10px;
+  background-color: var(--base-color);
   height: 100vh;
+  color: var(--secondary-color);
 }
 
 .categoryValue {

@@ -28,10 +28,10 @@ const Header = ({currentUser, logout, createActivity}) => {
           <li> <BrowseActivityModal /></li>
           <li> <NavLink onClick={handleLogOut}>LOG OUT</NavLink></li>
         </ul>
-        <div className="headerModal">
+        {/* <div className="headerModal">
           {openModal && <AddActivityModal handleModal={handleModal} createActivity={createActivity} currentUser={currentUser}/>}
           <button className='addActivityButton' onClick={handleModal}>Create Activity</button>
-        </div>
+        </div> */}
       </div>
       </>
   )

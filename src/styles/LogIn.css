@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: black;
+  background-color: var(--base-color);
   height: 100vh;
   width: 100vw;
 }
@@ -34,7 +34,7 @@
   height: 2.5rem;
   margin: 0.5rem;
   color: black;
-  background-color: #fd8a03;
+  background-color: var(--secondary-color);
   border-style: none;
   border-radius: .5rem;
 }
@@ -47,9 +47,9 @@
 }
 
 .signup {
-  color: #fd8a03;
+  color: var(--primary-color);
 }
 
 .loginBody > h1 {
-  color: white;
+  color: var(--secondary-color);
 }
