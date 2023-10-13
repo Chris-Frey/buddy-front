@@ -40,17 +40,15 @@ export const MobileNavBar = ({currentUser, logout, createActivity}) => {
             Home
           </NavLink>
         </li>
-        <li >
+        {/* <li >
           <NavLink to={`/`} className='myLink' >
             Browse
           </NavLink>
-        </li>
+        </li> */}
 
         <li className='myLink' onClick={handleLogOut}>logout</li>
-        <div className='actionButton'>
-          <li></li>
-
-        </div>
+        {/* <div className='actionButton'>
+        </div> */}
       </nav>
     </div>
     </>

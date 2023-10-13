@@ -28,15 +28,10 @@ const BuddyProfile = ({currentUser, userActivity, activities}) => {
   return (
     <>
     <div className='myProfileBody'>
-    <h1 className='your_profile'>
-      Your Profile
-    </h1>
+      <h1 className='your_profile'>
+        Your Profile
+      </h1>
 
-      <img
-          className="profileimg1"
-          src="src/assets/PXL_20230325_185527781.jpg"
-          alt="User Profile Picture"
-      />
 
           <div className='userCard'>
             <ul>
@@ -50,15 +45,12 @@ const BuddyProfile = ({currentUser, userActivity, activities}) => {
               <li className='categoryValue'>{myActivities}</li>
             </ul>
           </div>
+    </div>
 
 
-
-      </div>
-
-
-      <div className='modal'>
-      <AddActivityModal />
-      </div>
+      {/* <div className='modal'> */}
+      {/* <AddActivityModal /> */}
+      {/* </div> */}
     </>
   );
 }

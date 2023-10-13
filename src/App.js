@@ -19,8 +19,8 @@ function App() {
   const [currentUser, setCurrentUser] = useState(null)
   const [activities, setActivities] = useState([])
   const [userActivity, setUserActivity] = useState([])
-  // const url = "http://localhost:3000"
-const url = "https://whim.onrender.com"
+  const url = "http://localhost:3000"
+// const url = "https://whim.onrender.com"
   const navigate = useNavigate()
 
 useEffect(() => {
@@ -180,10 +180,11 @@ const deleteActivity = (id) => {
         <Route path="/login" element={<LogIn login={login}/>} />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="*" element={<Error />} />
+        <Route path="/" element={<Home activities={activities} currentUser={currentUser} createActivity={createActivity} exact/>}/>
 
 {/* Protected routes */}
         <Route element={<ProtectedRoutes currentUser={currentUser}/>} >
-          <Route path="/" element={<Home activities={activities} currentUser={currentUser} createActivity={createActivity} exact/>}/>
+
 
           <Route path="/display/:category?" element={<ActivityFilter activities={activities}/>} />
 

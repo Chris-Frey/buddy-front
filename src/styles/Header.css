@@ -4,20 +4,23 @@
   position: sticky;
   top: 0;
 }
+.headerBody > li {
+  font-size: 1.5rem;
+  color: black;
+}
 
 .headerBody > ul {
+  color: black;
   margin: 0;
   padding: 0.75rem;
   display: flex;
   flex-wrap: wrap;
-  background-color: black;
+  background-color: var(--secondary-color);
   justify-content: space-around;
   align-items: center;
 }
 
-.headerBody > li {
-  font-size: 1.5rem;
-}
+
 
 .headerBody > ul > img {
   max-height: 3rem;
@@ -39,15 +42,15 @@
 @media screen and (max-width:768px) {
 .headerBody {
   visibility: hidden;
-  visibility: collapse;
+  /* visibility: collapse; */
   height: 0;
-  background-color: black;
+  background-color: var(--secondary-color);
 }
 
 .addActivityButton {
   visibility: hidden;
   z-index: 1;
-  bottom: 0rem;
+  top: 0rem;
 
 }
 
