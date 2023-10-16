@@ -1,11 +1,11 @@
 .modalBackground {
-  background-color: yellow;
+  background-color: var(--base-color);
 }
 
 .modalCard {
   width: 30rem;
-  background-color: chocolate;
-  border-radius: .5rem;
+  background-color: var(--secondary-color);
+  /* border-radius: .5rem; */
 }
 
 .modalBody {
