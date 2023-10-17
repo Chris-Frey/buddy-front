@@ -76,7 +76,7 @@ const Home = (props) => {
     <div className='homeBody'>
     <div className='home_background'>
       <h3 className='title'>ACTIVITIES HAPPENING IN THE NEXT<br/><span className='time-frame'>30 MIN</span></h3>
-      <Carousel
+      <Carousel className='carousel'
         partialVisible
         infinite
         responsive={responsive}
@@ -85,7 +85,7 @@ const Home = (props) => {
       </Carousel>
 
       <h3 className='title'>ACTIVITIES HAPPENING IN THE NEXT<br/><span className='time-frame'>1 HOUR</span></h3>
-      <Carousel
+      <Carousel className='carousel'
         partialVisible
         infinite
         responsive={responsive}
@@ -94,7 +94,7 @@ const Home = (props) => {
       </Carousel>
 
       <h3 className='title'>ACTIVITIES HAPPENING IN THE NEXT<br/><span className='time-frame'>2 HOURS</span></h3>
-      <Carousel
+      <Carousel className='carousel'
         partialVisible
         infinite
         responsive={responsive}
@@ -104,7 +104,7 @@ const Home = (props) => {
       </Carousel>
 
       <h3 className='title'>ACTIVITIES HAPPENING IN THE NEXT<br/><span className='time-frame'>4 HOURS</span></h3>
-      <Carousel
+      <Carousel className='carousel'
         partialVisible
         infinite
         responsive={responsive}
@@ -113,7 +113,7 @@ const Home = (props) => {
       </Carousel>
 
       <h3 className='title'>ACTIVITIES HAPPENING IN THE NEXT<br/><span className='time-frame'>8 HOURS</span></h3>
-      <Carousel
+      <Carousel className='carousel'
         partialVisible
         infinite
         responsive={responsive}

@@ -24,7 +24,7 @@ const AddActivityModal = ({createActivity, currentUser, handleModal}) => {
   const submitHandler = () => {
     console.log(newActivity)
     createActivity(newActivity);
-    // handleChange()
+    handleModal()
   }
 
   return (

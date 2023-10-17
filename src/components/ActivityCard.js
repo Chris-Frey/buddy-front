@@ -6,7 +6,7 @@ const ActivityCard = (props) => {
   return(
     <>
     <Link to={`/activityshow/${props.activities.id}`} >
-    <Card css={{ bg: "$black", w: 200, h: 250, display: "inline-flex", marginBottom: 20}} >
+    <Card css={{ bg: "$black", w: 200, h: 250, display: "inline-flex", marginBottom: 20, zIndex: 0}} >
       <Card.Header css={{ position: "absolute", zIndex: 1, bottom: -4, width: 200}}>
 
         <Col>

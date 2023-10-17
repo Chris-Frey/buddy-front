@@ -1,5 +1,5 @@
 import { React, useState } from "react";
-// import styles from "../styles/AddMobileActivityModal.css"
+import styles from "../styles/AddMobileActivityModal.css"
 
 
 const AddMobileActivityModal = ({createActivity, currentUser, handleModal}) => {
@@ -7,12 +7,12 @@ const AddMobileActivityModal = ({createActivity, currentUser, handleModal}) => {
   const [newActivity, setNewActivity] = useState({
     category:"",
     activity_name:"",
-    activity_photo:"",
+    activity_photo:"https://images.unsplash.com/photo-1695632844647-d9252f33100d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80",
     start_time:"",
     duration:"",
     location:"",
     description:"",
-    creator_id: currentUser?.id
+    creator_id: 2
   })
 
   const handleChange = (e) => {
@@ -76,13 +76,13 @@ const AddMobileActivityModal = ({createActivity, currentUser, handleModal}) => {
               name="start_time"
               placeholder="e.g. 90"
               onChange={handleChange}/>
-            <input
+            {/* <input
               label="photo"
               value={newActivity.activity_photo}
               type="text"
               name="activity_photo"
               placeholder="e.g. https://www..."
-              onChange={handleChange}/>
+              onChange={handleChange}/> */}
           </div>
           <div className="mobileModalFooter">
           <button onClick={handleModal}>Close</button>

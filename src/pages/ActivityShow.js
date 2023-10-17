@@ -73,7 +73,7 @@ const ActivityShow = ({activities, deleteActivity, currentUser, createUserActivi
         <NavLink to={`/activityedit/${currentActivity.id}`}>
           <button className='button'>EDIT</button>
         </NavLink>
-          <button className='button' onClick={submitHandler}>Buddy Up</button>
+          {/* <button className='button' onClick={submitHandler}>Buddy Up</button> */}
       </div>
     </>
   )
