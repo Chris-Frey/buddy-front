@@ -1,0 +1,39 @@
+.mobileModalBackground {
+  /* background-color: var(--base-color); */
+  z-index: 2;
+  /* position: fixed; */
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  /* overflow: auto; */
+  background-color: rgba(0,0,0,0.6);
+
+}
+
+.mobileModalCard {
+  z-index: 2;
+  width: 100vw;
+  background-color: var(--secondary-color);
+  /* margin: 15% auto; */
+  animation-duration: 0.3s;
+  animation-name: animatetop;
+  position: fixed;
+  bottom: 10rem;
+}
+
+.mobileModalBody {
+  display: flex;
+  flex-direction: column;
+  padding: .5rem;
+}
+
+.mobileModalBody > input {
+  border-radius: .5rem;
+  margin: .2rem;
+}
+
+@keyframes animatetop {
+  from {bottom: -300px; opacity: 0}
+  to {bottom: 10rem; opacity: 1}
+}

@@ -33,3 +33,7 @@ h3 {
 .title {
   font-size: 1.25rem;
 }
+
+.carousel {
+  z-index: 0;
+}
