@@ -1,6 +1,7 @@
 .activityShowBody {
   background-color: var(--base-color);
   padding: 10px;
+  height: 100vh;
 }
 
 .activityShowBody > h2 {
@@ -9,9 +10,11 @@
 }
 
 .button {
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
+  color: var(--base-color);
   border: none;
-  border-radius: .7rem;
+  border-radius: .5rem;
+  margin: 0.5rem;
 }
 
 

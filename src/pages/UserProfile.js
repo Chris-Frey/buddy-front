@@ -29,28 +29,25 @@ const BuddyProfile = ({currentUser, userActivity, activities}) => {
     <>
     <div className='myProfileBody'>
       <h1 className='your_profile'>
-        Your Profile
+        You
       </h1>
 
-
-          <div className='userCard'>
-            <ul>
-              <li >NAME</li>
-              <li className='categoryValue'>{currentUser?.name}</li>
-              <li>USER NAME</li>
-              <li className='categoryValue'>{currentUser?.username}</li>
-              <li>GENDER</li>
-              <li className='categoryValue'>{currentUser?.gender_identity}</li>
-              <li>EVENTS YOU'RE ATTENDING</li>
-              <li className='categoryValue'>{myActivities}</li>
-            </ul>
-          </div>
+      <div className='userCard'>
+        <ul>
+          <li >NAME</li>
+          <li className='categoryValue'>{currentUser?.name}</li>
+          <li>USER NAME</li>
+          <li className='categoryValue'>{currentUser?.username}</li>
+          <li>GENDER IDENTITY</li>
+          <li className='categoryValue'>{currentUser?.gender_identity}</li>
+          <li>EVENTS YOU'RE ATTENDING</li>
+          <li className='categoryValue'>{myActivities}</li>
+          <li>FRIENDS</li>
+          {/* <li className='categoryValue'>{myActivities}</li> */}
+        </ul>
+      </div>
     </div>
 
-
-      {/* <div className='modal'> */}
-      {/* <AddActivityModal /> */}
-      {/* </div> */}
     </>
   );
 }

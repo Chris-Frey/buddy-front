@@ -3,6 +3,7 @@
   padding: none;
   position: sticky;
   top: 0;
+  z-index: 1;
 }
 .headerBody > li {
   font-size: 1.5rem;
@@ -11,6 +12,7 @@
 
 .headerBody > ul {
   color: var(--base-color);
+  z-index: 1;
   margin: 0;
   padding: 0.75rem;
   display: flex;

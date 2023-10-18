@@ -27,13 +27,14 @@ const ProfileShow = ({currentUser, userActivity, activities}) => {
 
   return (
     <>
+    <div className='profileBody'>
     <h1 className='your_profile'>
       You
     </h1>
     <div className='pic_info_buddy'>
       <img
           className="profileimg1"
-          src="src/assets/PXL_20230325_185527781.jpg"
+          src="src/assets/kaylee.jpg"
           alt="Default Image"
           />
     <div className='pic_fields'>
@@ -41,26 +42,26 @@ const ProfileShow = ({currentUser, userActivity, activities}) => {
 
         <Card className="profile-card" css={{ w: 400, h: "50vh", bg: "Black", pl: "30px"}}>
         <Card.Header css={{ position: "absolute", zIndex: 1, top: 5}}>
-      <Col>
-        <Text size={15} weight="bold" transform="uppercase"color="#FFCD4E" >NAME</Text>
+          <Col>
+            <Text size={15} weight="bold" transform="uppercase"color="#FFCD4E" >NAME</Text>
 
-        <Text size={13} h3 color="White" >
-        {currentUser?.name}</Text>
+            <Text size={13} h3 color="White" >
+            {currentUser?.name}</Text>
 
-        <Text size={15} weight="bold" transform="uppercase" color="#FFCD4E" > USER NAME</Text>
+            <Text size={15} weight="bold" transform="uppercase" color="#FFCD4E" > USER NAME</Text>
 
-        <Text size={13} h3 color="White">
-        {currentUser?.username}</Text>
+            <Text size={13} h3 color="White">
+            {currentUser?.username}</Text>
 
-        <Text size={15} weight="bold" transform="uppercase" color="#FFCD4E">Gender Identity</Text>
+            <Text size={15} weight="bold" transform="uppercase" color="#FFCD4E">Gender Identity</Text>
 
-        <Text size={13} h3 color="White"> {currentUser?.gender_identity}</Text>
+            <Text size={13} h3 color="White"> {currentUser?.gender_identity}</Text>
 
-        <Text size={15} weight="bold" transform="uppercase" color="#FFCD4E">My Events</Text>
+            <Text size={15} weight="bold" transform="uppercase" color="#FFCD4E">My Events</Text>
 
-        <Text size={13} h3 color="White" >{myActivities}</Text>
-      </Col>
-      </Card.Header>
+            <Text size={13} h3 color="White" >{myActivities}</Text>
+          </Col>
+        </Card.Header>
       </Card>
        </div>
       </div>
@@ -68,7 +69,9 @@ const ProfileShow = ({currentUser, userActivity, activities}) => {
       {/* <div className='modal'>
       <AddActivityModal />
       </div> */}
+          </div>
     </>
+
   );
 }
 export default ProfileShow

@@ -1,5 +1,4 @@
 import { React, useState } from "react";
-import BrowseActivityModal from "./BrowseActivity/BrowseActivityModal.js";
 import { NavLink } from "react-router-dom";
 import AddActivityModal from "./AddActivityModal.js";
 import Logo from "./Header/Logo.js"
@@ -29,8 +28,7 @@ const Header = ({currentUser, logout, createActivity}) => {
           <li > <NavLink to="/" className="links">HOME</NavLink></li>
           <li> <NavLink to="/aboutus" className="links">ABOUT</NavLink></li>
           <li> <NavLink to={`/buddyprofile/${currentUser?.id}` }className="links" >YOU</NavLink></li>
-          {/* <li> <BrowseActivityModal /></li> */}
-          <li> <NavLink onClick={handleLogOut}className="links">LOG OUT</NavLink></li>
+          {/* <li> <NavLink onClick={handleLogOut}className="links">LOG OUT</NavLink></li> */}
         </ul>
 
       </div>

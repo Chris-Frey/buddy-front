@@ -1,5 +1,6 @@
 .aboutBody {
   background-color: var(--base-color);
+  height: 100vh;
 }
 
 .chris_info_links {
