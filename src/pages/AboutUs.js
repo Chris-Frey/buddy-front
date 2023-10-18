@@ -6,8 +6,9 @@ const AboutUs = () => {
   return (
     <>
       <div className="aboutBody">
-        <h1 className="title">Promptu</h1>
-        <h4>Get in touch!</h4>
+        {/* <h1 className="title">Promptu</h1> */}
+        <p className='welcomeMessage'>Welcome to Promptu, the social app that actually let's you be social.  In Promptu, you can post an activity you want to do, fill out the specifics, and people can sign up to come with you.  Promptu is a same-day app. You only need to plan a few hours in advance.  <b><br/>At the moment, the app is in a "showoff" state, so logging in is not necessary.  This will change as the app gets closer to launch.</b></p>
+        {/* <h4>Get in touch!</h4> */}
 
       {/* <img className='kaylee' src="./assets/kaylee.jpg"
         alt="Kaylee"
