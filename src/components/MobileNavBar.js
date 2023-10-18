@@ -22,10 +22,10 @@ export const MobileNavBar = ({currentUser, logout, createActivity}) => {
 
       {openModal && <AddMobileActivityModal handleModal={handleModal} createActivity={createActivity} currentUser={currentUser}/>}
 
-      <button className='mobileActivityButton' onClick={handleModal}>Create Activity</button>
-
       <nav className='navBar'>
-
+      <li>
+      <button className='mobileActivityButton' onClick={handleModal}>Create Activity</button>
+      </li>
         {/* <li>
           <NavLink to={`/friends/${currentUser?.id}`} className='myLink'>
             Friends

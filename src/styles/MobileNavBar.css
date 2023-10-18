@@ -1,51 +1,35 @@
 
-  .mobileBody {
-    list-style: none;
-    background-color: var(--secondary-color);
-    position: sticky;
-    bottom: 0;
-    min-width: 0;
-    min-height: 0;
-    overflow: hidden;
-  }
-  .mobileBody > .navBar {
-    list-style: none;
-    /* width: 100vw; */
-    display: flex;
-    justify-content: space-around;
-    /* align-items: center; */
-    /* height: 20px; */
-  }
+.mobileBody {
+  list-style: none;
+  background-color: var(--secondary-color);
+  position: sticky;
+  bottom: 0;
+  min-width: 0;
+  min-height: 0;
+  /* overflow: hidden; */
+}
+.mobileBody > .navBar {
+  list-style: none;
+  /* width: 100vw; */
+  display: flex;
+  justify-content: space-around;
+  /* align-items: center; */
+  /* height: 20px; */
+}
 
-  .myLink {
-    color: var(--base-color);
-    text-decoration: none;
-  }
-  /* .myLink:hover {
-    color: blue;
-    background-color: red;
-  } */
-  /* .myLink:active:visited {
-    background-color: white;
-  } */
-/*
-  .actionButton {
-    background-color: #FC7A1E;
-    border-radius: 100%;
-    width: 3rem;
-    height: 3rem;
-    justify-content: center;
-    align-items: center;
-  } */
+.myLink {
+  color: var(--base-color);
+  text-decoration: none;
+}
 
-  /* .mobileActivityButton {
-    z-index: 2;
-    position: sticky;
-    bottom: 0;
-  } */
+.mobileActivityButton {
+  border: none;
+  background-color: var(--secondary-color);
+  color: var(--base-color);
+}
 
 
-
+/* In desktop mode below */
 @media screen and (min-width:768px) {
     .mobileBody {
       visibility: hidden;
