@@ -6,18 +6,15 @@
   --primary-color: #a9704a;
   --secondary-color: #19485f;
   --background-color: black;
-  --base-color: #ece6c6;
+  --base-color: #e7e5da;
 }
 
 .homeBody {
   margin: none;
   padding: none;
-  height: 100%;
 }
 
-h3 {
-  min-height: 110px;
-}
+
 .home_background {
   padding: 10px;
   background: #e7e5da;
@@ -40,4 +37,5 @@ h3 {
 
 .carousel {
   z-index: 0;
+  margin-bottom: 1rem;
 }

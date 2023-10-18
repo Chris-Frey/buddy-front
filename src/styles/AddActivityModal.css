@@ -21,6 +21,8 @@
 }
 
 .modalBody {
+  color: var(--secondary-color);
+  z-index: 2;
   display: flex;
   flex-direction: column;
   padding: .5rem;

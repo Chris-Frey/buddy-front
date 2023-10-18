@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import PictureCard from "../components/PictureCard";
-import { Card, Text } from "@nextui-org/react";
 import { useParams, Link, NavLink } from "react-router-dom"
 import styles from '../styles/ActivityShow.css'
 
@@ -60,7 +59,6 @@ const ActivityShow = ({activities, deleteActivity, currentUser, createUserActivi
           <p>{currentUser.name}</p>
         :null}
 
-      </div>
       <div className='show_links'>
         <NavLink to={`/`}>
           <button className='button' onClick={handleDelete}>DELETE</button>
@@ -75,6 +73,8 @@ const ActivityShow = ({activities, deleteActivity, currentUser, createUserActivi
         </NavLink>
           {/* <button className='button' onClick={submitHandler}>Buddy Up</button> */}
       </div>
+      </div>
+
     </>
   )
 }

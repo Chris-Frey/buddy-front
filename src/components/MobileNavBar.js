@@ -2,9 +2,9 @@ import { React, useState } from 'react'
 import styles from '../styles/MobileNavBar.css'
 import { NavLink } from 'react-router-dom'
 import AddMobileActivityModal from './AddMobileActivityModal'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export const MobileNavBar = ({currentUser, logout, createActivity}) => {
-
 
 
   const [openModal, setOpenModal] = useState(false)
@@ -12,9 +12,9 @@ export const MobileNavBar = ({currentUser, logout, createActivity}) => {
     setOpenModal(!openModal)
   }
 
-  const handleLogOut = () => {
-    logout()
-  }
+  // const handleLogOut = () => {
+  //   logout()
+  // }
 
   return (
     <>
@@ -24,8 +24,9 @@ export const MobileNavBar = ({currentUser, logout, createActivity}) => {
 
       <nav className='navBar'>
       <li>
-      <button className='mobileActivityButton' onClick={handleModal}>Create Activity</button>
+      <FontAwesomeIcon icon="fa-solid fa-square-plus" size="2xl" style={{color: "#ffffff",}} onClick={handleModal}/>
       </li>
+
         {/* <li>
           <NavLink to={`/friends/${currentUser?.id}`} className='myLink'>
             Friends
@@ -38,18 +39,19 @@ export const MobileNavBar = ({currentUser, logout, createActivity}) => {
           </NavLink>
         </li> */}
 
-        <li className='myLink' onClick={handleLogOut}>logout</li>
+        {/* <li className='myLink' onClick={handleLogOut}>logout</li> */}
         {/* <div className='actionButton'>
         </div> */}
          <li >
           <NavLink to={`/`} className='myLink' >
-            Home
+            <FontAwesomeIcon icon="fa-solid fa-house" size="2xl" style={{color: "#ffffff",}} />
           </NavLink>
         </li>
+
         <li>
-          <NavLink to={`/buddyprofile/${currentUser?.id}`} className='myLink'>
-            You
-          </NavLink>
+        <NavLink to={`/buddyprofile/${currentUser?.id}`} className='myLink'>
+          <FontAwesomeIcon icon="fa-solid fa-user" size="2xl" style={{color: "#e7e5da",}} />
+        </NavLink>
         </li>
       </nav>
     </div>

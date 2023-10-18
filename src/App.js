@@ -13,9 +13,13 @@ import ActivityFilter from "./pages/ActivityFilter";
 import AboutUs from "./pages/AboutUs";
 import Error from "./pages/Error";
 import ProtectedRoutes from "./components/ProtectedRoutes";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faUser, faSquarePlus, faHouse } from "@fortawesome/free-solid-svg-icons";
 
 
 function App() {
+  library.add(faUser, faSquarePlus, faHouse);
+
   const [currentUser, setCurrentUser] = useState(null)
   const [activities, setActivities] = useState([])
   const [userActivity, setUserActivity] = useState([])

@@ -1,12 +1,10 @@
 .mobileModalBackground {
-  /* background-color: var(--base-color); */
   z-index: 2;
-  /* position: fixed; */
   left: 0;
   right: 0;
   width: 100vw;
   height: 100vh;
-  /* overflow: auto; */
+  overflow: auto;
   background-color: rgba(0,0,0,0.6);
 
 }

@@ -1,12 +1,10 @@
 import React, {useRef} from "react";
-import { Input, useInput, Spacer, Button, Text } from "@nextui-org/react";
-import { NavLink, Link } from 'react-router-dom'
-import { useNavigate } from "react-router-dom";
+import { useInput } from "@nextui-org/react";
+import { NavLink } from 'react-router-dom'
 import styles from "../styles/SignUp.css"
 
-const SignUp = ({signup, logout}) => {
+const SignUp = ({signup}) => {
   const formRef = useRef ()
-  const navigate = useNavigate()
 
   const handleSubmit = (e) => {
     // stores the form entries in a variable
@@ -20,7 +18,7 @@ const SignUp = ({signup, logout}) => {
     signup(userInfo)
   }
 
-  const { value, reset, bindings } = useInput("");
+  const { value } = useInput("");
 
   const validateEmail = (value) => {
     return value.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$/i);
@@ -41,119 +39,43 @@ const SignUp = ({signup, logout}) => {
 
   return (
     <>
-    <div className="title_logo">
-    <img src="/logo.png"/>
-    <h1 id="buddy">Promptu</h1>
-    </div>
-      <form ref={formRef} onSubmit={handleSubmit}>
-        <div className="container">
-        <Spacer y={1} />
-            <Input
-            {...bindings}
-            clearable
-            width="300px"
-            shadow={false}
-            onClearClick={reset}
-            status={helper.color}
-            color="warning"
-            helperColor={helper.color}
-            helperText={helper.text}
-            type="email"
-            name="email"
-            label="Email"
-            placeholder="Enter email"
-            />
-        <Spacer y={1} />
-          <Input
-            clearable
-            color="warning"
-            helperText="Please enter your name"
-            width="300px"
-            type="text"
-            label="Name"
-            name="name"
-            placeholder="Enter your name"
-            />
-        <Spacer y={1} />
-          <Input
-            clearable
-            color="warning"
-            width="300px"
-            helperText="Excellent username"
-            name="username"
-            type="text"
-            label="Username"
-            placeholder="Enter your username"
-            />
-        <Spacer y={1} />
-          <Input.Password
-            clearable
-            color="warning"
-            helperText="Insecure password"
-            width="300px"
-            name="password"
-            type="password"
-            label="Password"
-            placeholder="Enter your password"
-            />
-        <Spacer y={1} />
-          <Input.Password
-            clearable
-            color="warning"
-            helperText="Insecure password"
-            name="password_confirmation"
-            width="300px"
-            type="password"
-            label="Confirm Password"
-            placeholder="Confirm your password"
-            />
-        <Spacer y={1} />
-          <Input
-            clearable
-            color="warning"
-            initialValue=""
-            width="300px"
-            helperText="Excellent username"
-            name="gender_identity"
-            type="text"
-            label="Gender Identity"
-            placeholder="Enter gender"
-            />
+    <div className="signupBody">
+      <div className="title_logo">
+      <img src="/logo.png"/>
 
-  <div className="buttons">
-       <Spacer y={1} />
-
-        <Button
-          onClick={handleSubmit}
-          flat
-          auto
-          rounded
-          css={{ color: "black", bg: "#FFCD4E" }}
-          >
-          <Text
-            css={{ color: "inherit" }}
-            size={12}
-            weight="bold"
-            transform="uppercase"
-            >
-            Sign Up
-          </Text>
-        </Button>
-        <Spacer y={1} />
-        <NavLink to="/login">
-          <Button
-
-            >
-            <Text
-
-              >
-              LogIn
-            </Text>
-          </Button>
+      </div>
+      <h1 id="buddy">Promptu</h1>
+      <form ref={formRef} onSubmit={handleSubmit} className="signupForm">
+      <input
+        type='email'
+        name='email'
+        placeholder='Email'
+      />
+      <input
+        type='text'
+        name='first_name'
+        placeholder='First Name'
+      />
+      <input
+        type='password'
+        name='password'
+        placeholder='Password'
+      />
+      <input
+        type='password'
+        name='confirm_password'
+        placeholder='Confirm Password'
+      />
+      <div className="buttons">
+        <NavLink to={`/`}>
+            <button className='button'>Confirm Signup</button>
+        </NavLink>
+        <NavLink to="/login" className='signup'>
+          Already Signed up?
         </NavLink>
       </div>
-      </div>
       </form>
+    </div>
     </>
   );
 };
