@@ -18,7 +18,7 @@
   }
 
   .myLink {
-    color: black;
+    color: var(--base-color);
     text-decoration: none;
   }
   /* .myLink:hover {

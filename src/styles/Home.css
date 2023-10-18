@@ -1,8 +1,12 @@
 :root {
-  --primary-color: #d1a17b;
+  /* --primary-color: #d1a17b;
   --secondary-color: #888077;
   --background-color: black;
-  --base-color: #e6e5da;
+  --base-color: #e6e5da; */
+  --primary-color: #a9704a;
+  --secondary-color: #19485f;
+  --background-color: black;
+  --base-color: #ece6c6;
 }
 
 .homeBody {
