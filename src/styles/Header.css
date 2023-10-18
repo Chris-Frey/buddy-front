@@ -6,11 +6,11 @@
 }
 .headerBody > li {
   font-size: 1.5rem;
-  color: black;
+  color: var(--base-color);
 }
 
 .headerBody > ul {
-  color: black;
+  color: var(--base-color);
   margin: 0;
   padding: 0.75rem;
   display: flex;
@@ -30,13 +30,16 @@
   z-index: 1;
 }
 
-/* .addActivityButton {
+.links {
+  color: var(--base-color);
+  text-decoration: none;
+}
 
-  z-index: 1;
-  position: relative;
-  bottom: -45rem;
-  left: 3rem;
-} */
+.addActivityButton {
+  border: none;
+  background-color: var(--secondary-color);
+  color: var(--base-color);
+}
 
 /* BELOW FOR MOBILE */
 @media screen and (max-width:768px) {

@@ -22,16 +22,17 @@ const Header = ({currentUser, logout, createActivity}) => {
 
         <ul>
           <img src="/logo.png"/>
-          <li> <NavLink to="/" >HOME</NavLink></li>
-          <li> <NavLink to="/aboutus" >ABOUT</NavLink></li>
-          <li> <NavLink to={`/buddyprofile/${currentUser?.id}` } >PROFILE</NavLink></li>
-          {/* <li> <BrowseActivityModal /></li> */}
-          <li> <NavLink onClick={handleLogOut}>LOG OUT</NavLink></li>
-        </ul>
-        <div className="headerModal">
+          <li >
           {openModal && <AddActivityModal handleModal={handleModal} createActivity={createActivity} currentUser={currentUser}/>}
-          <button className='addActivityButton' onClick={handleModal}>Create Activity</button>
-        </div>
+          <button className='addActivityButton' onClick={handleModal}>CREATE ACTIVITY</button>
+        </li>
+          <li > <NavLink to="/" className="links">HOME</NavLink></li>
+          <li> <NavLink to="/aboutus" className="links">ABOUT</NavLink></li>
+          <li> <NavLink to={`/buddyprofile/${currentUser?.id}` }className="links" >YOU</NavLink></li>
+          {/* <li> <BrowseActivityModal /></li> */}
+          <li> <NavLink onClick={handleLogOut}className="links">LOG OUT</NavLink></li>
+        </ul>
+
       </div>
       </>
   )
