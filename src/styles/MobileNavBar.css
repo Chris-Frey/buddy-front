@@ -1,13 +1,18 @@
 
 .mobileBody {
   list-style: none;
-  background-color: var(--secondary-color);
+  background-color: black;
   position: sticky;
   bottom: 0;
   min-width: 0;
   min-height: 0;
   overflow: hidden;
 }
+
+.navbar-logo {
+  height: 4rem;
+}
+
 .mobileBody > .navBar {
   list-style: none;
 

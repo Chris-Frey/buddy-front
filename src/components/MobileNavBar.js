@@ -24,7 +24,13 @@ export const MobileNavBar = ({currentUser, logout, createActivity}) => {
 
       <nav className='navBar'>
       <li>
-      <FontAwesomeIcon icon="fa-solid fa-square-plus" size="2xl" style={{color: "#ffffff",}} onClick={handleModal}/>
+        <NavLink to={`/buddyprofile/${currentUser?.id}`} className='myLink'>
+          <FontAwesomeIcon icon="fa-solid fa-user" size="2xl" style={{color: "#e7e5da",}} />
+        </NavLink>
+        </li>
+      <li>
+      <img className='navbar-logo' src={"/logo.png"} alt='Promptu Logo' onClick={handleModal}/>
+      {/* <FontAwesomeIcon icon="fa-solid fa-square-plus" size="2xl" style={{color: "#ffffff",}} onClick={handleModal}/> */}
       </li>
 
         {/* <li>
@@ -46,12 +52,6 @@ export const MobileNavBar = ({currentUser, logout, createActivity}) => {
           <NavLink to={`/`} className='myLink' >
             <FontAwesomeIcon icon="fa-solid fa-house" size="2xl" style={{color: "#ffffff",}} />
           </NavLink>
-        </li>
-
-        <li>
-        <NavLink to={`/buddyprofile/${currentUser?.id}`} className='myLink'>
-          <FontAwesomeIcon icon="fa-solid fa-user" size="2xl" style={{color: "#e7e5da",}} />
-        </NavLink>
         </li>
       </nav>
     </div>

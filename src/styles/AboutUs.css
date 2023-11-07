@@ -1,8 +1,11 @@
 .aboutBody {
-  background-color: var(--base-color);
+  /* background-color: var(--base-color); */
   height: 100vh;
 }
 
-.chris_info_links {
+.contact-links {
   color: var(--secondary-color);
+  width: 10rem;
+  display: flex;
+  justify-content: space-around;
 }

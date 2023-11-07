@@ -1,3 +1,4 @@
+// carousel from here: https://www.npmjs.com/package/react-multi-carousel
 import React from 'react'
 import ActivityCard from '../components/ActivityCard'
 import Carousel from "react-multi-carousel";
@@ -10,20 +11,20 @@ const Home = (props) => {
   const responsive = {
 
     desktop: {
-      breakpoint: { max: 3000, min: 1024 },
+      breakpoint: { max: 3000, min: 851 },
       items: 4,
-      partialVisibilityGutter: 40
+      partialVisibilityGutter: 10
     },
 
     tablet: {
-      breakpoint: { max: 1024, min: 500 },
-      items: 3,
-      partialVisibilityGutter: 40
+      breakpoint: { max: 850, min: 500 },
+      items: 2,
+      partialVisibilityGutter: 20
     },
     mobile: {
       breakpoint: { max: 500, min: 325 },
       items: 1,
-      partialVisibilityGutter: 100
+      partialVisibilityGutter: 20
     }
   };
   // creates new time object to be used to get current time
@@ -78,44 +79,44 @@ const Home = (props) => {
       <h3 className='title'>ACTIVITIES HAPPENING IN THE NEXT<br/><span className='time-frame'>30 MIN</span></h3>
       <Carousel className='carousel'
         partialVisible
-        infinite
+        // infinite
         responsive={responsive}
         >
         {activityFilter30Min}
       </Carousel>
 
-      <h3 className='title'>ACTIVITIES HAPPENING IN THE NEXT<br/><span className='time-frame'>1 HOUR</span></h3>
+      <h3 className='title'>ACTIVITIES HAPPENING IN <br/><span className='time-frame'>1 HOUR</span></h3>
       <Carousel className='carousel'
         partialVisible
-        infinite
+        // infinite
         responsive={responsive}
         >
         {activityFilter1hour}
       </Carousel>
 
-      <h3 className='title'>ACTIVITIES HAPPENING IN THE NEXT<br/><span className='time-frame'>2 HOURS</span></h3>
+      <h3 className='title'>ACTIVITIES HAPPENING IN<br/><span className='time-frame'>2 HOURS</span></h3>
       <Carousel className='carousel'
         partialVisible
-        infinite
+        // infinite
         responsive={responsive}
         >
         {activityFilter2hour}
 
       </Carousel>
 
-      <h3 className='title'>ACTIVITIES HAPPENING IN THE NEXT<br/><span className='time-frame'>4 HOURS</span></h3>
+      <h3 className='title'>ACTIVITIES HAPPENING IN<br/><span className='time-frame'>4 HOURS</span></h3>
       <Carousel className='carousel'
         partialVisible
-        infinite
+        // infinite
         responsive={responsive}
         >
         {activityFilter4hour}
       </Carousel>
 
-      <h3 className='title'>ACTIVITIES HAPPENING IN THE NEXT<br/><span className='time-frame'>8 HOURS</span></h3>
+      <h3 className='title'>ACTIVITIES HAPPENING IN<br/><span className='time-frame'>8 HOURS</span></h3>
       <Carousel className='carousel'
         partialVisible
-        infinite
+        // infinite
         responsive={responsive}
         >
         {activityFilter8hour}
