@@ -1,4 +1,5 @@
 import React, { useRef } from 'react'
+import ActivityCard from '../components/ActivityCard'
 import { NavLink } from 'react-router-dom'
 import styles from "../styles/LogIn.css"
 import AddActivityModal from '../components/AddActivityModal'
@@ -22,7 +23,7 @@ const LogIn = ({login}) => {
   return (
   <>
   <div className='loginBody'>
-    <img src="/logo.png" alt='Promptu Logo'/>
+    <img className='title-logo' src={"/logo.png"} alt='Promptu Logo'/>
 
   <h1>Promptu</h1>
 

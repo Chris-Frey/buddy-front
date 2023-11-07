@@ -1,0 +1,18 @@
+.profile-card {
+  z-index: 0;
+  display: flex;
+  border-radius: .5rem;
+  max-width: 25rem;
+}
+
+.profile-settings {
+  z-index: 2;
+  position: relative;
+  top: .5rem;
+  right: 3rem;
+}
+
+.profile-image {
+  z-index: 1;
+  border-radius: .5rem;
+}

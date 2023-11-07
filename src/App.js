@@ -14,11 +14,12 @@ import AboutUs from "./pages/AboutUs";
 import Error from "./pages/Error";
 import ProtectedRoutes from "./components/ProtectedRoutes";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faUser, faSquarePlus, faHouse, faFace, faFaceSmile } from "@fortawesome/free-solid-svg-icons";
+import { faUser, faSquarePlus, faHouse, faPeace, faFaceSmile, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 
 
 function App() {
-  library.add(faUser, faSquarePlus, faHouse, faFaceSmile);
+  library.add(faUser, faPeace, faSquarePlus, faHouse, faFaceSmile, faGithub, faLinkedin, faEnvelope);
 
   const [currentUser, setCurrentUser] = useState(null)
   const [activities, setActivities] = useState([])

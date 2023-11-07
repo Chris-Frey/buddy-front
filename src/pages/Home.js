@@ -1,3 +1,4 @@
+// carousel from here: https://www.npmjs.com/package/react-multi-carousel
 import React from 'react'
 import ActivityCard from '../components/ActivityCard'
 import Carousel from "react-multi-carousel";
@@ -84,7 +85,7 @@ const Home = (props) => {
         {activityFilter30Min}
       </Carousel>
 
-      <h3 className='title'>ACTIVITIES HAPPENING IN THE NEXT<br/><span className='time-frame'>1 HOUR</span></h3>
+      <h3 className='title'>ACTIVITIES HAPPENING IN <br/><span className='time-frame'>1 HOUR</span></h3>
       <Carousel className='carousel'
         partialVisible
         // infinite
@@ -93,7 +94,7 @@ const Home = (props) => {
         {activityFilter1hour}
       </Carousel>
 
-      <h3 className='title'>ACTIVITIES HAPPENING IN THE NEXT<br/><span className='time-frame'>2 HOURS</span></h3>
+      <h3 className='title'>ACTIVITIES HAPPENING IN<br/><span className='time-frame'>2 HOURS</span></h3>
       <Carousel className='carousel'
         partialVisible
         // infinite
@@ -103,7 +104,7 @@ const Home = (props) => {
 
       </Carousel>
 
-      <h3 className='title'>ACTIVITIES HAPPENING IN THE NEXT<br/><span className='time-frame'>4 HOURS</span></h3>
+      <h3 className='title'>ACTIVITIES HAPPENING IN<br/><span className='time-frame'>4 HOURS</span></h3>
       <Carousel className='carousel'
         partialVisible
         // infinite
@@ -112,7 +113,7 @@ const Home = (props) => {
         {activityFilter4hour}
       </Carousel>
 
-      <h3 className='title'>ACTIVITIES HAPPENING IN THE NEXT<br/><span className='time-frame'>8 HOURS</span></h3>
+      <h3 className='title'>ACTIVITIES HAPPENING IN<br/><span className='time-frame'>8 HOURS</span></h3>
       <Carousel className='carousel'
         partialVisible
         // infinite

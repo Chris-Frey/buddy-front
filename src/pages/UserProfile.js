@@ -1,9 +1,9 @@
 import React from 'react'
-// import { Container, Image } from '@nextui-org/react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import styles from "../styles/BuddyProfile.css";
-import { Card, Col, Text } from "@nextui-org/react";
 import { useParams, Link } from 'react-router-dom';
 import AddActivityModal from '../components/AddActivityModal'
+import ProfilePhotoCard from '../components/ProfilePhotoCard';
 
 const BuddyProfile = ({currentUser, userActivity, activities}) => {
 
@@ -28,13 +28,12 @@ const BuddyProfile = ({currentUser, userActivity, activities}) => {
   return (
     <>
     <div className='myProfileBody'>
-      <h1 className='your_profile'>
-        You
-      </h1>
+        {/* <FontAwesomeIcon className='peace' icon="fa-solid fa-peace" size="2xl" style={{color: "#ea5353",}} /> */}
+        <ProfilePhotoCard/>
 
       <div className='userCard'>
         <ul>
-          <li >NAME</li>
+          <li>NAME</li>
           <li className='categoryValue'>{currentUser?.name}</li>
           <li>USER NAME</li>
           <li className='categoryValue'>{currentUser?.username}</li>

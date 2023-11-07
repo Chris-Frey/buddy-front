@@ -7,7 +7,7 @@
   filter: drop-shadow(.2rem .2rem 0.3rem rgb(0, 0, 0));
 }
 
-img {
+.activity-image {
   border-radius: .5rem;
   object-fit: cover;
   overflow: auto;

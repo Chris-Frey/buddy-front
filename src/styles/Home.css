@@ -6,7 +6,7 @@
 
 .home_background {
   padding: 10px;
-  background: var(--base-color);
+  /* background: var(--base-color); */
 }
 
 .time-frame {

@@ -29,7 +29,8 @@ export const MobileNavBar = ({currentUser, logout, createActivity}) => {
         </NavLink>
         </li>
       <li>
-      <FontAwesomeIcon icon="fa-solid fa-square-plus" size="2xl" style={{color: "#ffffff",}} onClick={handleModal}/>
+      <img className='navbar-logo' src={"/logo.png"} alt='Promptu Logo' onClick={handleModal}/>
+      {/* <FontAwesomeIcon icon="fa-solid fa-square-plus" size="2xl" style={{color: "#ffffff",}} onClick={handleModal}/> */}
       </li>
 
         {/* <li>

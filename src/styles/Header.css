@@ -10,6 +10,10 @@
   color: var(--base-color);
 }
 
+.header-list {
+  max-width: 50rem;
+}
+
 .headerBody > ul {
   color: var(--base-color);
   z-index: 1;
@@ -24,6 +28,7 @@
 
 .logo {
   z-index: 5;
+  width: 10rem;
 }
 
 .headerBody > ul > img {
