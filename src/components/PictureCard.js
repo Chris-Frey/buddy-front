@@ -3,7 +3,7 @@ import { Card } from "@nextui-org/react";
 const PictureCard = ({currentActivity}) => {
 return(
   <>
-  <Card css={{w: 500, h: 340}}>
+  <Card css={{w: 600, h: 640}}>
     <Card.Header css={{ position: "absolute", zIndex: 1, top: 5,  }}>
     </Card.Header>
     <Card.Image

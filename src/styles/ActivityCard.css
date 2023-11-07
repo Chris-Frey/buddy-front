@@ -1,0 +1,90 @@
+.card {
+  display: flex;
+  width: 22rem;
+  color: white;
+  z-index: 0;
+  border-radius: .5rem;
+  filter: drop-shadow(.2rem .2rem 0.3rem rgb(0, 0, 0));
+}
+
+img {
+  border-radius: .5rem;
+  object-fit: cover;
+  overflow: auto;
+  width: 20rem;
+  height: 10rem;
+  z-index: -1;
+}
+
+.activity-details {
+  z-index: 1;
+  position: fixed;
+  left: 5rem;
+  width: 10rem;
+}
+
+.activity-title {
+  top: .5rem;
+  right: 5rem;
+  font-size: 1.5rem;
+}
+
+.activity-subtitle {
+  top: 3rem;
+  left: 5rem;
+}
+
+.activity-date {
+  z-index: 1;
+  width: 3rem;
+  top: 5rem;
+  left: .5rem;
+}
+
+.date-area {
+  display: flex;
+  position: absolute;
+  top: .5rem;
+  left: 1rem;
+}
+
+.activity-users {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: center;
+  z-index: 2;
+  width: 50px;
+  height: 9rem;
+  position: relative;
+  right: 3rem;
+  top: .5rem;
+}
+.activity-host {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 100%;
+}
+
+.activity-attendees {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100%;
+}
+
+@media screen and (min-width:851px) {
+  .activity-users {
+    position: relative;
+    right: 3rem;
+    top: .5rem;
+  }
+  .activity-host {
+    border-radius: 100%;
+  }
+
+  .activity-attendees {
+    border-radius: 100%;
+  }
+}
+

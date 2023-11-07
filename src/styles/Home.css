@@ -1,23 +1,12 @@
-:root {
-  /* --primary-color: #d1a17b;
-  --secondary-color: #888077;
-  --background-color: black;
-  --base-color: #e6e5da; */
-  --primary-color: #a9704a;
-  --secondary-color: #19485f;
-  --background-color: black;
-  --base-color: #e7e5da;
-}
 
 .homeBody {
   margin: none;
   padding: none;
 }
 
-
 .home_background {
   padding: 10px;
-  background: #e7e5da;
+  background: var(--base-color);
 }
 
 .time-frame {
@@ -38,4 +27,7 @@
 .carousel {
   z-index: 0;
   margin-bottom: 1rem;
+}
+.filter {
+  width: 19rem;
 }
