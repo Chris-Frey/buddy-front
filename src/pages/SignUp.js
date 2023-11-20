@@ -7,35 +7,37 @@ const SignUp = ({signup}) => {
   const formRef = useRef ()
 
   const handleSubmit = (e) => {
+    e.preventDefault()
     // stores the form entries in a variable
     const formData = new FormData(formRef.current)
     // creates an object from entries
     const data = Object.fromEntries(formData)
     // stores user info in a format for JWT
     const userInfo = {
-      "user":{ email: data.email, password: data.password, name: data.name, username: data.username, gender_identity: data.gender_identity, bio: data.bio}
+      "user":{ email: data.email, password: data.password, name: data.name, username: data.username}
     }
+    console.log(userInfo);
     signup(userInfo)
   }
+  // , gender_identity: data.gender_identity, bio: data.bio
+  // const { value } = useInput("");
 
-  const { value } = useInput("");
+  // const validateEmail = (value) => {
+  //   return value.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$/i);
+  // };
 
-  const validateEmail = (value) => {
-    return value.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$/i);
-  };
-
-  const helper = React.useMemo(() => {
-    if (!value)
-      return {
-        text: "",
-        color: "",
-      };
-    const isValid = validateEmail(value);
-    return {
-      text: isValid ? "Correct email" : "Enter a valid email",
-      color: isValid ? "success" : "error",
-    };
-  }, [value]);
+  // const helper = React.useMemo(() => {
+  //   if (!value)
+  //     return {
+  //       text: "",
+  //       color: "",
+  //     };
+  //   const isValid = validateEmail(value);
+  //   return {
+  //     text: isValid ? "Correct email" : "Enter a valid email",
+  //     color: isValid ? "success" : "error",
+  //   };
+  // }, [value]);
 
   return (
     <>
@@ -53,8 +55,13 @@ const SignUp = ({signup}) => {
       />
       <input
         type='text'
-        name='first_name'
+        name='name'
         placeholder='First Name'
+      />
+      <input
+        type='text'
+        name='username'
+        placeholder='username'
       />
       <input
         type='password'
@@ -68,7 +75,7 @@ const SignUp = ({signup}) => {
       />
       <div className="buttons">
         <NavLink to={`/`}>
-            <button className='button'>Confirm Signup</button>
+            <button className='button' type="submit" onClick={handleSubmit}>Confirm Signup</button>
         </NavLink>
         <NavLink to="/login" className='signup'>
           Already Signed up?
@@ -79,5 +86,4 @@ const SignUp = ({signup}) => {
     </>
   );
 };
-
 export default SignUp;

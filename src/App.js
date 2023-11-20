@@ -175,9 +175,9 @@ const deleteActivity = (id) => {
 
   return (
       <>
-      {/* {currentUser && ( */}
+      {currentUser && (
         <Header currentUser={currentUser} logout={logout} createActivity={createActivity}/>
-       {/* )} */}
+      )}
 
 
       <Routes>
@@ -185,11 +185,11 @@ const deleteActivity = (id) => {
         <Route path="/login" element={<LogIn login={login}/>} />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="*" element={<Error />} />
-        <Route path="/" element={<Home activities={activities} currentUser={currentUser} createActivity={createActivity} exact/>}/>
+
 
 {/* Protected routes */}
-        {/* <Route element={<ProtectedRoutes currentUser={currentUser}/>} > */}
-
+        <Route element={<ProtectedRoutes currentUser={currentUser}/>} >
+          <Route path="/" element={<Home activities={activities} currentUser={currentUser} createActivity={createActivity} exact/>}/>
 
           <Route path="/display/:category?" element={<ActivityFilter activities={activities}/>} />
 
@@ -198,11 +198,11 @@ const deleteActivity = (id) => {
           <Route path="/activityshow/:id" element={<ActivityShow activities={activities} currentUser={currentUser} updateActivity={updateActivity} deleteActivity={deleteActivity} createUserActivity={createUserActivity}/>} />
 
           <Route path="/activityedit/:id" element={<ActivityEdit activities={activities} updateActivity={updateActivity}/>} />
-        {/* </Route> */}
+        </Route>
       </Routes>
-      {/* {currentUser && ( */}
+      {currentUser && (
         <MobileNavBar currentUser={currentUser} logout={logout} createActivity={createActivity}/>
-      {/* )} */}
+      )}
       </>
   );
 }
