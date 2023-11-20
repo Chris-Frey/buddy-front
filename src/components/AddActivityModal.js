@@ -13,8 +13,8 @@ const AddActivityModal = ({createActivity, currentUser, handleModal}) => {
     duration:"120",
     location:"Mt. Leguna Trailhead",
     description:"Bring lots of water!",
-    creator_id: 2
-    // creator_id: currentUser?.id
+    // creator_id: 2
+    creator_id: currentUser?.id
   })
 
   const handleChange = (e) => {
