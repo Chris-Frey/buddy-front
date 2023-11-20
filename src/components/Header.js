@@ -20,7 +20,7 @@ const Header = ({currentUser, logout, createActivity}) => {
       <div className='headerBody'>
 
         <ul>
-          <img src={"/logo.png"} alt={"Logo"} classname="logo"/>
+          <img src={"/logo.png"} alt={"Logo"} className="logo"/>
           <li>
             {openModal && <AddActivityModal handleModal={handleModal} createActivity={createActivity} currentUser={currentUser}/>}
             <button className='addActivityButton' onClick={handleModal}>CREATE ACTIVITY</button>

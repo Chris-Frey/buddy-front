@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import PictureCard from "../components/PictureCard";
 import { useParams, Link, NavLink } from "react-router-dom"
 import styles from '../styles/ActivityShow.css'
 
@@ -31,10 +30,6 @@ const ActivityShow = ({activities, deleteActivity, currentUser, createUserActivi
     <>
     <div className='activityShowBody'>
 
-        {/* <img currentActivity={currentActivity}/> */}
-
-        {/* <p>{currentActivity?.category}</p> */}
-
         <h2>ACTIVITY NAME</h2>
         <p>
         {currentActivity?.activity_name}</p>
@@ -52,14 +47,14 @@ const ActivityShow = ({activities, deleteActivity, currentUser, createUserActivi
         <p>{currentActivity?.description}</p>
 
         <h2>Activity Owner</h2>
-        <p>{currentUser?.name}</p>
+        <p>{currentActivity?.creator_id}</p>
 
         <h2>Attendees</h2>
         {buddyUp?
           <p>{currentUser.name}</p>
         :null}
-
-      <div className='show_links'>
+      {currentUser.id === currentActivity?.creator_id  && (
+        <div className='show_links'>
         <NavLink to={`/`}>
           <button className='button' onClick={handleDelete}>DELETE</button>
         </NavLink>
@@ -71,9 +66,13 @@ const ActivityShow = ({activities, deleteActivity, currentUser, createUserActivi
         <NavLink to={`/activityedit/${currentActivity.id}`}>
           <button className='button'>EDIT</button>
         </NavLink>
-          {/* <button className='button' onClick={submitHandler}>Buddy Up</button> */}
-      </div>
-      </div>
+        </div>
+      )}
+      {currentUser.id !== currentActivity?.creator_id && (
+        <button className='button' onClick={submitHandler}>ATTEND ACTIVITY!</button>
+      )}
+
+    </div>
 
     </>
   )

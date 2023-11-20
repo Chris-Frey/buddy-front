@@ -1,5 +1,5 @@
 .activityShowBody {
-  background-color: var(--base-color);
+  /* background-color: var(--base-color); */
   padding: 10px;
   height: 100vh;
 }
@@ -19,7 +19,7 @@
 
 
 .show_links {
-  background-color: var(--base-color);
+  /* background-color: var(--base-color); */
 }
 
 .activityShowBody > p {
