@@ -39,30 +39,33 @@ const ProfileShow = ({currentUser, userActivity, activities}) => {
           />
     <div className='pic_fields'>
 
+    <h2>Time</h2>
+        <p>{currentActivity?.start_time}</p>
 
-        <Card className="profile-card" css={{ w: 400, h: "50vh", bg: "Black", pl: "30px"}}>
-        <Card.Header css={{ position: "absolute", zIndex: 1, top: 5}}>
-          <Col>
-            <Text size={15} weight="bold" transform="uppercase"color="#FFCD4E" >NAME</Text>
+        {/* <Card className="profile-card" css={{ w: 400, h: "50vh", bg: "Black", pl: "30px"}}>
+          <Card.Header css={{ position: "absolute", zIndex: 1, top: 5}}>
+            <Col>
+              <Text size={15} weight="bold" transform="uppercase"color="#FFCD4E" >NAME</Text>
 
-            <Text size={13} h3 color="White" >
-            {currentUser?.name}</Text>
+              <Text size={13} h3 color="White" >
+              {currentUser?.name}</Text>
 
-            <Text size={15} weight="bold" transform="uppercase" color="#FFCD4E" > USER NAME</Text>
+              <Text size={15} weight="bold" transform="uppercase" color="#FFCD4E" > USER NAME</Text>
 
-            <Text size={13} h3 color="White">
-            {currentUser?.username}</Text>
+              <Text size={13} h3 color="White">
+              {currentUser?.username}</Text>
 
-            <Text size={15} weight="bold" transform="uppercase" color="#FFCD4E">Gender Identity</Text>
+              <Text size={15} weight="bold" transform="uppercase" color="#FFCD4E">Gender Identity</Text>
 
-            <Text size={13} h3 color="White"> {currentUser?.gender_identity}</Text>
+              <Text size={13} h3 color="White"> {currentUser?.gender_identity}</Text>
 
-            <Text size={15} weight="bold" transform="uppercase" color="#FFCD4E">My Events</Text>
+              <Text size={15} weight="bold" transform="uppercase" color="#FFCD4E">My Events</Text>
 
-            <Text size={13} h3 color="White" >{myActivities}</Text>
-          </Col>
-        </Card.Header>
-      </Card>
+              <Text size={13} h3 color="White" >{myActivities}</Text>
+            </Col>
+          </Card.Header>
+        </Card> */}
+
        </div>
       </div>
 

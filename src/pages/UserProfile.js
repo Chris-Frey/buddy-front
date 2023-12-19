@@ -1,7 +1,7 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import styles from "../styles/BuddyProfile.css";
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, NavLink } from 'react-router-dom';
 import AddActivityModal from '../components/AddActivityModal'
 import ProfilePhotoCard from '../components/ProfilePhotoCard';
 
@@ -42,8 +42,12 @@ const BuddyProfile = ({currentUser, userActivity, activities}) => {
           <li>EVENTS YOU'RE ATTENDING</li>
           <li className='categoryValue'>{myActivities}</li>
           <li>FRIENDS</li>
-          {/* <li className='categoryValue'>{myActivities}</li> */}
         </ul>
+      </div>
+      <div>
+        <NavLink to={`/buddyprofile/edit/${id}`}>
+          <button className='profile-button'>Edit Profile</button>
+        </NavLink>
       </div>
     </div>
 

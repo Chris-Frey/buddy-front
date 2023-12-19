@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useParams, Link, NavLink } from "react-router-dom"
+import { useParams, NavLink } from "react-router-dom"
 import styles from '../styles/ActivityShow.css'
 
 
