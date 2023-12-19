@@ -7,7 +7,7 @@
 }
 .headerBody > li {
   font-size: 1.5rem;
-  color: var(--base-color);
+  color: var(--secondary-color);
 }
 
 .header-list {
@@ -15,15 +15,17 @@
 }
 
 .headerBody > ul {
-  color: var(--base-color);
+  color: var(--secondary-color);
   z-index: 1;
   margin: 0;
   padding: 0.75rem;
   display: flex;
   flex-wrap: wrap;
-  background-color: black;
+  background-color: var(--background-color);
   justify-content: space-around;
   align-items: center;
+  filter: var(--drop-shadow);
+  /* filter: drop-shadow(0 0 0.75rem rgb(188, 188, 188)); */
 }
 
 .logo {
@@ -40,14 +42,14 @@
 }
 
 .links {
-  color: var(--base-color);
+  color: var(--secondary-color);
   text-decoration: none;
 }
 
 .addActivityButton {
   border: none;
-  background-color: black;
-  color: var(--base-color);
+  background-color: var(--background-color);
+  color: var(--secondary-color);
 }
 
 /* BELOW FOR MOBILE */

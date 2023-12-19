@@ -26,24 +26,12 @@
 }
 
 .loginForm > input {
-  margin: 0.5rem;
+  margin: 0.25rem;
   border-style: none;
   border-radius: 0.5rem;
   padding: .5rem;
-}
-.loginButton {
-  display: flex;
-  font-size: 1.25rem;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  width: 10rem;
-  height: 2.5rem;
-  margin: 0.5rem;
-  color: black;
-  background-color: var(--secondary-color);
-  border-style: none;
-  border-radius: .5rem;
+  background-color: var(--base-color);
+  box-shadow: inset 0 0 0.75rem rgb(188, 188, 188);
 }
 
 .titleLogo {
@@ -60,4 +48,56 @@
 
 .loginBody > h1 {
   color: var(--secondary-color);
+}
+
+
+.loginButton{
+  display: flex;
+  font-size: 1.25rem;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 10rem;
+  height: 2.5rem;
+  margin: 0.5rem;
+  color: black;
+  background-color: var(--secondary-color);
+  border-style: none;
+  border-radius: .5rem;
+  filter: var(--drop-shadow);
+  transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s; /* Safari */
+}
+
+.loginButton:hover {
+  transition-duration: 0.1s;
+  background-color: #179090a2;
+}
+
+.loginButton:after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 4em;
+  left: 0;
+  top:0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all 0.5s;
+  box-shadow: 0 0 10px 40px var(--secondary-color);
+}
+
+.loginButton:active:after {
+  box-shadow: 0 0 0 0 white;
+  position: absolute;
+  border-radius: 4em;
+  left: 0;
+  top:0;
+  opacity: 1;
+  transition: 0s;
+}
+
+.loginButton:active {
+  top: 1px;
 }
