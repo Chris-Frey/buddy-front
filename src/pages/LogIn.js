@@ -26,7 +26,7 @@ const LogIn = ({login}) => {
 
     <h1>Promptu</h1>
 
-    <p className='welcomeMessage'>Welcome to Promptu, the social app that actually helps you be social.  In Promptu, you can find activities with people happening in as little as 30 minutes, or as far as 8 hours in the future.  Sign up for an activity you like, or make one yourself so people can go do it with you!<br/>
+    <p className='welcomeMessage'>For people that want to <span><em>do things</em></span><br/>
     </p>
 
     <form

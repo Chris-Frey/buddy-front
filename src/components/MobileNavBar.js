@@ -25,7 +25,7 @@ export const MobileNavBar = ({currentUser, logout, createActivity}) => {
       <nav className='navBar'>
       <li>
         <NavLink to={`/buddyprofile/${currentUser?.id}`} className='myLink'>
-          <FontAwesomeIcon icon="fa-solid fa-user" size="2xl" style={{color: "#e7e5da",}} />
+          <FontAwesomeIcon icon="fa-solid fa-user" size="2xl"/>
         </NavLink>
         </li>
       <li>
@@ -50,7 +50,7 @@ export const MobileNavBar = ({currentUser, logout, createActivity}) => {
         </div> */}
          <li >
           <NavLink to={`/`} className='myLink' >
-            <FontAwesomeIcon icon="fa-solid fa-house" size="2xl" style={{color: "#ffffff",}} />
+            <FontAwesomeIcon icon="fa-solid fa-house" size="2xl" />
           </NavLink>
         </li>
       </nav>

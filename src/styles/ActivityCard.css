@@ -34,15 +34,23 @@
   left: 5rem;
 }
 
-.activity-date {
+.activity-date-month {
   z-index: 1;
   width: 3rem;
   top: 5rem;
   left: .5rem;
 }
 
+.activity-date-day {
+  z-index: 1;
+  width: 3rem;
+  top: 5rem;
+  left: .5rem;
+  font-size: 2.5rem;
+}
+
 .date-area {
-  display: flex;
+  /* display: flex; */
   position: absolute;
   top: .5rem;
   left: 1rem;
