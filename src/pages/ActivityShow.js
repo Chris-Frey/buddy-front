@@ -30,46 +30,58 @@ const ActivityShow = ({activities, deleteActivity, currentUser, createUserActivi
     <>
     <div className='activityShowBody'>
 
-        <h2>ACTIVITY NAME</h2>
-        <p>
-        {currentActivity?.activity_name}</p>
+        {/* <h1>ACTIVITY NAME</h1> */}
+      <h1>{currentActivity?.activity_name}</h1>
 
-        <h2>Time</h2>
-        <p>{currentActivity?.start_time}</p>
+      <div className='activityData'>
+        <div className='eventComponent'>
+          <h2>Time</h2>
+          <p>{currentActivity?.start_time}</p>
+        </div>
 
-        <h2>Duration</h2>
-        <p> {currentActivity?.duration}</p>
+        <div className='eventComponent'>
+          <h2>Duration</h2>
+          <p> {currentActivity?.duration}</p>
+        </div>
 
-        <h2>Location</h2>
-        <p> {currentActivity?.location}</p>
+        <div className='eventComponent'>
+          <h2>Location</h2>
+          <p> {currentActivity?.location}</p>
+        </div>
 
-        <h2>Info</h2>
-        <p>{currentActivity?.description}</p>
+          <div className='eventComponent'>
+          <h2>Info</h2>
+          <p>{currentActivity?.description}</p>
+        </div>
 
-        <h2>Activity Owner</h2>
-        <p>{currentActivity?.creator_id}</p>
+        <div className='eventComponent'>
+          <h2>Activity Owner</h2>
+          <p>{currentActivity?.creator_id}</p>
+        </div>
+      </div>
 
-        <h2>Attendees</h2>
+        {/* <h2>Attendees</h2> */}
         {buddyUp?
           <p>{currentUser.name}</p>
         :null}
+
       {currentUser.id === currentActivity?.creator_id  && (
         <div className='show_links'>
-        <NavLink to={`/`}>
-          <button className='button' onClick={handleDelete}>DELETE</button>
-        </NavLink>
 
-        <NavLink to={`/`}>
-          <button className='button'>CANCEL</button>
-        </NavLink>
+          <NavLink to={`/activityedit/${currentActivity.id}`}>
+            <button className='button'>Edit</button>
+          </NavLink>
 
-        <NavLink to={`/activityedit/${currentActivity.id}`}>
-          <button className='button'>EDIT</button>
-        </NavLink>
+          <NavLink to={`/`}>
+            <button className='button'>Cancel</button>
+          </NavLink>
+          <div className='deleteLink'>
+          <NavLink to={`/`}>Delete</NavLink>
+          </div>
         </div>
       )}
       {currentUser.id !== currentActivity?.creator_id && (
-        <button className='button' onClick={submitHandler}>ATTEND ACTIVITY!</button>
+        <button className='button' onClick={submitHandler}>Let's Go!</button>
       )}
 
     </div>

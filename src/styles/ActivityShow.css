@@ -1,12 +1,37 @@
 .activityShowBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   /* background-color: var(--base-color); */
   padding: 10px;
   height: 100vh;
 }
 
 .activityShowBody > h2 {
+  font-size: 2rem;
+  color: var(--secondary-color);
+}
+
+.activityShowBody > h1 {
+  font-size: 2rem;
+}
+
+.eventComponent{
+  width: 20rem;
+  padding: .5rem;
+  background-color: var(--background-color);
+  filter: var(--drop-shadow);
+  margin: 1rem;
+}
+
+.activityShowBody > .activityData > .eventComponent > h2 {
   font-size: 1rem;
   color: var(--primary-color);
+}
+
+.activityShowBody > .activityData > .eventComponent > p {
+  font-size: 1.5rem;
+  color: var(--secondary-color);
 }
 
 .button {
@@ -17,11 +42,13 @@
   margin: 0.5rem;
 }
 
+.deleteLink {
+  display: flex;
+  justify-content: center;
+  font-size: 1rem;
+}
 
 .show_links {
   /* background-color: var(--base-color); */
 }
 
-.activityShowBody > p {
-  font-size: 1.5rem;
-}

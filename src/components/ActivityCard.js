@@ -26,7 +26,8 @@ const ActivityCard = (props) => {
         <div className="activity-date-month">{getMonthName    (formattedMonthString)}
         </div>
         <div className="activity-date-day">{formattedDayString}</div>
-        <div className="activity-date">{formattedTimeString}</div>
+        Start Time
+        <div className="activity-date-time">{formattedTimeString}</div>
       </div>
 
       <div className="activity-details">

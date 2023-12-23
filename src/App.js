@@ -1,4 +1,4 @@
-import { Routes, Route, useNavigate} from "react-router-dom"
+import { Routes, Route, useNavigate, useLocation } from "react-router-dom"
 import { useState, useEffect } from "react";
 import './App.css';
 import Header from './components/Header'
@@ -24,25 +24,22 @@ function App() {
   const [currentUser, setCurrentUser] = useState(null)
   const [activities, setActivities] = useState([])
   const [userActivity, setUserActivity] = useState([])
-  // const url = "http://localhost:3000"
-const url = "https://whim.onrender.com"
   const navigate = useNavigate()
+  const url = "http://localhost:3000"
+// const url = "https://whim.onrender.com"
 
-useEffect(() => {
-  readActivity()
-}, [])
 
-useEffect(() => {
-  const loggedInUser = localStorage.getItem("token")
-  if (loggedInUser) {
-    setCurrentUser(loggedInUser)
-  }
-  readActivity()
-}, [])
+  // useEffect(() => {
+  //   readActivity()
+  // }, [])
 
-// user_activities
+
   useEffect(() => {
-    readUserActivity();
+    const loggedInToken = localStorage.getItem("token")
+    if (loggedInToken) {
+      setCurrentUser(loggedInToken)
+    }
+    readActivity()
   }, [])
 
   const readUserActivity = () => {
@@ -53,7 +50,6 @@ useEffect(() => {
     })
     .catch((error) => console.log(error))
   }
-
 
   const createUserActivity = (activity) => {
   fetch(`${url}/user_activities`, {
@@ -66,112 +62,114 @@ useEffect(() => {
     .catch((errors) => console.log("Activity create errors:", errors))
   }
 
-// authentication methods
-const login = (userInfo) => {
-  fetch(`${url}/login`, {
-    body: JSON.stringify(userInfo),
-    headers: {
-      "Content-Type": "application/json",
-      "Accept": "application/json"
-    },
-    method: "POST"
-  })
-  .then(response => {
-    if (!response.ok) {
-      throw Error(response.statusText)
-    }
-// store the token
+  // login authentication
+  const login = (userInfo) => {
+    fetch(`${url}/login`, {
+      body: JSON.stringify(userInfo),
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      method: "POST"
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw Error(response.statusText)
+      }
+  // store the token
+      localStorage.setItem("token", response.headers.get("Authorization"))
+      return response.json()
+    })
+    .then(payload => {
+      setCurrentUser(payload)
+    })
+    .then(() => navigate("/"))
+    .catch(error => console.log("login errors: ", error))
+  }
+
+  // signup authentication
+  const signup = (userInfo) => {
+    fetch(`${url}/signup`, {
+      body: JSON.stringify(userInfo),
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      method: "POST"
+    })
+    .then(response => {
+        if (!response.ok) {
+        throw Error(response.statusText)
+      }
+      // store the token
     localStorage.setItem("token", response.headers.get("Authorization"))
     return response.json()
-  })
-  .then(payload => {
-    setCurrentUser(payload)
-  })
-  .then(() => navigate("/"))
-  .catch(error => console.log("login errors: ", error))
-}
-
-const signup = (userInfo) => {
-  fetch(`${url}/signup`, {
-    body: JSON.stringify(userInfo),
-    headers: {
-      "Content-Type": "application/json",
-      "Accept": "application/json"
-    },
-    method: "POST"
-  })
-  .then(response => {
-      if (!response.ok) {
-      throw Error(response.statusText)
-    }
-    // store the token
-  localStorage.setItem("token", response.headers.get("Authorization"))
-  return response.json()
-  })
-  .then(payload => {
-    setCurrentUser(payload)
-  })
-  .then(() => logout())
-  .then(() => navigate("/login"))
-  .catch(error => console.log("login errors: ", error))
-}
-
-const logout = () => {
-  fetch(`${url}/logout`, {
-    headers: {
-      "Content-Type": "application/json",
-      "Authorization": localStorage.getItem("token") //retrieve the token
-    },
-    method: "DELETE"
-  })
-  .then(payload => {
-    localStorage.removeItem("token")  // remove the token
-    setCurrentUser(null)
-  })
-  .catch(error => console.log("log out errors: ", error))
-}
-
-//CRUD fetch requests
-const readActivity = () => {
-  fetch(`${url}/activities`)
-    .then((response) => response.json())
-    .then((payload) => {
-      setActivities(payload)
     })
-    .catch((error) => console.log(error))
-}
+    .then(payload => {
+      setCurrentUser(payload)
+    })
+    .then(() => logout())
+    .then(() => navigate("/login"))
+    .catch(error => console.log("login errors: ", error))
+  }
 
-const createActivity = (activity) => {
-  fetch(`${url}/activities`, {
-    body: JSON.stringify(activity),
-    headers: {"Content-Type": "application/json"},
-    method: "POST"
-  })
-    .then((response) => response.json())
-    .then((payload) => readActivity())
-    .catch((errors) => console.log("Activity create errors:", errors))
-}
+  const logout = () => {
+    fetch(`${url}/logout`, {
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": localStorage.getItem("token") //retrieve the token
+      },
+      method: "DELETE"
+    })
+    .then(payload => {
+      localStorage.clear()  // remove the token
+      setCurrentUser(null)
+    })
+    .then(() => navigate("/login"))
+    .catch(error => console.log("log out errors: ", error))
+  }
 
-const updateActivity = (activity, id) => {
-  fetch(`${url}/activities/${id}/`, {
-    body: JSON.stringify(activity),
-    headers: {"Content-Type": "application/json"},
-    method: "PATCH"
-  })
-    .then((response) => response.json())
-    .then((payload) => readActivity())
-    .catch((errors) => console.log("Activity update errors:", errors))
-}
+  //CRUD fetch requests
+  const readActivity = () => {
+    fetch(`${url}/activities`)
+      .then((response) => response.json())
+      .then((payload) => {
+        setActivities(payload)
+      })
+      .catch((error) => console.log(error))
+  }
 
-const deleteActivity = (id) => {
-  fetch(`${url}/activities/${id}`, {
-    headers: {"Content-Type": "application/json"},
-    method: "DELETE"
-  })
-    .then((response) => response.json())
-    .then((payload) => readActivity())
-    .catch((errors) => console.log("delete errors:", errors))
-}
+  const createActivity = (activity) => {
+    fetch(`${url}/activities`, {
+      body: JSON.stringify(activity),
+      headers: {"Content-Type": "application/json"},
+      method: "POST"
+    })
+      .then((response) => response.json())
+      .then((payload) => readActivity())
+      .catch((errors) => console.log("Activity create errors:", errors))
+  }
+
+  const updateActivity = (activity, id) => {
+    fetch(`${url}/activities/${id}/`, {
+      body: JSON.stringify(activity),
+      headers: {"Content-Type": "application/json"},
+      method: "PATCH"
+    })
+      .then((response) => response.json())
+      .then((payload) => readActivity())
+      .catch((errors) => console.log("Activity update errors:", errors))
+  }
+
+  const deleteActivity = (id) => {
+    fetch(`${url}/activities/${id}`, {
+      headers: {"Content-Type": "application/json"},
+      method: "DELETE"
+    })
+      .then((response) => response.json())
+      .then((payload) => readActivity())
+      .catch((errors) => console.log("delete errors:", errors))
+  }
 
   return (
       <>
@@ -187,17 +185,23 @@ const deleteActivity = (id) => {
         <Route path="*" element={<Error />} />
 
 
-{/* Protected routes */}
+  {/* Protected routes */}
         <Route element={<ProtectedRoutes currentUser={currentUser}/>} >
+          {currentUser && (
           <Route path="/" element={<Home activities={activities} currentUser={currentUser} createActivity={createActivity} exact/>}/>
-
+          )}
+          {currentUser && (
           <Route path="/display/:category?" element={<ActivityFilter activities={activities}/>} />
-
+          )}
+          {currentUser && (
           <Route path="/buddyprofile/:id" element={<BuddyProfile currentUser={currentUser} userActivity={userActivity} activities={activities}/>} />
-
+          )}
+          {currentUser && (
           <Route path="/activityshow/:id" element={<ActivityShow activities={activities} currentUser={currentUser} updateActivity={updateActivity} deleteActivity={deleteActivity} createUserActivity={createUserActivity}/>} />
-
+          )}
+          {currentUser && (
           <Route path="/activityedit/:id" element={<ActivityEdit activities={activities} updateActivity={updateActivity}/>} />
+          )}
         </Route>
       </Routes>
       {currentUser && (

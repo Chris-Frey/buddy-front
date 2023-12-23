@@ -1,10 +1,10 @@
 .card {
   display: flex;
-  width: 22rem;
+  width: 40rem;
   color: white;
   z-index: 0;
   border-radius: .5rem;
-  filter: drop-shadow(.2rem .2rem 0.3rem rgb(0, 0, 0));
+  filter: var(--drop-shadow);
 }
 
 .activity-image {
@@ -43,10 +43,17 @@
 
 .activity-date-day {
   z-index: 1;
-  width: 3rem;
+  /* width: 3rem; */
   top: 5rem;
   left: .5rem;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
+}
+
+.activity-date-time {
+  z-index: 1;
+  top: 5rem;
+  left: .5rem;
+  font-size: 2rem;
 }
 
 .date-area {
@@ -82,6 +89,16 @@
 }
 
 @media screen and (min-width:851px) {
+
+  .card {
+    display: flex;
+    width: 15rem;
+    color: var(--base-color);
+    z-index: 0;
+    border-radius: .5rem;
+    filter: var(--drop-shadow);
+  }
+
   .activity-users {
     position: relative;
     right: 3rem;
